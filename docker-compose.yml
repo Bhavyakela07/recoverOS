@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recoveros-ai-agent
+    ports:
+      - "8501:8501" # Streamlit Dashboard
+      - "8000:8000" # FastAPI Policy & ML Backend
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - DATABASE_URL=sqlite:///./recoveros.db
+      - POLICY_VERSION=v1.0.0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: recoveros-postgres
+    environment:
+      POSTGRES_USER: recoveros
+      POSTGRES_PASSWORD: recoveros_password
+      POSTGRES_DB: recoveros
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --lc-collate=C --lc-ctype=C"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U recoveros -d recoveros"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local

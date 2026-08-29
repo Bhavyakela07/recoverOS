@@ -1,0 +1,10 @@
+.git
+.gitignore
+.pytest_cache
+.env
+.env.local
+node_modules
+.next
+*.pyc
+__pycache__
+.DS_Store
