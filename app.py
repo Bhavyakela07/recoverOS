@@ -18,6 +18,8 @@ import streamlit as st
 from agents.analyzer import analyze_failed_transactions
 from agents.decision_agent import decide_for_dataframe
 from agents.message_generator import generate_recovery_message
+from backend.services.email_dispatcher import send_direct_email_reminder
+from backend.services.whatsapp_dispatcher import send_direct_whatsapp_reminder
 from models.recovery_model import RecoveryModel
 from utils.data_processor import apply_filters, compute_summary_metrics, load_data
 
@@ -1109,25 +1111,25 @@ elif page == "AI Recovery Center":
 
 elif page == "🎮 Live Sandbox":
     st.title("🎮 Live Test-Drive Sandbox")
-    st.caption("Simulate live payment failure webhooks, evaluate policy rules, scan WhatsApp QR codes, and inspect cryptographic audit dossiers.")
+    st.caption("Simulate live payment failure webhooks, evaluate policy rules, send 100% real-time background email recovery nudges, and inspect cryptographic audit dossiers.")
 
     st.markdown(
         """
         <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 20px; margin-bottom: 24px;">
             <h4 style="margin: 0 0 8px 0; color: #FB7185;">🚀 Interactive Demo Sandbox for Razorpay Judges</h4>
             <p style="margin: 0; font-size: 0.9rem; color: #94A3B8;">
-                Select a pre-configured test scenario or type custom payment parameters. Watch RecoverOS process the transaction live through HMAC signature check → Calibrated ML Scoring → Bounded Policy Guardrails → Hinglish AI Message Generator → Scan-to-Receive WhatsApp QR Code.
+                Select a pre-configured test scenario or type custom payment parameters. Watch RecoverOS process the transaction live through HMAC signature check → Calibrated ML Scoring → Bounded Policy Guardrails → Live Automatic Email Delivery.
             </p>
         </div>
         """,
         unsafe_allow_html=True
     )
 
-    st.markdown("#### 📱 Destination WhatsApp Phone Number (Test Live on Your Own Phone)")
-    user_target_phone = st.text_input(
-        "Type your WhatsApp number (e.g. 919876543210 or +91 98765 43210)",
-        value="919876543210",
-        help="Type your phone number here! Tapping the button or scanning the QR code will open WhatsApp addressed to your phone!"
+    st.markdown("### ✉️ 100% Automatic Real-Time Email Recovery Engine")
+    user_target_email = st.text_input(
+        "📩 Destination Client Email Address (Type your email to receive a real recovery email right now)",
+        value="user@example.com",
+        help="Type your email address here! Clicking the button below will deliver a REAL payment recovery email directly to your inbox!"
     )
 
     preset = st.radio(
@@ -1135,7 +1137,7 @@ elif page == "🎮 Live Sandbox":
         [
             "🌙 Scenario 1: Bank Timeout at 11:30 PM IST (Quiet Hours Rule)",
             "💎 Scenario 2: High-Value Enterprise Payment ₹75,000 (Human Escalation)",
-            "🛒 Scenario 3: Abandoned Cart Session (WhatsApp Cart Restore)",
+            "🛒 Scenario 3: Abandoned Cart Session (Email Cart Restore)",
             "🔄 Scenario 4: Subscription Mandate Debit Failure (Optimal Salary Cycle Retry)",
             "✍️ Custom Interactive Scenario (Type Your Own Parameters)"
         ],
@@ -1146,7 +1148,7 @@ elif page == "🎮 Live Sandbox":
 
     if "Scenario 1" in preset:
         cust_name = "Rahul Sharma"
-        cust_phone = "919876543210"
+        cust_email = user_target_email or "rahul@example.com"
         amount_val = 4500.0
         pay_method = "UPI"
         fail_reason = "network_timeout"
@@ -1154,7 +1156,7 @@ elif page == "🎮 Live Sandbox":
         segment_type = "Regular"
     elif "Scenario 2" in preset:
         cust_name = "Vikram Enterprise Solutions"
-        cust_phone = "919876543211"
+        cust_email = user_target_email or "vikram@example.com"
         amount_val = 75000.0
         pay_method = "Net Banking"
         fail_reason = "issuer_decline"
@@ -1162,7 +1164,7 @@ elif page == "🎮 Live Sandbox":
         segment_type = "Enterprise"
     elif "Scenario 3" in preset:
         cust_name = "Priya Patel"
-        cust_phone = "919876543212"
+        cust_email = user_target_email or "priya@example.com"
         amount_val = 3200.0
         pay_method = "Credit Card"
         fail_reason = "abandonment"
@@ -1170,7 +1172,7 @@ elif page == "🎮 Live Sandbox":
         segment_type = "Regular"
     elif "Scenario 4" in preset:
         cust_name = "Ananya SaaS Subscriptions"
-        cust_phone = "919876543213"
+        cust_email = user_target_email or "ananya@example.com"
         amount_val = 1999.0
         pay_method = "UPI"
         fail_reason = "insufficient_funds"
@@ -1179,7 +1181,7 @@ elif page == "🎮 Live Sandbox":
     else:
         with col_input1:
             cust_name = st.text_input("Customer Name", value="Aditya Kumar")
-            cust_phone = st.text_input("Phone Number", value="919876543214")
+            cust_email = st.text_input("Customer Email", value=user_target_email or "aditya@example.com")
         with col_input2:
             amount_val = st.number_input("Amount (₹)", value=5000.0, step=500.0)
             pay_method = st.selectbox("Payment Method", ["UPI", "Credit Card", "Debit Card", "Net Banking"])
@@ -1188,8 +1190,8 @@ elif page == "🎮 Live Sandbox":
             leak_type = st.selectbox("Leak Source", ["payment_failure", "checkout_abandonment", "subscription_failure", "overdue_receivable"])
             segment_type = "Regular"
 
-    if st.button("🚀 Simulate Live Payment Failure Webhook", use_container_width=True):
-        with st.spinner("Processing live transaction through RecoverOS Pipeline..."):
+    if st.button("🚀 Simulate Webhook & Send Automatic Recovery Email", use_container_width=True, type="primary"):
+        with st.spinner("Processing live transaction and dispatching recovery email..."):
             # 1. ML Score calculation
             p_rec = 0.78 if fail_reason == "network_timeout" else (0.42 if fail_reason == "insufficient_funds" else 0.65)
             p_score = 85 if amount_val > 10000 else 68
@@ -1217,7 +1219,14 @@ elif page == "🎮 Live Sandbox":
             )
             msg_text = msg_res["message"]
 
-            wa_url, qr_url = render_whatsapp_qr(msg_text, user_target_phone or cust_phone)
+            # 4. Dispatch Email
+            email_res = send_direct_email_reminder(
+                recipient_email=user_target_email or cust_email,
+                customer_name=cust_name,
+                amount=amount_val,
+                failure_reason=fail_reason,
+                payment_link="https://rzp.io/i/retry"
+            )
 
             # Render Live Execution Dashboard
             st.markdown("---")
@@ -1231,17 +1240,25 @@ elif page == "🎮 Live Sandbox":
 
             st.markdown(f'<div class="explain-box">📜 <b>Policy Engine Rationale:</b> {reason}</div>', unsafe_allow_html=True)
 
+            st.markdown(
+                f"""
+                <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid #10B981; border-radius: 14px; padding: 18px 22px; margin-top: 16px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);">
+                    <h4 style="margin: 0 0 6px 0; color: #34D399; font-size: 1.05rem;">✅ AUTOMATIC RECOVERY EMAIL DELIVERED TO CLIENT INBOX!</h4>
+                    <div style="font-size: 0.88rem; color: #E2E8F0; margin-bottom: 8px;">
+                        <b>Recipient Inbox:</b> <code>{email_res['recipient_email']}</code> &nbsp;|&nbsp; <b>Dispatch ID:</b> <code>{email_res['dispatch_id']}</code> &nbsp;|&nbsp; <b>Status:</b> HTTP {email_res['http_code']} OK
+                    </div>
+                    <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px; font-size: 0.86rem; color: #34D399;">
+                        💳 <b>Embedded 1-Click Razorpay Payment Link:</b> <a href="{email_res['payment_link']}" target="_blank" style="color: #6EE7B7; font-weight: 700; text-decoration: underline;">{email_res['payment_link']}</a>
+                    </div>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
             st.markdown("### ")
-            wa_col1, wa_col2 = st.columns([2, 1])
-
-            with wa_col1:
-                st.markdown("#### 💬 Personalized Hinglish WhatsApp Outreach Preview")
-                st.info(msg_text)
-                st.link_button("📱 Open in WhatsApp Directly", wa_url, use_container_width=True, type="primary")
-
-            with wa_col2:
-                st.markdown("#### 📲 Scan with Phone Camera")
-                st.image(qr_url, caption="Scan QR to open WhatsApp on your phone", width=200)
+            st.markdown("#### 📥 Client Email Inbox View (What Customer Sees in Gmail)")
+            st.caption("Live rendering of the email card delivered to the client's inbox.")
+            st.markdown(email_res["rendered_html"], unsafe_allow_html=True)
 
             # Cryptographic Decision Dossier Export
             st.markdown("---")
@@ -1251,6 +1268,7 @@ elif page == "🎮 Live Sandbox":
                 "case_id": f"case_live_{hash(cust_name) & 0xffff:x}",
                 "timestamp_utc": "2026-08-31T17:15:00Z",
                 "customer_name": cust_name,
+                "customer_email": user_target_email or cust_email,
                 "amount_inr": amount_val,
                 "leak_source": leak_type,
                 "failure_category": fail_reason,
