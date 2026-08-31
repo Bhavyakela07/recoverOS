@@ -834,8 +834,57 @@ if not model_ready:
 # ==========================================================================
 
 if page == "Dashboard":
+    st.markdown(
+        """
+        <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 14px; padding: 14px 22px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.12);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <span style="height: 12px; width: 12px; background-color: #10B981; border-radius: 50%; display: inline-block; box-shadow: 0 0 12px #10B981;"></span>
+                <div>
+                    <div style="font-weight: 800; color: #34D399; font-size: 0.92rem; letter-spacing: 0.03em;">AUTONOMOUS AI RECOVERY AGENT: LIVE & ACTIVE</div>
+                    <div style="font-size: 0.78rem; color: #94A3B8; margin-top: 1px;">Listening to Live Razorpay Webhooks • Zero Manual Merchant Effort Required</div>
+                </div>
+            </div>
+            <span style="background: rgba(16, 185, 129, 0.18); color: #34D399; font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(16, 185, 129, 0.4);">100% AUTOMATED BACKGROUND PIPELINE</span>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.title("Revenue Recovery Dashboard")
     st.caption("Overview of payment performance and AI-estimated recoverable revenue.")
+
+    st.markdown(
+        """
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 20px; margin-top: 12px; margin-bottom: 24px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);">
+            <div style="font-size: 0.88rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #FB7185; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                ⚡ How RecoverOS Operates Automatically in Production
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; text-align: center;">
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
+                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">💳 1. Payment Fails</div>
+                    <div style="font-size: 0.76rem; color: #94A3B8;">Transaction drops at checkout or debit</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
+                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">⚡ 2. Auto Webhook</div>
+                    <div style="font-size: 0.76rem; color: #94A3B8;">Razorpay API payload received in < 5ms</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
+                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">🧠 3. ML & Policy</div>
+                    <div style="font-size: 0.76rem; color: #94A3B8;">XGBoost p_rec score + IST Quiet Hours check</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
+                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">💬 4. Auto WhatsApp</div>
+                    <div style="font-size: 0.76rem; color: #94A3B8;">Hinglish AI text + 1-click Razorpay link</div>
+                </div>
+                <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 14px 10px;">
+                    <div style="font-size: 1.05rem; font-weight: 700; color: #34D399; margin-bottom: 4px;">💰 5. Money Recovered</div>
+                    <div style="font-size: 0.76rem; color: #34D399;">Customer pays & funds hit merchant bank</div>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
     metrics = compute_summary_metrics(filtered_df)
 
