@@ -1,61 +1,57 @@
-# 5-Minute Pitch / Demo Script — AI Revenue Recovery Agent
+# 3-Minute Hackathon Demo Script — RecoverOS
 
-*Razorpay AI Buildathon 2026*
-
----
-
-**[0:00–0:40] Hook + Problem**
-
-"Every business running online payments loses revenue not because customers don't want to pay — but because a payment failed and nobody followed up the right way. A network blip, an expired card, insufficient funds — these get treated identically today: either ignored, or hit with the same generic retry. That's revenue leakage that's completely avoidable.
-
-We built the **AI Revenue Recovery Agent** — a system that looks at every failed payment, figures out *why* it failed, decides *if* it's worth recovering and *how*, and writes a personalized message to win that revenue back."
-
-**[0:40–1:30] What it does (live demo: Dashboard)**
-
-"Here's our dashboard, running on a synthetic dataset of 650 Indian payment transactions. At a glance: total transactions, successful vs failed, and — this is the key number — **potential recoverable revenue**. Right now we're looking at roughly [X]% of failed revenue as recoverable, not by guessing, but by an explainable AI pipeline underneath.
-
-You can see failure reasons breaking down — card declines, insufficient funds, network failures — and priority distribution across High, Medium, and Low."
-
-**[1:30–2:45] The AI pipeline (Transaction Explorer)**
-
-"Let's drill into one failed transaction. [Select one in Transaction Explorer.]
-
-First, our **Recovery Priority Score** — a transparent, weighted formula factoring in transaction amount, how recoverable this specific failure reason typically is, the customer's segment and history, and how many retries have already happened. Nothing hidden — you can see exactly why this scored a 78 and got marked High Priority.
-
-Second, a **Scikit-learn RandomForest model** trained on historical recovery outcomes estimates the actual probability a retry succeeds — here, 71%.
-
-Third, our **Decision Agent** — a rule engine, not a black box — combines all of that and recommends: 'Ask Customer to Update Payment Method,' with a one-sentence explanation of why. Every recommendation is justified, every time."
-
-**[2:45–3:45] Personalized recovery message (live demo)**
-
-"Now the part that actually reaches the customer. [Click 'Generate AI Recovery Message'.]
-
-This calls an LLM to write a short, warm, professional message personalized to this exact customer, amount, and failure reason — not a copy-pasted template. And critically: if the API key isn't available, or the call fails, the app **automatically falls back** to a varied template engine so the whole system keeps working. No single point of failure."
-
-**[3:45–4:30] AI Recovery Center + Analytics**
-
-"In the AI Recovery Center, we surface every High-Priority case ranked by score, and can batch-generate recovery messages for the top cases in one click — this is what an ops or growth team would actually use day to day.
-
-And in Analytics, we show the ML model's feature importances and a recovery-rate trend — so this isn't just a UI, there's a real trained model backing the numbers, with proper train/test evaluation: accuracy, precision, recall, ROC-AUC, all logged."
-
-**[4:30–5:00] Close**
-
-"To be clear — this runs on fully synthetic demo data, and it's not connected to Razorpay's live systems. But the architecture is built to plug in: swap the synthetic dataset for a real failed-payment webhook feed, and this pipeline — analysis, priority, ML probability, explainable decision, personalized outreach — works exactly the same way.
-
-The core idea: **stop treating every failed payment the same way.** Score it, explain it, act on it, and recover the revenue that was never actually lost — just unclaimed. Thank you."
+**Razorpay AI Buildathon 2026 | Track 03: AI Revenue Recovery Agent**
 
 ---
 
-### Anticipated Q&A
+## ⏱️ Timeline & Pitch Flow (3 Minutes)
 
-**Q: Is this connected to real Razorpay data?**
-A: No — synthetic demo data only, clearly labeled throughout the app. The architecture is designed so a real payment-failure feed could be plugged in later.
+### [0:00–0:40] Hook & Problem Statement
+> "Every merchant running online payments loses revenue not because customers don't want to buy, but because a payment failed due to a bank timeout, network failure, or expired card. Most systems either ignore these failures or blindly spam retry emails, driving up customer fatigue and bank decline fees.
+> 
+> We built **RecoverOS** — an autonomous, policy-governed AI revenue recovery agent that decides **which failed payments are worth recovering, why an action should be taken, and when to stop**."
 
-**Q: Why RandomForest and not a deep learning model?**
-A: Interpretability. Feature importances let us explain *why* the model predicts a given recovery probability — important for a finance-adjacent decision, and appropriate given the dataset size.
+---
 
-**Q: What happens if the LLM API is down or the key is missing?**
-A: The message generator automatically falls back to a template engine that still varies message wording per transaction — the app never breaks or blocks on the LLM call.
+### [0:40–1:40] Story 1: Recoverable Failed Payment (Closed-Loop Demo)
+> *"Let's look at Order #RZP-34005 (₹2,499) in the AI Recovery Center.*
+> 
+> 1. **Failure Diagnosis**: The payment failed due to a temporary bank network timeout.
+> 2. **Calibrated ML Inference**: Our Isotonic-Calibrated XGBoost model estimates a **94% model-estimated recovery probability**.
+> 3. **Policy Evaluation**: The Policy Engine checks IST Quiet Hours (outside 22:00-08:00 IST), customer contact caps, and amount limits — issuing a policy decision of **`ALLOW`**.
+> 4. **`WHY THIS DECISION?` Card**: Highlights positive signals (*temporary bank failure, high recovery score, customer tier*).
+> 5. **Razorpay Test Link & Outreach**: Generates an official Razorpay Test Mode Payment Link (`plink_...`) and formats a personalized email / WhatsApp outreach card.
+> 6. **Closed-Loop Outcome**: When the customer pays, Razorpay fires a `payment.captured` webhook. RecoverOS verifies the HMAC signature, enforces database idempotency, transitions the case to **`RECOVERED`**, and updates the recovered revenue on the dashboard!"*
 
-**Q: How is the priority score different from the ML model?**
-A: The priority score answers "how much is this worth recovering" (a transparent business formula). The ML model answers "how likely is a retry to actually work" (a learned probability from historical outcomes). The Decision Agent combines both.
+---
+
+### [1:40–2:30] Story 2: The `DO_NOT_RETRY` Case (Financial Safety)
+> *"Now look at Order #RZP-10982 (₹1,200).
+> 
+> 1. **Failure Diagnosis**: Declined due to Insufficient Funds with 3 previous failed retries.
+> 2. **Calibrated ML Inference**: Recovery probability drops below 15%.
+> 3. **Policy Guardrail**: The Policy Engine triggers a hard stopping rule (`MAX_RETRIES` & `MIN_PROBABILITY`).
+> 4. **First-Class Callout**: RecoverOS flags this case as **`🛑 DO_NOT_RETRY`**.
+> 5. **LLM Financial Guardrail**: The LLM cannot override this financial decision. RecoverOS stops outreach, saving merchant reputation and preventing bank decline fees."*
+
+---
+
+### [2:30–3:00] Analytics & Technical Polish
+> *"In the Analytics tab, we compare our 90% Treatment group against a 10% Control holdout to measure true net recovery uplift.
+> 
+> Everything in RecoverOS is built with production rigor: HMAC-SHA256 signature verification, `webhook_events.event_id` database idempotency, and clean fallback between Razorpay Test Mode and Demo Mode.
+> 
+> RecoverOS doesn't just retry payments — it governs recovery with intelligence, safety, and closed-loop verification. Thank you!"*
+
+---
+
+## ❓ Anticipated Q&A
+
+**Q: Is RecoverOS connected to live Razorpay APIs?**  
+*A: When `RAZORPAY_KEY_ID` and `RAZORPAY_KEY_SECRET` are provided, RecoverOS uses the official `razorpay` Python SDK to create real Razorpay Test Mode Payment Links (`plink_...`). Without credentials, it operates in an explicitly labeled `DEMO MODE (SIMULATED)`.*
+
+**Q: Can the LLM override a policy decision or execute financial actions?**  
+*A: No. The Policy Engine and ML models make all financial and retry decisions. The LLM functions strictly as a customer communication formatting layer.*
+
+**Q: How does RecoverOS handle double webhook deliveries?**  
+*A: `webhook_events.event_id` has a `UNIQUE` database constraint. If Razorpay sends duplicate webhooks, RecoverOS detects the existing record and returns `HTTP 200 {"status": "ignored"}` with zero duplicate payment link creations or double-counted revenue.*

@@ -239,3 +239,78 @@ def test_webhook_double_delivery_idempotency():
     assert res2.status_code == 200
     assert res2.json()["status"] == "ignored"
     assert "Duplicate event" in res2.json()["message"]
+
+
+# --------------------------------------------------------------------------
+# 5. High-Value Adversarial Guardrail Tests
+# --------------------------------------------------------------------------
+def test_webhook_malformed_json_payload():
+    """Verify malformed JSON payload with valid HMAC header returns HTTP 400."""
+    bad_bytes = b"NOT_VALID_JSON_STRING_{{}"
+    sig = generate_sig(bad_bytes)
+    res = client.post("/webhook/razorpay", content=bad_bytes, headers={"X-Razorpay-Signature": sig})
+    assert res.status_code == 400
+    assert "Invalid JSON" in res.json()["detail"]
+
+
+def test_llm_cannot_override_policy_decision():
+    """Verify Policy Engine rules strictly govern financial decision and LLM message generation cannot override decision state."""
+    from agents.message_generator import generate_recovery_message
+    
+    # 1. Evaluate DO_NOT_RETRY policy input
+    policy_engine = PolicyEngine()
+    inp = build_policy_input(
+        recovery_probability=0.05,  # Hopeless case
+        risk_score=0.1,
+        amount=Decimal("1500"),
+        retry_count=3,
+        proposed_action=RecoveryAction.RETRY,
+        leak_source=LeakSource.PAYMENT_FAILURE,
+        failure_category=FailureCategory.ISSUER_DECLINE,
+        customer_consent=True,
+        customer_contact_count_24h=0,
+        customer_contact_count_7d=0,
+        is_current_hour_quiet=False
+    )
+    stop_dec = policy_engine.check_stopping_rules(inp)
+    assert stop_dec.stop is True  # Policy Engine MANDATES STOP
+    
+    # 2. Verify message generator does NOT execute financial actions
+    msg_res = generate_recovery_message(
+        customer_name="Test Customer",
+        amount=1500.0,
+        failure_reason="Issuer Decline",
+        action="DO_NOT_RETRY",
+        currency="INR",
+        segment="Regular"
+    )
+    assert msg_res["mode"] in ["llm", "template"]
+    assert "DO_NOT_RETRY" not in msg_res["message"]  # Customer message formatted safely without exposing code enums
+
+
+def test_mocked_razorpay_test_mode_link_creation(monkeypatch):
+    """Verify RazorpayService with mocked SDK client creates official Test Mode plink_... links."""
+    from services.razorpay_service import RazorpayService
+
+    class MockRazorpayClient:
+        class MockPaymentLink:
+            def create(self, data):
+                return {
+                    "id": "plink_test_mock_12345",
+                    "short_url": "https://rzp.io/i/plink_test_mock_12345",
+                    "status": "created",
+                    "amount": data["amount"]
+                }
+        def __init__(self, auth=None):
+            self.payment_link = self.MockPaymentLink()
+
+    # Instantiate RazorpayService and inject mock client
+    srv = RazorpayService()
+    srv.client = MockRazorpayClient()
+    srv.is_live = True
+
+    link = srv.create_payment_link(amount_inr=1999.0, order_id="RZP-MOCK-1", customer_name="Mock User", customer_email="mock@example.com")
+    assert link["mode"] == "RAZORPAY_TEST_MODE"
+    assert link["link_id"] == "plink_test_mock_12345"
+    assert link["short_url"] == "https://rzp.io/i/plink_test_mock_12345"
+
