@@ -20,6 +20,7 @@ from services.policy_engine import PolicyEngine, build_policy_input, POLICY_VERS
 from services.ml_engine import get_ml_engine
 from services.ai_engine import get_ai_engine
 from services.recovery_tools import _idempotency_manager
+from services.email_dispatcher import send_direct_email_reminder
 
 logger = logging.getLogger("recoveros.webhooks")
 
@@ -136,6 +137,18 @@ async def receive_razorpay_webhook(
             decision = p_dec.value
             reason_code = p_reas.value
 
+        email_result = None
+        if decision == "ALLOW":
+            order_id = f"RZP-{str(payment_id).replace('pay_', '')[:5]}"
+            email_result = send_direct_email_reminder(
+                recipient_email=customer_email,
+                customer_name="Valued Customer",
+                amount=amount_inr,
+                order_id=order_id,
+                failure_reason=failure_cat,
+                payment_link=f"https://rzp.io/i/{payment_id}"
+            )
+
         return {
             "status": "processed",
             "event_id": event_id,
@@ -145,7 +158,8 @@ async def receive_razorpay_webhook(
             "decision": decision,
             "reason_code": reason_code,
             "ai_diagnosis": ai_rec.leak_diagnosis,
-            "draft_message": ai_rec.customer_message_draft
+            "draft_message": ai_rec.customer_message_draft,
+            "email_dispatch": email_result
         }
 
     return {
