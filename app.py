@@ -1268,55 +1268,7 @@ elif page == "Transaction Explorer":
             if result.get("error"):
                 st.caption(f"LLM call failed, used fallback. Details: {result['error']}")
 
-        # ------------------------------------------------------------------
-        # Direct Email Notification Dispatch (Matching Customer Email Card)
-        # ------------------------------------------------------------------
-        st.markdown("---")
-        st.markdown(f'<div style="font-size:1.05rem; font-weight:700; color:#FFFDFE; margin:14px 0 8px 0; display:flex; align-items:center; gap:8px;">{SVG_MAIL} Customer Recovery Email Dispatch</div>', unsafe_allow_html=True)
-        st.caption("Deliver an instant HTML recovery email with a 1-click Razorpay payment link directly to the customer inbox.")
 
-        em_col1, em_col2 = st.columns([2, 1])
-        with em_col1:
-            target_email_input = st.text_input(
-                "Customer Email Address",
-                value="bhavyakela0009@gmail.com",
-                key=f"target_email_{selected_id}",
-                help="Type destination email. Clicking below delivers the exact recovery email to this inbox."
-            )
-        with em_col2:
-            st.markdown("<div style='margin-top: 28px;'></div>", unsafe_allow_html=True)
-            send_email_btn = st.button("Send Recovery Email", key=f"btn_send_email_{selected_id}", type="primary", use_container_width=True)
-
-        if send_email_btn:
-            with st.spinner("Dispatching recovery email to recipient inbox..."):
-                order_id_clean = f"RZP-{str(row['transaction_id']).replace('TXN', '')[:5]}"
-                email_res = send_direct_email_reminder(
-                    recipient_email=target_email_input,
-                    customer_name=row["customer_name"],
-                    amount=float(row["amount"]),
-                    order_id=order_id_clean,
-                    failure_reason=row["failure_reason"],
-                    payment_link="https://rzp.io/i/retry"
-                )
-                st.session_state[f"email_res_{selected_id}"] = email_res
-
-        if f"email_res_{selected_id}" in st.session_state:
-            cached_res = st.session_state[f"email_res_{selected_id}"]
-            st.markdown(
-                f"""
-                <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid #10B981; border-radius: 12px; padding: 14px 18px; margin: 12px 0; box-shadow: 0 4px 16px rgba(16, 185, 129, 0.15);">
-                    <div style="color: #34D399; font-weight: 700; font-size: 0.96rem; display: flex; align-items: center; gap: 8px;">
-                        {SVG_CHECK_CIRCLE} Recovery Email Dispatched to <code>{cached_res['recipient_email']}</code>
-                    </div>
-                    <div style="font-size: 0.82rem; color: #CBD5E1; margin-top: 4px;">
-                        <b>Dispatch ID:</b> <code>{cached_res['dispatch_id']}</code> &nbsp;|&nbsp; <b>Mode:</b> {cached_res['mode']}
-                    </div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-            with st.expander("View Rendered Email Card (Exact Customer Inbox View)", expanded=True):
-                st.markdown(cached_res["rendered_html"], unsafe_allow_html=True)
 
         # ------------------------------------------------------------------
         # Multi-Channel Recovery (Interactive WhatsApp QR & 1-Click Link)
