@@ -37,7 +37,7 @@
 ---
 
 ### [2:30–3:00] Analytics & Technical Polish
-> *"In the Analytics tab, we compare our 90% Treatment group against a 10% Control holdout to measure true net recovery uplift.
+> *"In the Analytics tab, we compare our 90% Treatment group against a 10% Control holdout to measure estimated incremental recovery uplift in synthetic/demo evaluation.
 > 
 > Everything in RecoverOS is built with production rigor: HMAC-SHA256 signature verification, `webhook_events.event_id` database idempotency, and clean fallback between Razorpay Test Mode and Demo Mode.
 > 

@@ -21,7 +21,7 @@
 | **8** | **Policy Guardrails** | **PASS** | Enforces IST Quiet Hours (22:00–08:00 IST), ₹50,000 human escalation threshold, 24h contact caps, and low probability stops. Verified via `test_policy_quiet_hours_suppressed` & `test_policy_amount_over_50k_human_review`. |
 | **9** | **LLM Financial Guardrail** | **PASS** | Policy Engine & ML models strictly govern financial decisions. LLM (*OpenAI / Claude*) is restricted to customer message formatting and cannot override policy decisions. Verified by `test_llm_cannot_override_policy_decision`. |
 | **10** | **Analytics Integrity** | **PASS** | A/B Holdout Control Group comparison cards (*Treatment 42.8% vs Control 28.6%, Net AI Lift +14.2%*) visibly badged as *"Synthetic Demo Evaluation"* to avoid over-claiming real-world causal impact. |
-| **11** | **Security / Secrets** | **PASS** | Zero static fake URLs (`https://rzp.io/i/retry` scan: 0 matches). `.env` ignored in `.gitignore`. Zero hardcoded secrets committed. |
+| **11** | **Security / Secrets** | **PASS** | Zero static fake URLs (scan: 0 matches). `.env` ignored in `.gitignore`. Zero hardcoded secrets committed. |
 | **12** | **Reproducibility** | **PASS** | Complete `requirements.txt`, clean setup commands, database auto-initialization, and zero-config local startup. |
 | **13** | **UI / UX Polish** | **PASS** | 4 main navigation sections (Dashboard, AI Recovery Center, Transaction Explorer, Analytics & Reports). Displays environment mode badge, `WHY THIS DECISION?` card, and `DO_NOT_RETRY` callouts. |
 | **14** | **Documentation** | **PASS** | `README.md`, `DOCUMENTATION.md`, and `PITCH_SCRIPT.md` perfectly align with source code, disclaimers, setup instructions, and architecture. |
