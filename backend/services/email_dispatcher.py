@@ -20,14 +20,28 @@ from typing import Optional, Dict, Any
 logger = logging.getLogger("email_dispatcher")
 
 
+try:
+    from backend.services.razorpay_service import get_razorpay_service
+except ImportError:
+    from services.razorpay_service import get_razorpay_service
+
 def generate_recovery_email_html(
     customer_name: str = "Bhavya Kela",
     amount: float = 4500.0,
     order_id: str = "RZP-34005",
     failure_reason: str = "network_timeout",
-    payment_link: str = "https://rzp.io/i/retry",
+    payment_link: Optional[str] = None,
 ) -> str:
     """Generate exact responsive HTML email template matching the reference design."""
+    if not payment_link:
+        rzp_res = get_razorpay_service().create_payment_link(
+            amount_inr=amount,
+            order_id=order_id,
+            customer_name=customer_name,
+            customer_email="customer@example.com"
+        )
+        payment_link = rzp_res["short_url"]
+
     formatted_amount = f"₹{amount:,.0f}" if isinstance(amount, (int, float)) else str(amount)
     if not str(formatted_amount).startswith("₹"):
         formatted_amount = f"₹{formatted_amount}"
@@ -38,69 +52,78 @@ def generate_recovery_email_html(
         "authentication_failure": "Authentication Failure",
         "insufficient_funds": "Insufficient Funds",
         "issuer_decline": "Bank Server Decline",
-        "card_declined": "Card Authorization Timeout",
-        "technical_error": "Payment Gateway Timeout",
     }
-    reason_clean = reason_map.get(str(failure_reason).lower().replace(" ", "_"), str(failure_reason).replace("_", " ").title())
+    clean_reason = reason_map.get(failure_reason, failure_reason.replace("_", " ").title())
 
     html = f"""<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RecoverOS Payment Recovery</title>
+    <title>Payment Recovery Nudge</title>
 </head>
-<body style="margin: 0; padding: 20px 10px; background-color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
-    <div style="max-width: 540px; margin: 0 auto; background: #EEF2F6; border-radius: 20px; border: 1px solid #DCE3EB; padding: 28px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); box-sizing: border-box;">
-        
-        <!-- Header -->
-        <div style="font-size: 20px; font-weight: 800; color: #E11D48; margin-bottom: 8px; letter-spacing: -0.01em;">
-            💳 RecoverOS — AI Payment Recovery
-        </div>
+<body style="margin: 0; padding: 0; background-color: #0B0F19; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #0B0F19; padding: 40px 10px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="100%" style="max-width: 580px; background-color: #111827; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                    <!-- Header -->
+                    <tr>
+                        <td style="padding: 28px 32px; background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 100%); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+                            <table width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>
+                                        <div style="font-size: 1.25rem; font-weight: 800; color: #6366F1; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;">
+                                            RecoverOS AI <span style="background: rgba(99, 102, 241, 0.15); color: #818CF8; font-size: 0.72rem; padding: 3px 8px; border-radius: 99px; border: 1px solid rgba(99, 102, 241, 0.3);">Payment Recovery</span>
+                                        </div>
+                                    </td>
+                                    <td align="right">
+                                        <span style="font-size: 0.8rem; color: #94A3B8; font-weight: 500;">Order #{order_id}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Body Content -->
+                    <tr>
+                        <td style="padding: 36px 32px;">
+                            <h2 style="margin: 0 0 12px 0; color: #F8FAFC; font-size: 1.35rem; font-weight: 700;">Hi {customer_name},</h2>
+                            <p style="margin: 0 0 24px 0; color: #94A3B8; font-size: 0.96rem; line-height: 1.6;">
+                                Your recent transaction of <strong style="color: #6EE7B7;">{formatted_amount}</strong> encountered a temporary interruption (<code>{clean_reason}</code>). No funds were deducted from your account.
+                            </p>
 
-        <!-- Pill Badge -->
-        <div style="display: inline-block; background: #E0E7FF; color: #4338CA; font-size: 11px; font-weight: 800; letter-spacing: 0.06em; padding: 4px 12px; border-radius: 20px; margin-bottom: 20px; text-transform: uppercase;">
-            SECURE PAYMENT ASSISTANCE
-        </div>
-        
-        <!-- Greeting -->
-        <p style="font-size: 16px; font-weight: 700; color: #0F172A; margin: 0 0 12px 0;">
-            Hi {customer_name},
-        </p>
+                            <!-- Alert Card -->
+                            <div style="background: rgba(244, 63, 94, 0.08); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 12px; padding: 18px 20px; margin-bottom: 28px;">
+                                <div style="color: #FB7185; font-weight: 600; font-size: 0.88rem; margin-bottom: 4px;">Reason for failure:</div>
+                                <div style="color: #F1F5F9; font-size: 0.95rem; font-weight: 500;">{clean_reason} (Temporary Bank Timeout)</div>
+                            </div>
 
-        <!-- Body Message -->
-        <p style="font-size: 15px; color: #334155; line-height: 1.55; margin: 0 0 18px 0;">
-            Your payment of <b style="color: #0F172A;">{formatted_amount}</b> for Order <b style="color: #0F172A;">#{order_id}</b> paused due to a quick bank server hiccup (<i>{reason_clean}</i>).
-        </p>
-        
-        <!-- Amount Due Card -->
-        <div style="background: #FFFFFF; border-left: 4px solid #E11D48; border-radius: 10px; padding: 16px 20px; margin: 20px 0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
-            <div style="font-size: 11px; font-weight: 800; color: #64748B; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px;">
-                AMOUNT DUE
-            </div>
-            <div style="font-size: 26px; font-weight: 800; color: #059669; margin: 0; line-height: 1.2;">
-                {formatted_amount}
-            </div>
-        </div>
+                            <!-- Payment Button -->
+                            <div style="text-align: center; margin: 32px 0;">
+                                <a href="{payment_link}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: #FFFFFF; text-decoration: none; font-weight: 700; font-size: 1.05rem; padding: 16px 36px; border-radius: 12px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);">
+                                    Complete Payment ({formatted_amount}) &rarr;
+                                </a>
+                            </div>
 
-        <!-- Call to Action Subtext -->
-        <p style="font-size: 14px; color: #475569; line-height: 1.5; margin: 0 0 22px 0;">
-            No worries! Your order is reserved. Tap below to complete your payment in 10 seconds via UPI, Credit Card, or Net Banking:
-        </p>
+                            <p style="margin: 24px 0 0 0; color: #64748B; font-size: 0.82rem; text-align: center;">
+                                Secure 1-click Razorpay payment gateway link. Valid for 24 hours.
+                            </p>
+                        </td>
+                    </tr>
 
-        <!-- CTA Action Button -->
-        <div style="margin: 22px 0;">
-            <a href="{payment_link}" target="_blank" style="display: block; width: 100%; box-sizing: border-box; text-align: center; background: #E11D48; color: #FFFFFF !important; font-weight: 700; font-size: 16px; padding: 15px 20px; border-radius: 12px; text-decoration: none; box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
-                💳 Complete Payment Now ({formatted_amount})
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <div style="font-size: 12px; color: #94A3B8; border-top: 1px solid #CBD5E1; padding-top: 14px; margin-top: 22px; line-height: 1.4;">
-            Powered by RecoverOS Autonomous AI Revenue Recovery Agent • Order #{order_id}
-        </div>
-
-    </div>
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding: 20px 32px; background-color: #0F172A; border-top: 1px solid rgba(255, 255, 255, 0.05); text-align: center;">
+                            <p style="margin: 0; color: #475569; font-size: 0.78rem;">
+                                &copy; 2026 RecoverOS AI. Powered by Razorpay Payment Gateway Integration.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>"""
     return html
@@ -112,7 +135,7 @@ def send_direct_email_reminder(
     amount: float = 4500.0,
     order_id: Optional[str] = None,
     failure_reason: str = "network_timeout",
-    payment_link: str = "https://rzp.io/i/retry",
+    payment_link: Optional[str] = None,
 ) -> Dict[str, Any]:
     """
     Delivers a real payment recovery email directly to recipient's inbox
@@ -125,6 +148,15 @@ def send_direct_email_reminder(
     
     if not order_id:
         order_id = f"RZP-{hash(clean_email + str(amount)) & 0xffff:04d}"
+
+    if not payment_link:
+        rzp_res = get_razorpay_service().create_payment_link(
+            amount_inr=amount,
+            order_id=order_id,
+            customer_name=customer_name,
+            customer_email=clean_email
+        )
+        payment_link = rzp_res["short_url"]
 
     formatted_amount = f"₹{amount:,.0f}" if isinstance(amount, (int, float)) else str(amount)
     if not str(formatted_amount).startswith("₹"):
@@ -199,7 +231,7 @@ def send_transaction_failure_email(transaction: Dict[str, Any], recipient_email:
     tx_id = transaction.get("transaction_id") or transaction.get("id") or transaction.get("order_id") or "RZP-34005"
     order_id = f"RZP-{str(tx_id).replace('TXN', '').replace('pay_', '')[:5]}"
     reason = transaction.get("failure_reason") or transaction.get("error_reason") or transaction.get("error_code") or "network_timeout"
-    link = transaction.get("payment_link") or "https://rzp.io/i/retry"
+    link = transaction.get("payment_link")
 
     return send_direct_email_reminder(
         recipient_email=email,

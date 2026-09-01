@@ -179,11 +179,7 @@ Respond ONLY with valid JSON matching this exact structure:
             action = "follow_up"
             rationale = "B2B Receivables Chaser with automated Promise-to-Pay tracking link."
             hinglish_msg = f"Hello {customer_name}, invoice #INV-{leak_id[:6]} for ₹{amount_inr:,.2f} is overdue. Click here to settle or log a Promise-to-Pay date: https://rzp.io/i/invoice"
-        elif failure_category == "network_timeout":
-            diagnosis = "Transient bank gateway timeout during payment processing."
-            action = "retry"
-            rationale = f"Network timeouts have {p_recovery:.0%} recovery chance via silent retry or instant retry link."
-            hinglish_msg = f"Hi {customer_name}! Your payment of ₹{amount_inr:,.2f} paused due to a quick bank server hiccup. Tap here to complete securely: https://rzp.io/i/retry"
+            hinglish_msg = f"Hi {customer_name}! Your payment of ₹{amount_inr:,.2f} paused due to a quick bank server hiccup. Tap here to complete securely using your 1-click Razorpay payment link."
         elif leak_source == "checkout_abandonment":
             diagnosis = "Checkout session abandoned prior to payment authorization."
             action = "reminder"

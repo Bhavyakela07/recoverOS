@@ -24,7 +24,7 @@ def send_direct_whatsapp_reminder(
     message: str,
     customer_name: str = "Client",
     amount: float = 0.0,
-    payment_link: str = "https://rzp.io/i/retry",
+    payment_link: Optional[str] = None,
     auto_open_os: bool = True,
 ) -> dict:
     """

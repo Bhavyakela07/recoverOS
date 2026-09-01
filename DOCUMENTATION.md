@@ -135,7 +135,7 @@ recoverOS/
 ### B. Multi-Channel Outreach Engine
 1. **Live HTML Email Dispatcher (`backend/services/email_dispatcher.py`)**:
    - Directly connects to standard SMTP relays (`smtp.gmail.com`).
-   - Generates responsive HTML email cards with a dark badge, bold red failure indicator, green amount due highlight, and a prominent 1-click Razorpay payment button (`https://rzp.io/i/retry`).
+   - Generates responsive HTML email cards with a dark badge, bold red failure indicator, green amount due highlight, and a prominent 1-click Razorpay Test Mode Payment Link (`plink_...`).
 2. **Interactive WhatsApp QR & Universal Link (`app.py`)**:
    - Dynamically formats WhatsApp web URLs (`https://wa.me/{phone}?text={message}`).
    - Renders live QR codes that judges and merchants can scan with their phone camera to open WhatsApp directly with pre-filled order retry prompts.

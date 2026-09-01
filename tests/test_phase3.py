@@ -15,6 +15,9 @@ from datetime import datetime, timedelta
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "backend")))
 
 from fastapi.testclient import TestClient
+from db.database import init_db
+init_db()
+
 from main import app
 from services.sweep_detector import get_sweep_detector
 
@@ -53,13 +56,15 @@ def test_webhook_signature_security():
 
 def test_double_webhook_idempotency():
     """Verify duplicate webhook delivery is safely ignored (Idempotency Defense)."""
+    import uuid
+    test_evt_id = f"evt_idempotency_test_{uuid.uuid4().hex[:6]}"
     payload = {
         "event": "payment.failed",
-        "event_id": "evt_idempotency_test_999",
+        "event_id": test_evt_id,
         "payload": {
             "payment": {
                 "entity": {
-                    "id": "pay_test_999",
+                    "id": f"pay_test_{uuid.uuid4().hex[:6]}",
                     "amount": 149900,
                     "currency": "INR",
                     "error_code": "BAD_REQUEST_ERROR",
@@ -79,7 +84,7 @@ def test_double_webhook_idempotency():
     res_1 = client.post("/webhook/razorpay", content=body_bytes, headers=headers)
     assert res_1.status_code == 200
     assert res_1.json()["status"] == "processed"
-    assert res_1.json()["event_id"] == "evt_idempotency_test_999"
+    assert res_1.json()["event_id"] == test_evt_id
 
     # Second Delivery (Duplicate): Should be IGNORED by Idempotency Manager
     res_2 = client.post("/webhook/razorpay", content=body_bytes, headers=headers)

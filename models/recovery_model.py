@@ -1,23 +1,11 @@
 """
 recovery_model.py
 ------------------
-A small, explainable Scikit-learn model that predicts the probability
-that a FAILED transaction will be successfully recovered if retried /
-followed up on.
+Offline Benchmark Baseline Model (RandomForestClassifier).
 
-Why this model exists (and why it's not "ML for ML's sake"):
-    The rule-based recovery_score in agents/analyzer.py tells us WHICH
-    transactions matter most (priority). This model complements it by
-    estimating HOW LIKELY a retry actually is to succeed, learned from
-    historical outcomes (the `recovered_after_retry` column that was
-    simulated for past failed transactions in data/generate_data.py).
-    The AI Decision Agent (agents/decision_agent.py) combines both
-    signals to pick an action.
-
-Model: RandomForestClassifier
-    - Chosen because it's easy to explain (feature importances), handles
-      a mix of categorical/numeric features well after encoding, and
-      does not require feature scaling.
+NOTE ON ML ARCHITECTURE:
+    Primary Authoritative Production Inference: Calibrated XGBoost Engine (`backend/services/ml_engine.py`)
+    Benchmark Baseline / Benchmark Comparison: This RandomForestClassifier (`models/recovery_model.py`)
 
 Features used:
     - amount                (numeric)

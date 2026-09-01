@@ -9,6 +9,7 @@ import logging
 from typing import Optional
 
 logger = logging.getLogger("recoveros.security")
+WEBHOOK_SECRET = os.getenv("RAZORPAY_WEBHOOK_SECRET", "test_webhook_secret")
 
 
 def verify_razorpay_webhook_signature(

@@ -58,7 +58,7 @@ def generate_audit_certificate_pdf(case_data: Dict[str, Any]) -> bytes:
     decision = str(case_data.get("decision") or "ALLOW").upper()
     decision_reason = str(case_data.get("reason_code") or case_data.get("policy_reason") or "IST Quiet Hours rule satisfied. Amount within safety threshold.")
     recipient_email = str(case_data.get("recipient_email") or case_data.get("customer_email") or "customer@example.com")
-    payment_link = str(case_data.get("payment_link") or "https://rzp.io/i/retry")
+    payment_link = str(case_data.get("payment_link") or "http://localhost:8501/?demo_pay=plink_demo")
 
     timestamp_str = datetime.datetime.now(datetime.timezone.utc).strftime("%B %d, %Y • %H:%M UTC")
 
