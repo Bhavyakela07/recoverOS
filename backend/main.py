@@ -27,6 +27,7 @@ from api.cases import router as cases_router
 from api.batch import router as batch_router
 from api.demo import router as demo_router
 from api.webhooks import router as webhooks_router
+from api.auth import router as auth_router
 
 logger = setup_logger("recoveros.main")
 
@@ -66,6 +67,7 @@ app.include_router(cases_router)
 app.include_router(batch_router)
 app.include_router(demo_router)
 app.include_router(webhooks_router)
+app.include_router(auth_router)
 
 
 @app.get("/")

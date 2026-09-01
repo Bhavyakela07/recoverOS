@@ -1,651 +1,651 @@
 transaction_id,customer_id,customer_name,amount,currency,payment_method,transaction_date,payment_status,failure_reason,customer_history,retry_count,customer_segment,recovered_after_retry
-TXN00534,CUST0043,Shreya Pillai,1026.53,INR,UPI,2026-06-02 18:27:13,Success,,Regular Customer,0,Regular,
-TXN00228,CUST0012,Shreya Kulkarni,3168.86,INR,Credit Card,2026-06-02 18:38:24,Success,,Loyal Customer,0,Premium,
-TXN00451,CUST0145,Manish Patel,1930.48,INR,UPI,2026-06-02 19:50:22,Failed,Card Declined,Loyal Customer,1,Regular,0.0
-TXN00191,CUST0063,Sneha Kulkarni,686.83,INR,UPI,2026-06-02 20:19:11,Failed,Expired Card,New Customer,1,New,0.0
-TXN00520,CUST0070,Manish Iyer,3020.76,INR,Debit Card,2026-06-02 21:18:45,Success,,Occasional Buyer,0,Regular,
-TXN00272,CUST0118,Vikram Pillai,379.36,INR,Credit Card,2026-06-03 00:32:30,Failed,Authentication Failure,New Customer,0,New,0.0
-TXN00038,CUST0163,Ananya Menon,2038.9,INR,Netbanking,2026-06-03 03:19:15,Success,,Loyal Customer,0,Premium,
-TXN00419,CUST0152,Priya Rao,9795.21,INR,UPI,2026-06-03 05:07:22,Success,,Occasional Buyer,0,Premium,
-TXN00108,CUST0080,Kiran Nair,997.0,INR,Wallet,2026-06-03 06:35:21,Failed,Authentication Failure,Regular Customer,0,New,0.0
-TXN00269,CUST0005,Kunal Singh,1568.66,INR,Credit Card,2026-06-03 07:59:43,Success,,Regular Customer,0,Regular,
-TXN00041,CUST0095,Rohan Chowdhury,1398.39,INR,Debit Card,2026-06-03 11:59:11,Success,,Occasional Buyer,0,New,
-TXN00647,CUST0190,Radhika Reddy,178.02,INR,Netbanking,2026-06-03 13:17:40,Failed,Insufficient Funds,Occasional Buyer,1,New,1.0
-TXN00155,CUST0218,Aditya Reddy,1070.46,INR,UPI,2026-06-03 15:32:11,Failed,Card Declined,New Customer,0,New,0.0
-TXN00362,CUST0156,Amit Joshi,4642.49,INR,UPI,2026-06-03 17:17:42,Success,,Regular Customer,0,Regular,
-TXN00350,CUST0110,Rajesh Gupta,1776.86,INR,UPI,2026-06-03 21:07:17,Success,,Occasional Buyer,0,Regular,
-TXN00071,CUST0156,Amit Joshi,2437.6,INR,Wallet,2026-06-04 02:03:21,Failed,Card Declined,Regular Customer,2,Regular,0.0
-TXN00143,CUST0184,Vikram Chowdhury,2431.49,INR,Credit Card,2026-06-04 08:28:50,Success,,Regular Customer,0,Premium,
-TXN00277,CUST0059,Anjali Verma,2229.39,INR,UPI,2026-06-04 12:57:16,Success,,Occasional Buyer,0,Regular,
-TXN00470,CUST0126,Harsh Pillai,1455.78,INR,Netbanking,2026-06-04 19:53:40,Success,,Occasional Buyer,0,Regular,
-TXN00056,CUST0217,Meera Desai,3334.92,INR,UPI,2026-06-04 20:14:57,Success,,Regular Customer,0,Regular,
-TXN00537,CUST0092,Ishita Gupta,1244.85,INR,Credit Card,2026-06-04 21:04:32,Success,,Loyal Customer,0,Regular,
-TXN00619,CUST0207,Ananya Agarwal,2603.35,INR,Wallet,2026-06-04 22:21:24,Success,,Loyal Customer,0,Regular,
-TXN00278,CUST0012,Shreya Kulkarni,4023.44,INR,Wallet,2026-06-05 02:31:36,Success,,Loyal Customer,0,Premium,
-TXN00401,CUST0024,Lakshmi Chowdhury,344.93,INR,UPI,2026-06-05 03:23:41,Success,,Occasional Buyer,0,New,
-TXN00153,CUST0114,Karthik Patel,1374.69,INR,Wallet,2026-06-05 03:57:16,Success,,Regular Customer,0,Regular,
-TXN00261,CUST0141,Abhishek Sharma,514.83,INR,Debit Card,2026-06-05 04:36:32,Failed,Authentication Failure,New Customer,3,New,0.0
-TXN00638,CUST0131,Pooja Patel,2080.42,INR,UPI,2026-06-05 04:47:41,Success,,Occasional Buyer,0,Regular,
-TXN00501,CUST0050,Kunal Iyer,3325.57,INR,Credit Card,2026-06-05 06:12:53,Success,,Regular Customer,0,Regular,
-TXN00453,CUST0108,Meera Bose,496.99,INR,Wallet,2026-06-05 09:36:23,Success,,Occasional Buyer,0,New,
-TXN00372,CUST0196,Siddharth Malhotra,2627.79,INR,Netbanking,2026-06-05 15:44:06,Failed,Network Failure,Regular Customer,2,Regular,0.0
-TXN00339,CUST0220,Riya Malhotra,6677.28,INR,Credit Card,2026-06-05 19:47:08,Failed,Authentication Failure,Regular Customer,1,Premium,1.0
-TXN00146,CUST0104,Rajesh Kulkarni,3071.75,INR,UPI,2026-06-05 22:08:36,Success,,Regular Customer,0,Regular,
-TXN00321,CUST0118,Vikram Pillai,951.65,INR,Credit Card,2026-06-06 03:08:53,Success,,New Customer,0,New,
-TXN00226,CUST0015,Shreya Gupta,1725.67,INR,Credit Card,2026-06-06 03:32:19,Success,,Occasional Buyer,0,New,
-TXN00147,CUST0037,Meera Singh,2926.39,INR,Netbanking,2026-06-06 08:16:19,Failed,Insufficient Funds,Loyal Customer,2,Premium,1.0
-TXN00301,CUST0204,Riya Kulkarni,3588.55,INR,Debit Card,2026-06-06 10:29:51,Failed,Card Declined,Loyal Customer,0,Premium,1.0
-TXN00556,CUST0012,Shreya Kulkarni,4420.74,INR,Wallet,2026-06-06 13:45:23,Failed,Bank Server Issue,Loyal Customer,1,Premium,1.0
-TXN00078,CUST0029,Rahul Reddy,750.39,INR,UPI,2026-06-06 13:54:50,Success,,Occasional Buyer,0,New,
-TXN00644,CUST0001,Riya Singh,874.17,INR,Netbanking,2026-06-06 15:57:23,Success,,New Customer,0,Regular,
-TXN00264,CUST0020,Anjali Menon,3254.54,INR,Wallet,2026-06-06 18:05:05,Success,,Loyal Customer,0,Premium,
-TXN00567,CUST0150,Manish Joshi,1960.47,INR,Credit Card,2026-06-07 07:31:06,Success,,Regular Customer,0,Premium,
-TXN00065,CUST0032,Manish Bose,8153.99,INR,UPI,2026-06-07 07:43:02,Success,,Loyal Customer,0,Premium,
-TXN00266,CUST0016,Riya Patel,1005.98,INR,Credit Card,2026-06-07 14:45:55,Success,,Occasional Buyer,0,Regular,
-TXN00433,CUST0023,Kiran Desai,763.84,INR,Netbanking,2026-06-07 15:35:15,Success,,New Customer,0,New,
-TXN00352,CUST0065,Preeti Gupta,2175.93,INR,UPI,2026-06-07 15:56:41,Failed,Card Declined,New Customer,0,New,0.0
-TXN00374,CUST0156,Amit Joshi,3386.66,INR,UPI,2026-06-07 16:16:39,Success,,Regular Customer,0,Regular,
-TXN00051,CUST0205,Harsh Bose,1090.56,INR,UPI,2026-06-07 17:15:26,Failed,Card Declined,Occasional Buyer,2,New,0.0
-TXN00028,CUST0159,Tanvi Nair,1124.87,INR,UPI,2026-06-07 21:17:54,Success,,Loyal Customer,0,New,
-TXN00107,CUST0086,Swati Desai,5638.66,INR,UPI,2026-06-07 21:28:04,Success,,Regular Customer,0,Regular,
-TXN00025,CUST0180,Sneha Desai,647.66,INR,UPI,2026-06-08 06:43:46,Failed,Network Failure,New Customer,2,New,0.0
-TXN00005,CUST0215,Suresh Pillai,780.17,INR,Credit Card,2026-06-08 10:08:45,Success,,New Customer,0,New,
-TXN00055,CUST0158,Kunal Agarwal,3522.94,INR,UPI,2026-06-08 11:18:14,Failed,Network Failure,New Customer,0,Regular,0.0
-TXN00106,CUST0099,Riya Joshi,1144.17,INR,UPI,2026-06-08 14:15:44,Success,,New Customer,0,New,
-TXN00541,CUST0064,Varun Verma,3164.12,INR,Credit Card,2026-06-08 15:40:17,Failed,Authentication Failure,New Customer,1,Regular,0.0
-TXN00584,CUST0211,Anjali Bose,3506.65,INR,Debit Card,2026-06-08 16:38:20,Failed,Card Declined,New Customer,0,New,0.0
-TXN00517,CUST0013,Aditya Rao,1212.63,INR,Debit Card,2026-06-08 17:02:14,Failed,Insufficient Funds,New Customer,1,New,1.0
-TXN00009,CUST0099,Riya Joshi,677.44,INR,Wallet,2026-06-08 21:51:23,Success,,New Customer,0,New,
-TXN00565,CUST0034,Siddharth Nair,9903.14,INR,Wallet,2026-06-08 22:47:33,Success,,Regular Customer,0,Premium,
-TXN00650,CUST0134,Abhishek Chowdhury,7693.29,INR,UPI,2026-06-08 23:47:51,Success,,New Customer,0,Premium,
-TXN00166,CUST0198,Karthik Rao,6676.78,INR,Credit Card,2026-06-08 23:59:38,Success,,Occasional Buyer,0,Premium,
-TXN00489,CUST0067,Ishita Chowdhury,5053.96,INR,Debit Card,2026-06-09 03:11:50,Failed,Expired Card,Regular Customer,0,Regular,1.0
-TXN00139,CUST0200,Anjali Menon,1462.8,INR,UPI,2026-06-09 04:24:13,Failed,Authentication Failure,Occasional Buyer,1,New,1.0
-TXN00256,CUST0098,Anjali Kapoor,671.46,INR,Credit Card,2026-06-09 05:23:55,Failed,Card Declined,Occasional Buyer,3,New,0.0
-TXN00626,CUST0146,Sneha Joshi,1508.44,INR,UPI,2026-06-09 06:06:00,Success,,Regular Customer,0,Regular,
-TXN00549,CUST0131,Pooja Patel,2450.7,INR,Credit Card,2026-06-09 08:55:43,Success,,Occasional Buyer,0,Regular,
-TXN00177,CUST0153,Rajesh Chowdhury,2012.54,INR,Netbanking,2026-06-09 09:27:07,Success,,Loyal Customer,0,Regular,
-TXN00060,CUST0030,Riya Kapoor,3417.11,INR,Netbanking,2026-06-09 12:23:31,Success,,Regular Customer,0,Regular,
-TXN00592,CUST0190,Radhika Reddy,674.12,INR,Debit Card,2026-06-09 18:56:39,Success,,Occasional Buyer,0,New,
-TXN00357,CUST0193,Deepak Mehta,887.93,INR,Netbanking,2026-06-09 21:31:11,Failed,Network Failure,New Customer,1,New,1.0
-TXN00480,CUST0055,Vikram Pillai,1757.67,INR,Netbanking,2026-06-10 00:30:52,Success,,New Customer,0,New,
-TXN00484,CUST0079,Rohan Nair,2234.8,INR,Debit Card,2026-06-10 02:20:41,Success,,Regular Customer,0,Regular,
-TXN00601,CUST0037,Meera Singh,7930.68,INR,UPI,2026-06-10 05:54:13,Success,,Loyal Customer,0,Premium,
-TXN00209,CUST0073,Rahul Pillai,7027.06,INR,Credit Card,2026-06-10 12:05:58,Success,,Loyal Customer,0,Premium,
-TXN00596,CUST0031,Tanvi Sharma,661.16,INR,Credit Card,2026-06-10 14:49:55,Failed,Authentication Failure,New Customer,0,New,0.0
-TXN00306,CUST0157,Vikram Bose,2131.39,INR,UPI,2026-06-10 15:51:56,Success,,Regular Customer,0,Regular,
-TXN00274,CUST0142,Tanvi Gupta,903.38,INR,Credit Card,2026-06-10 16:39:45,Success,,New Customer,0,New,
-TXN00073,CUST0018,Kiran Singh,1959.21,INR,UPI,2026-06-10 17:26:05,Failed,Expired Card,Occasional Buyer,1,Regular,0.0
-TXN00305,CUST0208,Rohan Gupta,886.66,INR,Credit Card,2026-06-10 19:24:45,Failed,Card Declined,New Customer,2,New,1.0
-TXN00021,CUST0037,Meera Singh,11303.01,INR,UPI,2026-06-11 01:33:56,Success,,Loyal Customer,0,Premium,
-TXN00319,CUST0126,Harsh Pillai,2388.19,INR,Credit Card,2026-06-11 03:43:45,Success,,Occasional Buyer,0,Regular,
-TXN00488,CUST0087,Divya Desai,469.22,INR,Wallet,2026-06-11 04:09:23,Success,,New Customer,0,New,
-TXN00324,CUST0109,Anjali Rao,3150.87,INR,UPI,2026-06-11 11:53:02,Success,,New Customer,0,New,
-TXN00365,CUST0029,Rahul Reddy,1358.43,INR,UPI,2026-06-11 13:56:34,Failed,Bank Server Issue,Occasional Buyer,0,New,1.0
-TXN00046,CUST0170,Simran Pillai,1344.91,INR,UPI,2026-06-11 14:03:36,Success,,Regular Customer,0,Regular,
-TXN00575,CUST0114,Karthik Patel,3153.2,INR,Netbanking,2026-06-11 15:53:53,Success,,Regular Customer,0,Regular,
-TXN00188,CUST0186,Meera Patel,859.46,INR,Netbanking,2026-06-11 17:17:19,Success,,Occasional Buyer,0,New,
-TXN00614,CUST0005,Kunal Singh,1075.97,INR,Netbanking,2026-06-11 17:27:15,Success,,Regular Customer,0,Regular,
-TXN00613,CUST0051,Gaurav Malhotra,1062.08,INR,UPI,2026-06-11 19:06:09,Success,,Occasional Buyer,0,New,
-TXN00358,CUST0090,Ishita Reddy,4701.66,INR,Debit Card,2026-06-11 21:49:47,Success,,Regular Customer,0,Premium,
-TXN00315,CUST0060,Rajesh Menon,1965.08,INR,Debit Card,2026-06-11 23:02:03,Failed,Network Failure,New Customer,1,New,0.0
-TXN00590,CUST0017,Ishita Gupta,1247.82,INR,UPI,2026-06-12 00:04:48,Success,,Occasional Buyer,0,Regular,
-TXN00265,CUST0106,Siddharth Joshi,1739.04,INR,UPI,2026-06-12 00:44:41,Failed,Insufficient Funds,Loyal Customer,0,Regular,1.0
-TXN00516,CUST0066,Neha Patel,1412.67,INR,Debit Card,2026-06-12 18:05:15,Success,,New Customer,0,New,
-TXN00075,CUST0014,Rohan Chowdhury,1465.76,INR,UPI,2026-06-12 18:07:49,Success,,Loyal Customer,0,Premium,
-TXN00500,CUST0150,Manish Joshi,2720.58,INR,Credit Card,2026-06-12 18:54:41,Success,,Regular Customer,0,Premium,
-TXN00521,CUST0027,Swati Mehta,797.78,INR,Credit Card,2026-06-12 20:36:18,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
-TXN00531,CUST0092,Ishita Gupta,2839.05,INR,Netbanking,2026-06-13 02:05:14,Success,,Loyal Customer,0,Regular,
-TXN00093,CUST0145,Manish Patel,1358.14,INR,Debit Card,2026-06-13 04:05:10,Success,,Loyal Customer,0,Regular,
-TXN00129,CUST0062,Kiran Agarwal,2110.77,INR,UPI,2026-06-13 08:57:41,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
-TXN00085,CUST0084,Amit Sharma,1280.91,INR,UPI,2026-06-13 09:04:12,Success,,Loyal Customer,0,Regular,
-TXN00461,CUST0004,Kiran Iyer,2918.53,INR,Debit Card,2026-06-13 13:42:41,Success,,Occasional Buyer,0,New,
-TXN00181,CUST0072,Tanvi Kapoor,1306.88,INR,Netbanking,2026-06-13 14:33:57,Failed,Unknown Error,Occasional Buyer,1,New,0.0
-TXN00058,CUST0017,Ishita Gupta,1685.69,INR,UPI,2026-06-13 15:22:05,Success,,Occasional Buyer,0,Regular,
-TXN00037,CUST0144,Rajesh Menon,1017.72,INR,UPI,2026-06-14 00:22:42,Success,,Occasional Buyer,0,New,
-TXN00185,CUST0082,Nikhil Agarwal,1767.1,INR,UPI,2026-06-14 03:12:48,Success,,Loyal Customer,0,Regular,
-TXN00192,CUST0053,Rohan Singh,1500.93,INR,UPI,2026-06-14 09:29:21,Success,,Occasional Buyer,0,New,
-TXN00441,CUST0024,Lakshmi Chowdhury,1130.53,INR,UPI,2026-06-14 09:53:40,Success,,Occasional Buyer,0,New,
-TXN00283,CUST0088,Kiran Nair,2325.31,INR,Credit Card,2026-06-14 14:00:14,Failed,Authentication Failure,New Customer,0,New,1.0
-TXN00335,CUST0151,Kavya Gupta,1611.74,INR,Debit Card,2026-06-14 15:21:25,Success,,Occasional Buyer,0,New,
-TXN00070,CUST0197,Divya Menon,609.68,INR,Debit Card,2026-06-14 15:43:06,Success,,New Customer,0,New,
-TXN00630,CUST0048,Simran Iyer,3647.53,INR,UPI,2026-06-14 20:37:36,Success,,Occasional Buyer,0,Regular,
-TXN00576,CUST0151,Kavya Gupta,238.25,INR,Credit Card,2026-06-14 23:28:18,Success,,Occasional Buyer,0,New,
-TXN00295,CUST0035,Preeti Sharma,2431.73,INR,UPI,2026-06-14 23:37:53,Success,,Occasional Buyer,0,Regular,
-TXN00220,CUST0123,Preeti Desai,943.05,INR,UPI,2026-06-15 05:55:18,Failed,Network Failure,New Customer,1,New,1.0
-TXN00636,CUST0022,Tanvi Nair,332.65,INR,UPI,2026-06-15 09:28:56,Success,,New Customer,0,New,
-TXN00128,CUST0141,Abhishek Sharma,639.2,INR,Wallet,2026-06-15 11:32:03,Failed,Authentication Failure,New Customer,0,New,1.0
-TXN00548,CUST0001,Riya Singh,1787.06,INR,Netbanking,2026-06-15 14:51:29,Success,,New Customer,0,Regular,
-TXN00104,CUST0199,Suresh Pillai,1285.3,INR,UPI,2026-06-15 18:13:30,Success,,Loyal Customer,0,Regular,
-TXN00323,CUST0131,Pooja Patel,1274.08,INR,UPI,2026-06-15 21:20:17,Success,,Occasional Buyer,0,Regular,
-TXN00113,CUST0197,Divya Menon,930.89,INR,Credit Card,2026-06-16 06:02:04,Failed,Insufficient Funds,New Customer,2,New,0.0
-TXN00490,CUST0220,Riya Malhotra,8440.69,INR,Debit Card,2026-06-16 07:01:52,Success,,Regular Customer,0,Premium,
-TXN00097,CUST0219,Divya Agarwal,2351.64,INR,UPI,2026-06-16 10:46:49,Success,,Occasional Buyer,0,Regular,
-TXN00002,CUST0038,Ananya Patel,826.37,INR,UPI,2026-06-16 10:49:23,Success,,Regular Customer,0,New,
-TXN00059,CUST0183,Sneha Menon,2397.53,INR,UPI,2026-06-16 11:38:08,Failed,Expired Card,Occasional Buyer,1,Regular,0.0
-TXN00648,CUST0220,Riya Malhotra,5286.19,INR,UPI,2026-06-16 12:06:54,Success,,Regular Customer,0,Premium,
-TXN00615,CUST0149,Kavya Kulkarni,3895.01,INR,UPI,2026-06-17 00:03:53,Success,,New Customer,0,New,
-TXN00201,CUST0036,Kavya Joshi,2432.76,INR,UPI,2026-06-17 01:01:50,Failed,Network Failure,Regular Customer,1,Regular,1.0
-TXN00511,CUST0027,Swati Mehta,2318.68,INR,UPI,2026-06-17 03:27:50,Failed,Authentication Failure,Regular Customer,0,Regular,1.0
-TXN00010,CUST0010,Sanjay Reddy,7124.39,INR,UPI,2026-06-17 04:24:22,Success,,Loyal Customer,0,Premium,
-TXN00360,CUST0036,Kavya Joshi,1267.78,INR,Debit Card,2026-06-17 06:18:02,Success,,Regular Customer,0,Regular,
-TXN00251,CUST0019,Sneha Singh,998.76,INR,UPI,2026-06-17 12:39:56,Success,,Loyal Customer,0,Regular,
-TXN00135,CUST0161,Harsh Pillai,3429.91,INR,UPI,2026-06-18 04:25:30,Failed,Card Declined,Regular Customer,0,Premium,0.0
-TXN00285,CUST0111,Kiran Sharma,6458.6,INR,UPI,2026-06-18 06:09:23,Failed,Network Failure,Occasional Buyer,2,Regular,0.0
-TXN00092,CUST0194,Suresh Rao,3404.16,INR,Credit Card,2026-06-18 08:39:45,Success,,New Customer,0,Regular,
-TXN00189,CUST0068,Ishita Kulkarni,540.19,INR,Wallet,2026-06-18 13:20:58,Failed,Insufficient Funds,Regular Customer,1,New,0.0
-TXN00381,CUST0066,Neha Patel,542.49,INR,Debit Card,2026-06-18 20:31:04,Failed,Expired Card,New Customer,0,New,0.0
-TXN00493,CUST0010,Sanjay Reddy,5645.9,INR,Credit Card,2026-06-18 23:13:59,Success,,Loyal Customer,0,Premium,
-TXN00205,CUST0197,Divya Menon,392.84,INR,UPI,2026-06-19 00:46:24,Success,,New Customer,0,New,
-TXN00297,CUST0163,Ananya Menon,8516.83,INR,Credit Card,2026-06-19 01:08:42,Success,,Loyal Customer,0,Premium,
-TXN00083,CUST0020,Anjali Menon,11372.43,INR,Netbanking,2026-06-19 07:56:54,Success,,Loyal Customer,0,Premium,
-TXN00455,CUST0183,Sneha Menon,1492.72,INR,UPI,2026-06-19 11:08:07,Success,,Occasional Buyer,0,Regular,
-TXN00198,CUST0071,Manish Chowdhury,2174.49,INR,UPI,2026-06-19 12:05:44,Success,,Occasional Buyer,0,Regular,
-TXN00539,CUST0174,Riya Rao,1642.17,INR,Credit Card,2026-06-19 12:53:24,Failed,Unknown Error,Occasional Buyer,3,New,0.0
-TXN00241,CUST0188,Preeti Chowdhury,1292.22,INR,Credit Card,2026-06-19 14:05:17,Success,,Regular Customer,0,Regular,
-TXN00437,CUST0026,Kavya Nair,4893.87,INR,Netbanking,2026-06-19 16:01:10,Success,,Regular Customer,0,Regular,
-TXN00430,CUST0147,Amit Sharma,312.55,INR,UPI,2026-06-19 17:29:51,Failed,Card Declined,New Customer,2,New,0.0
-TXN00380,CUST0015,Shreya Gupta,552.81,INR,Credit Card,2026-06-19 22:23:40,Success,,Occasional Buyer,0,New,
-TXN00366,CUST0082,Nikhil Agarwal,1602.51,INR,UPI,2026-06-20 07:38:30,Success,,Loyal Customer,0,Regular,
-TXN00503,CUST0088,Kiran Nair,387.94,INR,UPI,2026-06-20 08:58:41,Failed,Bank Server Issue,New Customer,0,New,1.0
-TXN00635,CUST0104,Rajesh Kulkarni,1145.21,INR,Credit Card,2026-06-20 15:32:01,Failed,Authentication Failure,Regular Customer,2,Regular,1.0
-TXN00151,CUST0128,Deepak Patel,2293.35,INR,Credit Card,2026-06-20 20:36:22,Failed,Card Declined,Occasional Buyer,1,Regular,0.0
-TXN00602,CUST0003,Ananya Iyer,1203.28,INR,Credit Card,2026-06-20 21:27:57,Failed,Insufficient Funds,New Customer,1,Regular,0.0
-TXN00571,CUST0158,Kunal Agarwal,2018.54,INR,Netbanking,2026-06-21 00:29:07,Success,,New Customer,0,Regular,
-TXN00082,CUST0181,Simran Reddy,1112.39,INR,UPI,2026-06-21 05:12:48,Failed,Bank Server Issue,Regular Customer,0,New,1.0
-TXN00314,CUST0142,Tanvi Gupta,1462.8,INR,UPI,2026-06-21 07:50:32,Success,,New Customer,0,New,
-TXN00244,CUST0161,Harsh Pillai,8373.92,INR,Debit Card,2026-06-21 10:21:49,Failed,Card Declined,Regular Customer,1,Premium,1.0
-TXN00327,CUST0050,Kunal Iyer,3778.04,INR,Debit Card,2026-06-21 10:43:15,Success,,Regular Customer,0,Regular,
-TXN00064,CUST0016,Riya Patel,1034.93,INR,Credit Card,2026-06-21 12:46:07,Success,,Occasional Buyer,0,Regular,
-TXN00427,CUST0167,Vivek Menon,1175.32,INR,UPI,2026-06-21 14:39:47,Success,,Occasional Buyer,0,Regular,
-TXN00574,CUST0176,Neha Iyer,787.25,INR,UPI,2026-06-21 18:16:38,Failed,Card Declined,New Customer,1,New,0.0
-TXN00048,CUST0053,Rohan Singh,1693.03,INR,UPI,2026-06-21 23:51:39,Success,,Occasional Buyer,0,New,
-TXN00255,CUST0102,Amit Reddy,866.4,INR,Netbanking,2026-06-22 04:01:41,Success,,Loyal Customer,0,Regular,
-TXN00580,CUST0126,Harsh Pillai,3748.33,INR,Debit Card,2026-06-22 05:21:21,Failed,Authentication Failure,Occasional Buyer,1,Regular,0.0
-TXN00605,CUST0193,Deepak Mehta,1150.63,INR,Wallet,2026-06-22 09:06:45,Success,,New Customer,0,New,
-TXN00412,CUST0064,Varun Verma,1076.47,INR,Debit Card,2026-06-22 17:01:46,Success,,New Customer,0,Regular,
-TXN00239,CUST0103,Varun Malhotra,1388.55,INR,Credit Card,2026-06-23 00:13:44,Success,,Occasional Buyer,0,Regular,
-TXN00444,CUST0105,Swati Sharma,851.1,INR,Debit Card,2026-06-23 01:58:35,Success,,New Customer,0,New,
-TXN00154,CUST0182,Harsh Agarwal,6100.51,INR,UPI,2026-06-23 02:53:25,Success,,Loyal Customer,0,Premium,
-TXN00600,CUST0035,Preeti Sharma,2459.01,INR,Debit Card,2026-06-23 03:03:30,Success,,Occasional Buyer,0,Regular,
-TXN00331,CUST0147,Amit Sharma,891.27,INR,UPI,2026-06-23 05:40:32,Success,,New Customer,0,New,
-TXN00449,CUST0068,Ishita Kulkarni,659.63,INR,UPI,2026-06-23 06:25:40,Failed,Bank Server Issue,Regular Customer,1,New,1.0
-TXN00234,CUST0119,Siddharth Chowdhury,1396.35,INR,Debit Card,2026-06-23 07:45:38,Success,,Regular Customer,0,Regular,
-TXN00616,CUST0142,Tanvi Gupta,970.23,INR,UPI,2026-06-23 09:30:26,Success,,New Customer,0,New,
-TXN00138,CUST0080,Kiran Nair,740.08,INR,Credit Card,2026-06-23 09:33:16,Failed,Authentication Failure,Regular Customer,0,New,1.0
-TXN00132,CUST0018,Kiran Singh,2074.99,INR,Wallet,2026-06-23 10:47:23,Success,,Occasional Buyer,0,Regular,
-TXN00040,CUST0030,Riya Kapoor,2226.69,INR,UPI,2026-06-23 21:15:28,Success,,Regular Customer,0,Regular,
-TXN00223,CUST0130,Divya Singh,7655.12,INR,UPI,2026-06-23 21:46:28,Failed,Bank Server Issue,Occasional Buyer,1,Premium,1.0
-TXN00464,CUST0026,Kavya Nair,2247.76,INR,Debit Card,2026-06-24 04:50:18,Success,,Regular Customer,0,Regular,
-TXN00399,CUST0081,Nisha Iyer,838.22,INR,UPI,2026-06-24 05:21:48,Success,,Occasional Buyer,0,New,
-TXN00232,CUST0090,Ishita Reddy,6052.52,INR,UPI,2026-06-24 06:37:45,Success,,Regular Customer,0,Premium,
-TXN00186,CUST0130,Divya Singh,7762.04,INR,Netbanking,2026-06-24 10:09:12,Success,,Occasional Buyer,0,Premium,
-TXN00642,CUST0158,Kunal Agarwal,5003.84,INR,Credit Card,2026-06-24 10:38:39,Success,,New Customer,0,Regular,
-TXN00303,CUST0123,Preeti Desai,1405.82,INR,Credit Card,2026-06-24 10:45:49,Success,,New Customer,0,New,
-TXN00369,CUST0103,Varun Malhotra,2108.48,INR,UPI,2026-06-24 11:53:38,Success,,Occasional Buyer,0,Regular,
-TXN00494,CUST0183,Sneha Menon,1244.26,INR,UPI,2026-06-24 15:33:32,Success,,Occasional Buyer,0,Regular,
-TXN00263,CUST0165,Priya Agarwal,336.06,INR,Wallet,2026-06-24 17:33:00,Success,,Occasional Buyer,0,Regular,
-TXN00112,CUST0214,Sneha Iyer,1969.27,INR,Debit Card,2026-06-24 17:41:34,Success,,Regular Customer,0,Regular,
-TXN00512,CUST0187,Kunal Mehta,5296.92,INR,Credit Card,2026-06-25 04:37:07,Success,,Occasional Buyer,0,Premium,
-TXN00222,CUST0021,Abhishek Kapoor,292.84,INR,Credit Card,2026-06-25 05:29:26,Failed,Network Failure,Regular Customer,0,New,1.0
-TXN00149,CUST0020,Anjali Menon,7051.32,INR,Credit Card,2026-06-25 05:40:43,Success,,Loyal Customer,0,Premium,
-TXN00158,CUST0184,Vikram Chowdhury,6883.73,INR,Debit Card,2026-06-25 07:16:30,Success,,Regular Customer,0,Premium,
-TXN00018,CUST0111,Kiran Sharma,2375.2,INR,UPI,2026-06-25 07:19:15,Success,,Occasional Buyer,0,Regular,
-TXN00011,CUST0217,Meera Desai,1548.62,INR,Credit Card,2026-06-25 08:57:17,Failed,Insufficient Funds,Regular Customer,3,Regular,0.0
-TXN00162,CUST0015,Shreya Gupta,1439.79,INR,Netbanking,2026-06-25 21:53:23,Failed,Insufficient Funds,Occasional Buyer,3,New,0.0
-TXN00522,CUST0200,Anjali Menon,1243.91,INR,UPI,2026-06-25 23:39:40,Success,,Occasional Buyer,0,New,
-TXN00160,CUST0116,Ishita Rao,1331.33,INR,Credit Card,2026-06-26 04:51:43,Failed,Authentication Failure,Loyal Customer,1,New,1.0
-TXN00587,CUST0073,Rahul Pillai,4317.02,INR,UPI,2026-06-26 05:58:13,Success,,Loyal Customer,0,Premium,
-TXN00640,CUST0028,Tanvi Bose,412.8,INR,UPI,2026-06-26 10:40:54,Success,,New Customer,0,New,
-TXN00481,CUST0069,Kunal Kulkarni,1862.44,INR,Debit Card,2026-06-26 17:02:55,Success,,Regular Customer,0,Regular,
-TXN00077,CUST0107,Nisha Mehta,2096.19,INR,UPI,2026-06-26 20:27:45,Success,,Loyal Customer,0,Regular,
-TXN00473,CUST0096,Aditya Iyer,2546.32,INR,Netbanking,2026-06-26 22:06:23,Failed,Authentication Failure,Loyal Customer,1,Premium,0.0
-TXN00343,CUST0197,Divya Menon,1040.0,INR,UPI,2026-06-27 02:26:54,Success,,New Customer,0,New,
-TXN00572,CUST0144,Rajesh Menon,2454.95,INR,UPI,2026-06-27 02:47:28,Success,,Occasional Buyer,0,New,
-TXN00486,CUST0150,Manish Joshi,2667.44,INR,UPI,2026-06-27 05:56:38,Success,,Regular Customer,0,Premium,
-TXN00225,CUST0015,Shreya Gupta,676.44,INR,Credit Card,2026-06-27 07:26:37,Success,,Occasional Buyer,0,New,
-TXN00386,CUST0147,Amit Sharma,982.63,INR,UPI,2026-06-27 18:14:10,Failed,Authentication Failure,New Customer,3,New,0.0
-TXN00581,CUST0134,Abhishek Chowdhury,6433.33,INR,UPI,2026-06-27 22:07:16,Success,,New Customer,0,Premium,
-TXN00240,CUST0199,Suresh Pillai,3193.39,INR,UPI,2026-06-28 02:51:01,Success,,Loyal Customer,0,Regular,
-TXN00414,CUST0089,Shreya Verma,4034.84,INR,Netbanking,2026-06-28 04:01:40,Failed,Insufficient Funds,New Customer,0,Regular,1.0
-TXN00560,CUST0156,Amit Joshi,1585.19,INR,Netbanking,2026-06-28 06:19:25,Success,,Regular Customer,0,Regular,
-TXN00476,CUST0095,Rohan Chowdhury,773.23,INR,Netbanking,2026-06-28 06:46:15,Success,,Occasional Buyer,0,New,
-TXN00180,CUST0074,Rohan Patel,8920.37,INR,UPI,2026-06-28 08:42:55,Success,,Regular Customer,0,Regular,
-TXN00618,CUST0075,Arjun Joshi,2978.49,INR,UPI,2026-06-28 10:54:07,Failed,Card Declined,Regular Customer,0,Regular,1.0
-TXN00164,CUST0158,Kunal Agarwal,1272.35,INR,Credit Card,2026-06-28 15:39:22,Failed,Bank Server Issue,New Customer,0,Regular,0.0
-TXN00557,CUST0130,Divya Singh,4256.48,INR,UPI,2026-06-28 16:28:35,Success,,Occasional Buyer,0,Premium,
-TXN00156,CUST0203,Abhishek Kulkarni,584.87,INR,UPI,2026-06-28 17:16:32,Failed,Network Failure,New Customer,1,New,0.0
-TXN00408,CUST0211,Anjali Bose,824.33,INR,Debit Card,2026-06-28 17:23:31,Failed,Card Declined,New Customer,1,New,0.0
-TXN00431,CUST0164,Tanvi Kulkarni,3006.02,INR,Credit Card,2026-06-28 21:26:21,Success,,Regular Customer,0,Premium,
-TXN00389,CUST0095,Rohan Chowdhury,1588.04,INR,Credit Card,2026-06-28 23:26:01,Success,,Occasional Buyer,0,New,
-TXN00026,CUST0013,Aditya Rao,959.64,INR,Netbanking,2026-06-29 02:44:19,Success,,New Customer,0,New,
-TXN00379,CUST0148,Priya Mehta,16234.62,INR,Debit Card,2026-06-29 08:53:30,Success,,Occasional Buyer,0,Premium,
-TXN00330,CUST0145,Manish Patel,2823.1,INR,Debit Card,2026-06-29 12:20:00,Success,,Loyal Customer,0,Regular,
-TXN00152,CUST0074,Rohan Patel,2417.64,INR,Debit Card,2026-06-29 23:36:24,Failed,Bank Server Issue,Regular Customer,1,Regular,0.0
-TXN00622,CUST0011,Kiran Rao,6875.6,INR,UPI,2026-06-30 00:45:22,Failed,Card Declined,Regular Customer,0,Premium,1.0
-TXN00344,CUST0095,Rohan Chowdhury,662.38,INR,Credit Card,2026-06-30 04:14:05,Success,,Occasional Buyer,0,New,
-TXN00628,CUST0210,Tanvi Patel,5100.56,INR,Netbanking,2026-06-30 09:52:18,Success,,Loyal Customer,0,Premium,
-TXN00014,CUST0082,Nikhil Agarwal,697.63,INR,Debit Card,2026-06-30 12:00:59,Failed,Insufficient Funds,Loyal Customer,1,Regular,0.0
-TXN00465,CUST0068,Ishita Kulkarni,839.33,INR,UPI,2026-06-30 13:08:43,Success,,Regular Customer,0,New,
-TXN00355,CUST0109,Anjali Rao,887.66,INR,Debit Card,2026-06-30 18:53:50,Failed,Insufficient Funds,New Customer,2,New,1.0
-TXN00200,CUST0168,Siddharth Patel,1065.68,INR,UPI,2026-07-01 00:06:34,Failed,Expired Card,Regular Customer,3,Regular,0.0
-TXN00524,CUST0054,Arjun Malhotra,1264.41,INR,Debit Card,2026-07-01 04:21:19,Failed,Insufficient Funds,New Customer,0,New,1.0
-TXN00413,CUST0201,Ananya Mehta,859.4,INR,Debit Card,2026-07-01 12:08:38,Success,,Regular Customer,0,Regular,
-TXN00036,CUST0028,Tanvi Bose,431.6,INR,Debit Card,2026-07-01 17:13:47,Success,,New Customer,0,New,
-TXN00499,CUST0119,Siddharth Chowdhury,1234.49,INR,Netbanking,2026-07-01 18:16:22,Success,,Regular Customer,0,Regular,
-TXN00367,CUST0175,Siddharth Kapoor,1027.06,INR,UPI,2026-07-01 18:58:34,Failed,Insufficient Funds,New Customer,0,New,1.0
-TXN00482,CUST0197,Divya Menon,506.07,INR,Debit Card,2026-07-01 21:08:09,Success,,New Customer,0,New,
-TXN00599,CUST0211,Anjali Bose,687.75,INR,Debit Card,2026-07-01 22:00:36,Success,,New Customer,0,New,
-TXN00116,CUST0080,Kiran Nair,1075.92,INR,Wallet,2026-07-01 23:22:57,Success,,Regular Customer,0,New,
-TXN00001,CUST0214,Sneha Iyer,2625.94,INR,Credit Card,2026-07-02 01:11:33,Success,,Regular Customer,0,Regular,
-TXN00257,CUST0206,Neha Kulkarni,4011.02,INR,Wallet,2026-07-02 03:58:40,Success,,Loyal Customer,0,Regular,
-TXN00623,CUST0203,Abhishek Kulkarni,2777.24,INR,UPI,2026-07-02 08:52:18,Success,,New Customer,0,New,
-TXN00203,CUST0041,Swati Iyer,1719.57,INR,UPI,2026-07-02 09:42:07,Success,,Regular Customer,0,New,
-TXN00448,CUST0079,Rohan Nair,1191.62,INR,Debit Card,2026-07-02 10:07:33,Success,,Regular Customer,0,Regular,
-TXN00183,CUST0036,Kavya Joshi,1108.77,INR,Debit Card,2026-07-02 11:13:36,Success,,Regular Customer,0,Regular,
-TXN00478,CUST0115,Radhika Kapoor,1082.2,INR,UPI,2026-07-02 13:41:10,Success,,Occasional Buyer,0,New,
-TXN00400,CUST0054,Arjun Malhotra,1886.9,INR,Credit Card,2026-07-03 01:58:02,Success,,New Customer,0,New,
-TXN00210,CUST0035,Preeti Sharma,16630.64,INR,Netbanking,2026-07-03 02:15:08,Failed,Insufficient Funds,Occasional Buyer,0,Regular,0.0
-TXN00117,CUST0147,Amit Sharma,879.34,INR,Wallet,2026-07-03 02:34:39,Success,,New Customer,0,New,
-TXN00022,CUST0171,Aditya Chowdhury,1764.85,INR,UPI,2026-07-03 02:47:27,Success,,New Customer,0,Regular,
-TXN00611,CUST0085,Manish Gupta,1329.58,INR,Netbanking,2026-07-03 08:32:00,Failed,Card Declined,New Customer,1,New,1.0
-TXN00136,CUST0213,Shreya Mehta,4686.61,INR,Debit Card,2026-07-03 09:44:29,Success,,Occasional Buyer,0,Regular,
-TXN00349,CUST0220,Riya Malhotra,3792.49,INR,UPI,2026-07-03 16:20:35,Success,,Regular Customer,0,Premium,
-TXN00137,CUST0208,Rohan Gupta,561.18,INR,UPI,2026-07-03 17:39:54,Failed,Insufficient Funds,New Customer,0,New,1.0
-TXN00394,CUST0180,Sneha Desai,2694.25,INR,Netbanking,2026-07-03 19:24:35,Success,,New Customer,0,New,
-TXN00485,CUST0097,Meera Singh,3721.29,INR,Netbanking,2026-07-04 01:29:36,Failed,Card Declined,Regular Customer,1,Premium,0.0
-TXN00235,CUST0211,Anjali Bose,3249.86,INR,UPI,2026-07-04 04:55:18,Failed,Insufficient Funds,New Customer,3,New,0.0
-TXN00194,CUST0081,Nisha Iyer,425.2,INR,Wallet,2026-07-04 11:43:45,Failed,Card Declined,Occasional Buyer,2,New,0.0
-TXN00342,CUST0161,Harsh Pillai,6135.48,INR,UPI,2026-07-04 19:04:05,Success,,Regular Customer,0,Premium,
-TXN00100,CUST0039,Sanjay Nair,1756.32,INR,Wallet,2026-07-04 20:05:13,Success,,Loyal Customer,0,Regular,
-TXN00562,CUST0088,Kiran Nair,3118.92,INR,Wallet,2026-07-04 21:10:28,Failed,Network Failure,New Customer,3,New,0.0
-TXN00172,CUST0120,Rahul Reddy,1275.77,INR,UPI,2026-07-05 01:20:42,Failed,Insufficient Funds,Occasional Buyer,3,Regular,0.0
-TXN00127,CUST0195,Aditya Menon,1158.88,INR,Debit Card,2026-07-05 14:43:21,Failed,Insufficient Funds,Regular Customer,0,Regular,0.0
-TXN00094,CUST0161,Harsh Pillai,4610.86,INR,UPI,2026-07-05 18:48:17,Success,,Regular Customer,0,Premium,
-TXN00016,CUST0181,Simran Reddy,640.74,INR,Netbanking,2026-07-05 22:22:32,Success,,Regular Customer,0,New,
-TXN00471,CUST0059,Anjali Verma,1717.67,INR,UPI,2026-07-06 04:00:03,Failed,Card Declined,Occasional Buyer,1,Regular,1.0
-TXN00435,CUST0001,Riya Singh,4565.56,INR,UPI,2026-07-06 07:35:51,Success,,New Customer,0,Regular,
-TXN00102,CUST0011,Kiran Rao,4401.4,INR,UPI,2026-07-06 08:19:02,Success,,Regular Customer,0,Premium,
-TXN00332,CUST0194,Suresh Rao,1219.88,INR,UPI,2026-07-06 12:12:38,Failed,Card Declined,New Customer,2,Regular,0.0
-TXN00115,CUST0185,Sneha Nair,1797.59,INR,UPI,2026-07-06 14:32:58,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
-TXN00122,CUST0132,Tanvi Malhotra,1211.77,INR,UPI,2026-07-06 19:39:28,Success,,Occasional Buyer,0,Regular,
-TXN00015,CUST0059,Anjali Verma,773.79,INR,Debit Card,2026-07-06 19:54:10,Success,,Occasional Buyer,0,Regular,
-TXN00307,CUST0193,Deepak Mehta,1932.56,INR,UPI,2026-07-06 20:10:33,Failed,Card Declined,New Customer,1,New,0.0
-TXN00373,CUST0015,Shreya Gupta,2144.55,INR,UPI,2026-07-06 20:32:29,Success,,Occasional Buyer,0,New,
-TXN00178,CUST0003,Ananya Iyer,4444.59,INR,Netbanking,2026-07-06 21:11:42,Success,,New Customer,0,Regular,
-TXN00282,CUST0089,Shreya Verma,2876.05,INR,UPI,2026-07-07 00:46:14,Success,,New Customer,0,Regular,
-TXN00161,CUST0197,Divya Menon,500.29,INR,Wallet,2026-07-07 10:37:38,Success,,New Customer,0,New,
-TXN00558,CUST0013,Aditya Rao,692.61,INR,Credit Card,2026-07-07 13:37:19,Success,,New Customer,0,New,
-TXN00426,CUST0035,Preeti Sharma,4241.82,INR,Wallet,2026-07-07 15:35:36,Success,,Occasional Buyer,0,Regular,
-TXN00275,CUST0022,Tanvi Nair,498.25,INR,Credit Card,2026-07-07 15:47:56,Success,,New Customer,0,New,
-TXN00294,CUST0085,Manish Gupta,1494.82,INR,Credit Card,2026-07-07 16:01:19,Success,,New Customer,0,New,
-TXN00568,CUST0216,Priya Mehta,3281.17,INR,Credit Card,2026-07-07 16:47:00,Success,,Regular Customer,0,Premium,
-TXN00316,CUST0051,Gaurav Malhotra,909.23,INR,Credit Card,2026-07-08 06:28:32,Failed,Insufficient Funds,Occasional Buyer,0,New,0.0
-TXN00507,CUST0163,Ananya Menon,4039.2,INR,Credit Card,2026-07-08 09:42:00,Success,,Loyal Customer,0,Premium,
-TXN00076,CUST0070,Manish Iyer,3140.21,INR,Credit Card,2026-07-08 10:00:03,Success,,Occasional Buyer,0,Regular,
-TXN00213,CUST0164,Tanvi Kulkarni,8751.68,INR,Netbanking,2026-07-08 11:04:45,Success,,Regular Customer,0,Premium,
-TXN00519,CUST0162,Riya Kapoor,2110.4,INR,UPI,2026-07-08 19:59:42,Success,,Regular Customer,0,Regular,
-TXN00384,CUST0183,Sneha Menon,1496.43,INR,Debit Card,2026-07-09 00:29:34,Success,,Occasional Buyer,0,Regular,
-TXN00230,CUST0187,Kunal Mehta,7629.66,INR,Debit Card,2026-07-09 05:57:08,Success,,Occasional Buyer,0,Premium,
-TXN00492,CUST0076,Shreya Rao,11384.09,INR,UPI,2026-07-09 07:02:58,Success,,Loyal Customer,0,Premium,
-TXN00245,CUST0135,Meera Chowdhury,1032.6,INR,UPI,2026-07-09 07:10:58,Failed,Card Declined,Loyal Customer,2,Regular,0.0
-TXN00328,CUST0105,Swati Sharma,1443.75,INR,Debit Card,2026-07-09 08:28:43,Success,,New Customer,0,New,
-TXN00247,CUST0144,Rajesh Menon,675.22,INR,UPI,2026-07-09 12:36:31,Success,,Occasional Buyer,0,New,
-TXN00535,CUST0217,Meera Desai,1396.17,INR,UPI,2026-07-09 13:49:37,Success,,Regular Customer,0,Regular,
-TXN00236,CUST0009,Vivek Menon,1313.37,INR,Debit Card,2026-07-09 14:42:26,Success,,Occasional Buyer,0,New,
-TXN00533,CUST0177,Lakshmi Bose,862.95,INR,Netbanking,2026-07-09 15:56:32,Success,,New Customer,0,New,
-TXN00042,CUST0191,Pooja Menon,5917.59,INR,Debit Card,2026-07-09 16:09:48,Failed,Expired Card,Regular Customer,1,Premium,0.0
-TXN00547,CUST0005,Kunal Singh,2744.6,INR,UPI,2026-07-09 17:37:23,Success,,Regular Customer,0,Regular,
-TXN00538,CUST0125,Swati Desai,4481.54,INR,UPI,2026-07-10 08:21:48,Failed,Card Declined,Loyal Customer,0,Premium,0.0
-TXN00472,CUST0055,Vikram Pillai,225.62,INR,Netbanking,2026-07-10 09:57:26,Success,,New Customer,0,New,
-TXN00637,CUST0044,Ishita Singh,8197.51,INR,UPI,2026-07-10 14:11:40,Failed,Network Failure,Regular Customer,2,Premium,1.0
-TXN00466,CUST0010,Sanjay Reddy,4863.51,INR,UPI,2026-07-10 21:33:22,Success,,Loyal Customer,0,Premium,
-TXN00545,CUST0141,Abhishek Sharma,203.77,INR,Debit Card,2026-07-11 00:52:28,Failed,Expired Card,New Customer,1,New,1.0
-TXN00179,CUST0187,Kunal Mehta,4758.42,INR,UPI,2026-07-11 05:38:31,Failed,Insufficient Funds,Occasional Buyer,1,Premium,1.0
-TXN00395,CUST0130,Divya Singh,9795.91,INR,UPI,2026-07-11 19:02:35,Success,,Occasional Buyer,0,Premium,
-TXN00045,CUST0166,Pooja Joshi,2593.44,INR,UPI,2026-07-12 02:21:47,Failed,Insufficient Funds,Occasional Buyer,2,Premium,0.0
-TXN00087,CUST0103,Varun Malhotra,3305.92,INR,Credit Card,2026-07-12 03:36:55,Success,,Occasional Buyer,0,Regular,
-TXN00298,CUST0072,Tanvi Kapoor,1079.64,INR,Debit Card,2026-07-12 05:36:30,Failed,Network Failure,Occasional Buyer,1,New,1.0
-TXN00368,CUST0016,Riya Patel,2012.08,INR,Wallet,2026-07-12 10:45:49,Failed,Authentication Failure,Occasional Buyer,2,Regular,1.0
-TXN00215,CUST0064,Varun Verma,1680.09,INR,UPI,2026-07-13 00:53:37,Success,,New Customer,0,Regular,
-TXN00586,CUST0204,Riya Kulkarni,6149.4,INR,Wallet,2026-07-13 01:39:38,Success,,Loyal Customer,0,Premium,
-TXN00140,CUST0113,Deepak Iyer,1015.39,INR,Netbanking,2026-07-13 04:39:45,Success,,Regular Customer,0,Regular,
-TXN00573,CUST0013,Aditya Rao,1092.43,INR,Wallet,2026-07-13 07:29:07,Success,,New Customer,0,New,
-TXN00133,CUST0130,Divya Singh,3193.42,INR,Credit Card,2026-07-13 09:26:08,Failed,Card Declined,Occasional Buyer,1,Premium,0.0
-TXN00024,CUST0078,Preeti Sharma,2664.11,INR,UPI,2026-07-13 09:54:42,Failed,Card Declined,Loyal Customer,1,Premium,1.0
-TXN00190,CUST0185,Sneha Nair,868.56,INR,Credit Card,2026-07-13 21:41:56,Success,,Regular Customer,0,Regular,
-TXN00646,CUST0206,Neha Kulkarni,1719.87,INR,Credit Card,2026-07-14 05:04:50,Success,,Loyal Customer,0,Regular,
-TXN00436,CUST0106,Siddharth Joshi,2081.31,INR,Credit Card,2026-07-14 05:06:23,Success,,Loyal Customer,0,Regular,
-TXN00231,CUST0098,Anjali Kapoor,579.28,INR,Credit Card,2026-07-14 05:59:43,Failed,Unknown Error,Occasional Buyer,3,New,0.0
-TXN00250,CUST0049,Abhishek Kulkarni,2496.74,INR,UPI,2026-07-14 14:20:41,Success,,Regular Customer,0,Regular,
-TXN00286,CUST0022,Tanvi Nair,278.31,INR,UPI,2026-07-14 15:23:53,Failed,Card Declined,New Customer,1,New,1.0
-TXN00035,CUST0173,Swati Desai,3141.32,INR,UPI,2026-07-14 15:34:02,Success,,Regular Customer,0,Regular,
-TXN00508,CUST0010,Sanjay Reddy,3526.3,INR,Credit Card,2026-07-14 16:49:52,Success,,Loyal Customer,0,Premium,
-TXN00553,CUST0075,Arjun Joshi,3798.19,INR,Credit Card,2026-07-14 20:11:22,Failed,Insufficient Funds,Regular Customer,0,Regular,0.0
-TXN00376,CUST0185,Sneha Nair,1310.23,INR,UPI,2026-07-14 20:56:24,Success,,Regular Customer,0,Regular,
-TXN00388,CUST0142,Tanvi Gupta,2767.51,INR,Credit Card,2026-07-14 23:37:29,Failed,Authentication Failure,New Customer,2,New,1.0
-TXN00498,CUST0202,Varun Mehta,800.95,INR,Netbanking,2026-07-15 01:48:19,Success,,New Customer,0,New,
-TXN00103,CUST0157,Vikram Bose,1654.92,INR,UPI,2026-07-15 02:37:06,Success,,Regular Customer,0,Regular,
-TXN00141,CUST0128,Deepak Patel,2264.49,INR,Debit Card,2026-07-15 11:13:29,Failed,Insufficient Funds,Occasional Buyer,1,Regular,0.0
-TXN00405,CUST0051,Gaurav Malhotra,685.37,INR,Netbanking,2026-07-15 15:16:01,Success,,Occasional Buyer,0,New,
-TXN00424,CUST0217,Meera Desai,3409.65,INR,Credit Card,2026-07-15 18:57:33,Success,,Regular Customer,0,Regular,
-TXN00610,CUST0165,Priya Agarwal,4549.74,INR,Credit Card,2026-07-15 21:12:30,Success,,Occasional Buyer,0,Regular,
-TXN00182,CUST0087,Divya Desai,536.84,INR,Credit Card,2026-07-15 21:34:16,Failed,Expired Card,New Customer,1,New,1.0
-TXN00217,CUST0003,Ananya Iyer,1306.29,INR,UPI,2026-07-16 00:55:19,Failed,Insufficient Funds,New Customer,0,Regular,0.0
-TXN00583,CUST0170,Simran Pillai,2829.99,INR,UPI,2026-07-16 03:00:26,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
-TXN00382,CUST0063,Sneha Kulkarni,626.64,INR,UPI,2026-07-16 06:15:44,Success,,New Customer,0,New,
-TXN00326,CUST0159,Tanvi Nair,433.32,INR,UPI,2026-07-16 16:40:03,Success,,Loyal Customer,0,New,
-TXN00262,CUST0126,Harsh Pillai,1933.84,INR,Credit Card,2026-07-16 22:28:52,Failed,Network Failure,Occasional Buyer,0,Regular,0.0
-TXN00027,CUST0059,Anjali Verma,1060.99,INR,Credit Card,2026-07-17 00:17:32,Success,,Occasional Buyer,0,Regular,
-TXN00284,CUST0116,Ishita Rao,427.22,INR,Credit Card,2026-07-17 12:27:14,Success,,Loyal Customer,0,New,
-TXN00144,CUST0011,Kiran Rao,5956.97,INR,Debit Card,2026-07-17 14:42:16,Success,,Regular Customer,0,Premium,
-TXN00552,CUST0057,Rahul Patel,1834.23,INR,UPI,2026-07-17 15:23:22,Success,,Regular Customer,0,Regular,
-TXN00123,CUST0057,Rahul Patel,4322.27,INR,Debit Card,2026-07-17 17:17:22,Success,,Regular Customer,0,Regular,
-TXN00603,CUST0022,Tanvi Nair,1512.87,INR,UPI,2026-07-18 00:01:39,Failed,Network Failure,New Customer,1,New,1.0
-TXN00582,CUST0138,Simran Sharma,1590.16,INR,UPI,2026-07-18 00:22:19,Success,,Occasional Buyer,0,Regular,
-TXN00134,CUST0092,Ishita Gupta,2592.75,INR,Debit Card,2026-07-18 01:05:51,Success,,Loyal Customer,0,Regular,
-TXN00006,CUST0115,Radhika Kapoor,780.17,INR,Credit Card,2026-07-18 04:25:20,Success,,Occasional Buyer,0,New,
-TXN00171,CUST0082,Nikhil Agarwal,1225.09,INR,Debit Card,2026-07-18 06:50:07,Failed,Card Declined,Loyal Customer,1,Regular,1.0
-TXN00311,CUST0053,Rohan Singh,787.92,INR,Credit Card,2026-07-18 09:39:18,Failed,Authentication Failure,Occasional Buyer,1,New,1.0
-TXN00068,CUST0058,Karthik Malhotra,8971.13,INR,Netbanking,2026-07-18 12:34:17,Success,,Loyal Customer,0,Premium,
-TXN00023,CUST0041,Swati Iyer,934.97,INR,UPI,2026-07-18 13:42:41,Failed,Unknown Error,Regular Customer,2,New,0.0
-TXN00348,CUST0145,Manish Patel,921.4,INR,Netbanking,2026-07-18 18:04:52,Failed,Network Failure,Loyal Customer,2,Regular,1.0
-TXN00555,CUST0212,Sanjay Pillai,6430.46,INR,Debit Card,2026-07-18 20:14:32,Success,,New Customer,0,Premium,
-TXN00032,CUST0076,Shreya Rao,13713.54,INR,Debit Card,2026-07-18 20:30:42,Success,,Loyal Customer,0,Premium,
-TXN00532,CUST0024,Lakshmi Chowdhury,331.32,INR,UPI,2026-07-18 22:58:36,Failed,Card Declined,Occasional Buyer,1,New,0.0
-TXN00513,CUST0176,Neha Iyer,777.93,INR,Wallet,2026-07-19 10:09:55,Failed,Insufficient Funds,New Customer,3,New,0.0
-TXN00347,CUST0083,Sneha Patel,376.59,INR,Netbanking,2026-07-19 12:14:44,Success,,Regular Customer,0,New,
-TXN00165,CUST0185,Sneha Nair,3394.31,INR,Netbanking,2026-07-19 12:50:21,Failed,Bank Server Issue,Regular Customer,0,Regular,0.0
-TXN00593,CUST0040,Kiran Gupta,1196.78,INR,UPI,2026-07-19 17:41:52,Failed,Insufficient Funds,New Customer,2,New,0.0
-TXN00105,CUST0166,Pooja Joshi,5010.83,INR,UPI,2026-07-19 19:45:34,Success,,Occasional Buyer,0,Premium,
-TXN00407,CUST0033,Rohan Rao,1110.77,INR,UPI,2026-07-19 20:46:46,Failed,Expired Card,Regular Customer,0,Regular,0.0
-TXN00049,CUST0209,Suresh Chowdhury,1103.42,INR,Netbanking,2026-07-19 21:41:27,Success,,Occasional Buyer,0,New,
-TXN00443,CUST0041,Swati Iyer,259.7,INR,UPI,2026-07-19 23:48:08,Success,,Regular Customer,0,New,
-TXN00252,CUST0054,Arjun Malhotra,1557.31,INR,Netbanking,2026-07-20 03:21:26,Success,,New Customer,0,New,
-TXN00202,CUST0014,Rohan Chowdhury,7189.61,INR,UPI,2026-07-20 09:31:05,Failed,Authentication Failure,Loyal Customer,0,Premium,1.0
-TXN00013,CUST0102,Amit Reddy,2282.62,INR,Debit Card,2026-07-20 11:44:49,Success,,Loyal Customer,0,Regular,
-TXN00497,CUST0047,Nisha Patel,481.86,INR,Wallet,2026-07-20 16:08:45,Failed,Card Declined,New Customer,2,New,0.0
-TXN00423,CUST0206,Neha Kulkarni,1742.49,INR,Netbanking,2026-07-20 18:29:13,Failed,Network Failure,Loyal Customer,3,Regular,0.0
-TXN00624,CUST0011,Kiran Rao,10643.56,INR,Wallet,2026-07-20 20:04:36,Success,,Regular Customer,0,Premium,
-TXN00081,CUST0196,Siddharth Malhotra,1770.79,INR,UPI,2026-07-20 20:41:13,Failed,Authentication Failure,Regular Customer,0,Regular,1.0
-TXN00007,CUST0140,Radhika Desai,11963.39,INR,UPI,2026-07-20 23:11:14,Success,,Loyal Customer,0,Premium,
-TXN00204,CUST0194,Suresh Rao,3567.4,INR,Wallet,2026-07-21 02:42:36,Success,,New Customer,0,Regular,
-TXN00289,CUST0153,Rajesh Chowdhury,2332.15,INR,Credit Card,2026-07-21 06:20:40,Failed,Card Declined,Loyal Customer,2,Regular,0.0
-TXN00371,CUST0207,Ananya Agarwal,2025.32,INR,UPI,2026-07-21 06:32:40,Success,,Loyal Customer,0,Regular,
-TXN00074,CUST0041,Swati Iyer,2295.68,INR,UPI,2026-07-21 12:59:02,Success,,Regular Customer,0,New,
-TXN00579,CUST0040,Kiran Gupta,369.76,INR,UPI,2026-07-21 14:03:01,Failed,Bank Server Issue,New Customer,1,New,0.0
-TXN00099,CUST0147,Amit Sharma,900.61,INR,Debit Card,2026-07-21 14:20:46,Success,,New Customer,0,New,
-TXN00595,CUST0162,Riya Kapoor,3535.63,INR,UPI,2026-07-21 16:56:00,Success,,Regular Customer,0,Regular,
-TXN00125,CUST0096,Aditya Iyer,7283.95,INR,UPI,2026-07-21 19:55:34,Success,,Loyal Customer,0,Premium,
-TXN00432,CUST0020,Anjali Menon,1959.38,INR,UPI,2026-07-21 22:25:52,Success,,Loyal Customer,0,Premium,
-TXN00385,CUST0107,Nisha Mehta,1316.16,INR,Netbanking,2026-07-22 02:11:41,Success,,Loyal Customer,0,Regular,
-TXN00296,CUST0046,Sneha Singh,1364.99,INR,Wallet,2026-07-22 02:55:47,Success,,New Customer,0,Regular,
-TXN00397,CUST0213,Shreya Mehta,778.82,INR,Debit Card,2026-07-22 08:48:10,Failed,Insufficient Funds,Occasional Buyer,0,Regular,0.0
-TXN00563,CUST0216,Priya Mehta,8396.43,INR,Debit Card,2026-07-22 12:28:26,Success,,Regular Customer,0,Premium,
-TXN00218,CUST0129,Nisha Kapoor,1754.17,INR,Wallet,2026-07-22 20:35:36,Success,,Occasional Buyer,0,Regular,
-TXN00310,CUST0187,Kunal Mehta,4909.38,INR,UPI,2026-07-23 04:48:33,Success,,Occasional Buyer,0,Premium,
-TXN00029,CUST0161,Harsh Pillai,4022.59,INR,Debit Card,2026-07-23 08:22:06,Failed,Card Declined,Regular Customer,0,Premium,0.0
-TXN00175,CUST0120,Rahul Reddy,2326.64,INR,Credit Card,2026-07-23 10:25:38,Failed,Bank Server Issue,Occasional Buyer,1,Regular,0.0
-TXN00608,CUST0085,Manish Gupta,425.48,INR,Credit Card,2026-07-23 13:35:15,Failed,Network Failure,New Customer,2,New,0.0
-TXN00487,CUST0153,Rajesh Chowdhury,1400.22,INR,Credit Card,2026-07-23 20:15:16,Success,,Loyal Customer,0,Regular,
-TXN00242,CUST0210,Tanvi Patel,5128.82,INR,UPI,2026-07-23 21:32:04,Success,,Loyal Customer,0,Premium,
-TXN00495,CUST0172,Lakshmi Joshi,4618.01,INR,UPI,2026-07-23 22:30:27,Success,,Occasional Buyer,0,Regular,
-TXN00080,CUST0015,Shreya Gupta,272.45,INR,UPI,2026-07-24 00:00:33,Success,,Occasional Buyer,0,New,
-TXN00196,CUST0064,Varun Verma,2469.88,INR,UPI,2026-07-24 00:30:20,Success,,New Customer,0,Regular,
-TXN00243,CUST0134,Abhishek Chowdhury,6991.8,INR,UPI,2026-07-24 02:20:11,Failed,Bank Server Issue,New Customer,3,Premium,0.0
-TXN00469,CUST0096,Aditya Iyer,4166.16,INR,UPI,2026-07-24 03:38:23,Success,,Loyal Customer,0,Premium,
-TXN00169,CUST0207,Ananya Agarwal,1745.92,INR,Debit Card,2026-07-24 08:49:53,Failed,Insufficient Funds,Loyal Customer,1,Regular,0.0
-TXN00168,CUST0140,Radhika Desai,14022.19,INR,UPI,2026-07-24 09:54:07,Success,,Loyal Customer,0,Premium,
-TXN00216,CUST0069,Kunal Kulkarni,3033.38,INR,Wallet,2026-07-24 13:31:31,Success,,Regular Customer,0,Regular,
-TXN00208,CUST0048,Simran Iyer,2650.71,INR,Wallet,2026-07-24 17:40:57,Failed,Network Failure,Occasional Buyer,0,Regular,0.0
-TXN00300,CUST0054,Arjun Malhotra,1309.99,INR,Credit Card,2026-07-24 18:50:11,Success,,New Customer,0,New,
-TXN00084,CUST0182,Harsh Agarwal,4191.71,INR,Debit Card,2026-07-24 20:30:43,Success,,Loyal Customer,0,Premium,
-TXN00260,CUST0149,Kavya Kulkarni,1429.07,INR,Debit Card,2026-07-24 21:52:03,Failed,Insufficient Funds,New Customer,1,New,0.0
-TXN00527,CUST0117,Priya Verma,338.14,INR,Wallet,2026-07-25 01:56:06,Success,,New Customer,0,New,
-TXN00338,CUST0083,Sneha Patel,740.38,INR,Wallet,2026-07-25 02:51:10,Success,,Regular Customer,0,New,
-TXN00142,CUST0211,Anjali Bose,1967.04,INR,UPI,2026-07-25 04:00:48,Failed,Card Declined,New Customer,0,New,0.0
-TXN00564,CUST0052,Sneha Reddy,1670.18,INR,UPI,2026-07-25 04:53:25,Success,,Loyal Customer,0,Regular,
-TXN00410,CUST0158,Kunal Agarwal,2651.66,INR,UPI,2026-07-25 10:28:57,Success,,New Customer,0,Regular,
-TXN00364,CUST0049,Abhishek Kulkarni,2492.25,INR,Debit Card,2026-07-25 15:50:41,Failed,Bank Server Issue,Regular Customer,3,Regular,1.0
-TXN00096,CUST0015,Shreya Gupta,373.12,INR,UPI,2026-07-25 19:06:44,Success,,Occasional Buyer,0,New,
-TXN00387,CUST0018,Kiran Singh,2411.41,INR,Netbanking,2026-07-26 03:37:50,Success,,Occasional Buyer,0,Regular,
-TXN00598,CUST0078,Preeti Sharma,3329.64,INR,Credit Card,2026-07-26 08:15:14,Success,,Loyal Customer,0,Premium,
-TXN00066,CUST0185,Sneha Nair,4213.01,INR,UPI,2026-07-26 14:10:43,Success,,Regular Customer,0,Regular,
-TXN00544,CUST0083,Sneha Patel,2132.27,INR,UPI,2026-07-26 18:09:06,Success,,Regular Customer,0,New,
-TXN00351,CUST0078,Preeti Sharma,6345.2,INR,UPI,2026-07-26 19:43:01,Success,,Loyal Customer,0,Premium,
-TXN00612,CUST0156,Amit Joshi,1938.03,INR,UPI,2026-07-26 21:24:57,Success,,Regular Customer,0,Regular,
-TXN00625,CUST0134,Abhishek Chowdhury,12047.27,INR,Debit Card,2026-07-27 01:54:20,Success,,New Customer,0,Premium,
-TXN00003,CUST0035,Preeti Sharma,2853.29,INR,Netbanking,2026-07-27 07:25:34,Success,,Occasional Buyer,0,Regular,
-TXN00460,CUST0102,Amit Reddy,1033.98,INR,Credit Card,2026-07-27 11:14:23,Success,,Loyal Customer,0,Regular,
-TXN00268,CUST0004,Kiran Iyer,380.66,INR,UPI,2026-07-27 11:49:27,Success,,Occasional Buyer,0,New,
-TXN00095,CUST0162,Riya Kapoor,1610.57,INR,UPI,2026-07-27 13:51:05,Failed,Expired Card,Regular Customer,0,Regular,0.0
-TXN00337,CUST0146,Sneha Joshi,1268.99,INR,UPI,2026-07-27 14:02:58,Success,,Regular Customer,0,Regular,
-TXN00287,CUST0079,Rohan Nair,1838.16,INR,Credit Card,2026-07-27 20:02:26,Failed,Insufficient Funds,Regular Customer,1,Regular,0.0
-TXN00406,CUST0022,Tanvi Nair,1304.68,INR,Credit Card,2026-07-28 19:02:55,Failed,Insufficient Funds,New Customer,3,New,0.0
-TXN00479,CUST0089,Shreya Verma,10865.9,INR,UPI,2026-07-28 19:36:34,Failed,Card Declined,New Customer,0,Regular,0.0
-TXN00578,CUST0110,Rajesh Gupta,3053.29,INR,UPI,2026-07-28 21:03:15,Failed,Bank Server Issue,Occasional Buyer,0,Regular,1.0
-TXN00403,CUST0013,Aditya Rao,900.68,INR,Debit Card,2026-07-28 22:38:56,Failed,Card Declined,New Customer,1,New,0.0
-TXN00434,CUST0086,Swati Desai,2965.05,INR,Credit Card,2026-07-28 23:57:10,Failed,Insufficient Funds,Regular Customer,0,Regular,1.0
-TXN00450,CUST0068,Ishita Kulkarni,475.55,INR,Credit Card,2026-07-29 00:33:21,Success,,Regular Customer,0,New,
-TXN00012,CUST0020,Anjali Menon,4303.29,INR,Credit Card,2026-07-29 04:38:42,Success,,Loyal Customer,0,Premium,
-TXN00594,CUST0148,Priya Mehta,6417.8,INR,Netbanking,2026-07-29 07:09:36,Success,,Occasional Buyer,0,Premium,
-TXN00259,CUST0190,Radhika Reddy,1171.79,INR,UPI,2026-07-29 12:27:50,Success,,Occasional Buyer,0,New,
-TXN00195,CUST0165,Priya Agarwal,2197.88,INR,Debit Card,2026-07-29 14:31:50,Success,,Occasional Buyer,0,Regular,
-TXN00604,CUST0057,Rahul Patel,4211.61,INR,Credit Card,2026-07-29 23:23:37,Failed,Network Failure,Regular Customer,1,Regular,1.0
-TXN00031,CUST0070,Manish Iyer,1435.2,INR,Netbanking,2026-07-30 09:51:43,Success,,Occasional Buyer,0,Regular,
-TXN00554,CUST0185,Sneha Nair,2298.31,INR,UPI,2026-07-30 14:33:32,Failed,Insufficient Funds,Regular Customer,2,Regular,1.0
-TXN00047,CUST0013,Aditya Rao,681.04,INR,Debit Card,2026-07-30 20:54:12,Success,,New Customer,0,New,
-TXN00390,CUST0140,Radhika Desai,4070.61,INR,Debit Card,2026-07-30 21:48:02,Failed,Card Declined,Loyal Customer,0,Premium,1.0
-TXN00609,CUST0044,Ishita Singh,2231.97,INR,UPI,2026-07-31 00:23:02,Success,,Regular Customer,0,Premium,
-TXN00561,CUST0156,Amit Joshi,2343.44,INR,Netbanking,2026-07-31 02:16:47,Success,,Regular Customer,0,Regular,
-TXN00290,CUST0144,Rajesh Menon,617.93,INR,Netbanking,2026-07-31 13:08:34,Success,,Occasional Buyer,0,New,
-TXN00221,CUST0171,Aditya Chowdhury,7137.1,INR,Netbanking,2026-07-31 14:00:41,Success,,New Customer,0,Regular,
-TXN00254,CUST0194,Suresh Rao,3525.78,INR,Credit Card,2026-07-31 14:19:27,Success,,New Customer,0,Regular,
-TXN00607,CUST0033,Rohan Rao,1305.6,INR,Debit Card,2026-07-31 19:57:40,Failed,Insufficient Funds,Regular Customer,0,Regular,0.0
-TXN00130,CUST0162,Riya Kapoor,1514.88,INR,Credit Card,2026-07-31 21:32:45,Failed,Insufficient Funds,Regular Customer,1,Regular,0.0
-TXN00334,CUST0031,Tanvi Sharma,598.07,INR,Debit Card,2026-07-31 23:57:36,Success,,New Customer,0,New,
-TXN00477,CUST0032,Manish Bose,7246.53,INR,Debit Card,2026-08-01 05:52:46,Success,,Loyal Customer,0,Premium,
-TXN00124,CUST0102,Amit Reddy,924.25,INR,Credit Card,2026-08-01 06:22:42,Success,,Loyal Customer,0,Regular,
-TXN00392,CUST0027,Swati Mehta,2619.02,INR,UPI,2026-08-01 07:36:13,Success,,Regular Customer,0,Regular,
-TXN00020,CUST0098,Anjali Kapoor,384.76,INR,Credit Card,2026-08-01 10:26:17,Success,,Occasional Buyer,0,New,
-TXN00416,CUST0197,Divya Menon,573.01,INR,Credit Card,2026-08-01 22:07:49,Failed,Network Failure,New Customer,0,New,0.0
-TXN00639,CUST0153,Rajesh Chowdhury,982.91,INR,Credit Card,2026-08-02 06:05:19,Success,,Loyal Customer,0,Regular,
-TXN00008,CUST0062,Kiran Agarwal,3047.54,INR,Credit Card,2026-08-02 07:16:28,Failed,Authentication Failure,Regular Customer,2,Regular,0.0
-TXN00061,CUST0056,Rohan Verma,4274.46,INR,Credit Card,2026-08-02 07:23:06,Success,,Loyal Customer,0,Premium,
-TXN00514,CUST0104,Rajesh Kulkarni,1212.99,INR,UPI,2026-08-02 21:05:44,Failed,Insufficient Funds,Regular Customer,1,Regular,1.0
-TXN00219,CUST0076,Shreya Rao,4261.25,INR,UPI,2026-08-03 00:17:48,Success,,Loyal Customer,0,Premium,
-TXN00483,CUST0154,Lakshmi Singh,2432.75,INR,Debit Card,2026-08-03 01:30:28,Success,,Occasional Buyer,0,Premium,
-TXN00329,CUST0022,Tanvi Nair,1305.67,INR,Credit Card,2026-08-03 02:57:11,Failed,Insufficient Funds,New Customer,0,New,0.0
-TXN00510,CUST0161,Harsh Pillai,3585.04,INR,Debit Card,2026-08-03 04:51:21,Success,,Regular Customer,0,Premium,
-TXN00079,CUST0171,Aditya Chowdhury,2101.63,INR,UPI,2026-08-03 06:42:34,Success,,New Customer,0,Regular,
-TXN00033,CUST0020,Anjali Menon,5395.13,INR,UPI,2026-08-03 06:47:16,Success,,Loyal Customer,0,Premium,
-TXN00069,CUST0196,Siddharth Malhotra,2437.92,INR,UPI,2026-08-03 07:56:31,Success,,Regular Customer,0,Regular,
-TXN00308,CUST0149,Kavya Kulkarni,629.58,INR,Debit Card,2026-08-03 08:32:56,Failed,Expired Card,New Customer,2,New,0.0
-TXN00550,CUST0094,Kunal Singh,624.91,INR,Netbanking,2026-08-03 08:51:53,Failed,Authentication Failure,Regular Customer,1,New,0.0
-TXN00417,CUST0189,Lakshmi Malhotra,4689.75,INR,UPI,2026-08-03 13:16:44,Success,,Regular Customer,0,Regular,
-TXN00617,CUST0039,Sanjay Nair,2122.11,INR,UPI,2026-08-03 13:47:07,Success,,Loyal Customer,0,Regular,
-TXN00359,CUST0158,Kunal Agarwal,2386.29,INR,Debit Card,2026-08-03 19:28:29,Success,,New Customer,0,Regular,
-TXN00067,CUST0027,Swati Mehta,1920.6,INR,Credit Card,2026-08-03 21:57:07,Success,,Regular Customer,0,Regular,
-TXN00402,CUST0179,Rahul Desai,626.64,INR,Credit Card,2026-08-04 04:15:11,Failed,Authentication Failure,New Customer,3,New,0.0
-TXN00110,CUST0080,Kiran Nair,858.63,INR,UPI,2026-08-04 04:45:38,Success,,Regular Customer,0,New,
-TXN00043,CUST0009,Vivek Menon,837.66,INR,Debit Card,2026-08-04 08:27:42,Success,,Occasional Buyer,0,New,
-TXN00505,CUST0002,Sanjay Patel,607.66,INR,Credit Card,2026-08-04 22:27:26,Success,,Occasional Buyer,0,New,
-TXN00336,CUST0158,Kunal Agarwal,1842.94,INR,UPI,2026-08-04 23:51:11,Success,,New Customer,0,Regular,
-TXN00248,CUST0100,Sanjay Kapoor,1395.03,INR,UPI,2026-08-05 04:20:35,Success,,Occasional Buyer,0,Regular,
-TXN00197,CUST0077,Meera Mehta,528.31,INR,Debit Card,2026-08-05 10:07:21,Failed,Card Declined,Occasional Buyer,3,New,0.0
-TXN00363,CUST0169,Kiran Singh,841.13,INR,Netbanking,2026-08-05 11:10:09,Success,,New Customer,0,New,
-TXN00591,CUST0109,Anjali Rao,937.24,INR,Netbanking,2026-08-05 11:53:51,Success,,New Customer,0,New,
-TXN00509,CUST0194,Suresh Rao,2052.24,INR,Netbanking,2026-08-06 16:58:15,Success,,New Customer,0,Regular,
-TXN00253,CUST0004,Kiran Iyer,3207.65,INR,UPI,2026-08-06 20:35:23,Success,,Occasional Buyer,0,New,
-TXN00212,CUST0146,Sneha Joshi,3731.48,INR,Debit Card,2026-08-06 22:42:29,Success,,Regular Customer,0,Regular,
-TXN00089,CUST0030,Riya Kapoor,1493.13,INR,Credit Card,2026-08-07 05:02:20,Success,,Regular Customer,0,Regular,
-TXN00420,CUST0145,Manish Patel,2073.79,INR,UPI,2026-08-07 10:14:24,Success,,Loyal Customer,0,Regular,
-TXN00214,CUST0103,Varun Malhotra,2859.11,INR,Debit Card,2026-08-07 21:26:17,Success,,Occasional Buyer,0,Regular,
-TXN00536,CUST0146,Sneha Joshi,2050.97,INR,Debit Card,2026-08-08 14:34:34,Success,,Regular Customer,0,Regular,
-TXN00429,CUST0177,Lakshmi Bose,1694.35,INR,UPI,2026-08-08 16:23:02,Success,,New Customer,0,New,
-TXN00577,CUST0050,Kunal Iyer,2274.66,INR,UPI,2026-08-08 19:01:47,Failed,Insufficient Funds,Regular Customer,1,Regular,0.0
-TXN00019,CUST0203,Abhishek Kulkarni,520.71,INR,UPI,2026-08-08 19:11:37,Success,,New Customer,0,New,
-TXN00418,CUST0205,Harsh Bose,962.38,INR,UPI,2026-08-08 22:43:48,Failed,Card Declined,Occasional Buyer,2,New,0.0
-TXN00030,CUST0084,Amit Sharma,1702.02,INR,Debit Card,2026-08-08 23:37:45,Failed,Expired Card,Loyal Customer,3,Regular,0.0
-TXN00504,CUST0086,Swati Desai,2723.39,INR,Debit Card,2026-08-09 03:43:46,Success,,Regular Customer,0,Regular,
-TXN00279,CUST0145,Manish Patel,2076.4,INR,Debit Card,2026-08-09 03:46:07,Failed,Insufficient Funds,Loyal Customer,0,Regular,0.0
-TXN00428,CUST0058,Karthik Malhotra,7654.32,INR,Debit Card,2026-08-09 06:05:42,Success,,Loyal Customer,0,Premium,
-TXN00325,CUST0166,Pooja Joshi,3284.57,INR,Wallet,2026-08-09 12:31:20,Failed,Card Declined,Occasional Buyer,0,Premium,0.0
-TXN00620,CUST0036,Kavya Joshi,2260.04,INR,Credit Card,2026-08-09 12:56:20,Success,,Regular Customer,0,Regular,
-TXN00559,CUST0131,Pooja Patel,2482.32,INR,Debit Card,2026-08-09 13:22:59,Failed,Authentication Failure,Occasional Buyer,0,Regular,0.0
-TXN00091,CUST0195,Aditya Menon,2107.78,INR,Debit Card,2026-08-09 15:10:53,Success,,Regular Customer,0,Regular,
-TXN00543,CUST0219,Divya Agarwal,2674.16,INR,Credit Card,2026-08-09 19:02:39,Success,,Occasional Buyer,0,Regular,
-TXN00088,CUST0057,Rahul Patel,2394.22,INR,UPI,2026-08-09 19:05:58,Success,,Regular Customer,0,Regular,
-TXN00457,CUST0115,Radhika Kapoor,842.0,INR,UPI,2026-08-10 00:01:59,Success,,Occasional Buyer,0,New,
-TXN00313,CUST0166,Pooja Joshi,8206.72,INR,UPI,2026-08-10 01:11:57,Success,,Occasional Buyer,0,Premium,
-TXN00442,CUST0111,Kiran Sharma,1962.59,INR,Wallet,2026-08-10 14:25:49,Success,,Occasional Buyer,0,Regular,
-TXN00118,CUST0129,Nisha Kapoor,1050.72,INR,Credit Card,2026-08-10 23:35:21,Success,,Occasional Buyer,0,Regular,
-TXN00121,CUST0073,Rahul Pillai,8066.83,INR,UPI,2026-08-11 02:15:02,Success,,Loyal Customer,0,Premium,
-TXN00173,CUST0108,Meera Bose,857.26,INR,UPI,2026-08-11 04:14:24,Success,,Occasional Buyer,0,New,
-TXN00174,CUST0185,Sneha Nair,2410.61,INR,UPI,2026-08-11 10:27:35,Success,,Regular Customer,0,Regular,
-TXN00542,CUST0014,Rohan Chowdhury,3087.59,INR,UPI,2026-08-11 10:43:32,Success,,Loyal Customer,0,Premium,
-TXN00632,CUST0123,Preeti Desai,2247.85,INR,UPI,2026-08-11 15:53:04,Success,,New Customer,0,New,
-TXN00409,CUST0071,Manish Chowdhury,2134.87,INR,UPI,2026-08-11 17:34:48,Success,,Occasional Buyer,0,Regular,
-TXN00525,CUST0147,Amit Sharma,567.96,INR,Debit Card,2026-08-11 19:35:54,Success,,New Customer,0,New,
-TXN00502,CUST0106,Siddharth Joshi,5711.17,INR,UPI,2026-08-11 21:19:11,Success,,Loyal Customer,0,Regular,
-TXN00462,CUST0108,Meera Bose,917.05,INR,UPI,2026-08-11 21:42:51,Success,,Occasional Buyer,0,New,
-TXN00518,CUST0065,Preeti Gupta,499.43,INR,Credit Card,2026-08-11 23:48:01,Success,,New Customer,0,New,
-TXN00456,CUST0174,Riya Rao,557.95,INR,Wallet,2026-08-12 20:41:52,Success,,Occasional Buyer,0,New,
-TXN00050,CUST0153,Rajesh Chowdhury,757.73,INR,UPI,2026-08-12 21:03:05,Success,,Loyal Customer,0,Regular,
-TXN00126,CUST0167,Vivek Menon,6665.84,INR,UPI,2026-08-12 21:19:42,Failed,Bank Server Issue,Occasional Buyer,1,Regular,0.0
-TXN00090,CUST0210,Tanvi Patel,7020.81,INR,Debit Card,2026-08-13 00:55:15,Failed,Card Declined,Loyal Customer,0,Premium,1.0
-TXN00393,CUST0016,Riya Patel,966.68,INR,Wallet,2026-08-13 02:30:24,Failed,Bank Server Issue,Occasional Buyer,3,Regular,0.0
-TXN00199,CUST0102,Amit Reddy,2063.2,INR,Debit Card,2026-08-13 02:53:37,Failed,Unknown Error,Loyal Customer,0,Regular,0.0
-TXN00170,CUST0053,Rohan Singh,571.21,INR,UPI,2026-08-13 03:41:57,Success,,Occasional Buyer,0,New,
-TXN00246,CUST0218,Aditya Reddy,734.58,INR,UPI,2026-08-13 09:10:36,Success,,New Customer,0,New,
-TXN00621,CUST0169,Kiran Singh,558.76,INR,Netbanking,2026-08-13 09:55:20,Success,,New Customer,0,New,
-TXN00072,CUST0090,Ishita Reddy,11719.6,INR,UPI,2026-08-13 12:56:15,Success,,Regular Customer,0,Premium,
-TXN00341,CUST0174,Riya Rao,548.22,INR,UPI,2026-08-13 13:20:31,Success,,Occasional Buyer,0,New,
-TXN00375,CUST0031,Tanvi Sharma,3267.92,INR,UPI,2026-08-13 16:43:54,Failed,Unknown Error,New Customer,1,New,0.0
-TXN00281,CUST0139,Anjali Gupta,2126.93,INR,UPI,2026-08-13 19:10:26,Success,,Regular Customer,0,Regular,
-TXN00111,CUST0125,Swati Desai,2081.02,INR,UPI,2026-08-13 21:57:35,Failed,Bank Server Issue,Loyal Customer,0,Premium,1.0
-TXN00361,CUST0110,Rajesh Gupta,2658.83,INR,UPI,2026-08-14 01:20:24,Failed,Insufficient Funds,Occasional Buyer,1,Regular,0.0
-TXN00291,CUST0176,Neha Iyer,792.45,INR,UPI,2026-08-14 02:06:34,Failed,Expired Card,New Customer,0,New,0.0
-TXN00293,CUST0051,Gaurav Malhotra,630.42,INR,Credit Card,2026-08-14 03:24:39,Failed,Card Declined,Occasional Buyer,2,New,0.0
-TXN00322,CUST0152,Priya Rao,7314.24,INR,UPI,2026-08-14 03:43:16,Failed,Card Declined,Occasional Buyer,0,Premium,0.0
-TXN00184,CUST0156,Amit Joshi,2605.45,INR,Netbanking,2026-08-14 04:15:34,Success,,Regular Customer,0,Regular,
-TXN00356,CUST0095,Rohan Chowdhury,492.0,INR,Netbanking,2026-08-14 06:15:11,Success,,Occasional Buyer,0,New,
-TXN00629,CUST0002,Sanjay Patel,928.37,INR,Credit Card,2026-08-14 08:20:05,Failed,Insufficient Funds,Occasional Buyer,1,New,1.0
-TXN00193,CUST0189,Lakshmi Malhotra,2247.9,INR,Debit Card,2026-08-14 11:12:11,Failed,Card Declined,Regular Customer,2,Regular,0.0
-TXN00530,CUST0012,Shreya Kulkarni,3455.91,INR,UPI,2026-08-14 15:52:56,Success,,Loyal Customer,0,Premium,
-TXN00340,CUST0071,Manish Chowdhury,1465.5,INR,Netbanking,2026-08-14 21:08:59,Failed,Authentication Failure,Occasional Buyer,2,Regular,0.0
-TXN00396,CUST0016,Riya Patel,1543.72,INR,Credit Card,2026-08-15 00:56:21,Failed,Bank Server Issue,Occasional Buyer,3,Regular,1.0
-TXN00159,CUST0211,Anjali Bose,439.32,INR,Credit Card,2026-08-15 03:51:40,Success,,New Customer,0,New,
-TXN00422,CUST0158,Kunal Agarwal,5247.13,INR,UPI,2026-08-15 04:43:30,Success,,New Customer,0,Regular,
-TXN00109,CUST0165,Priya Agarwal,2302.27,INR,Debit Card,2026-08-15 11:29:02,Failed,Network Failure,Occasional Buyer,1,Regular,1.0
-TXN00633,CUST0006,Rahul Gupta,1831.88,INR,UPI,2026-08-15 13:11:55,Success,,Occasional Buyer,0,Regular,
-TXN00643,CUST0024,Lakshmi Chowdhury,768.35,INR,Credit Card,2026-08-15 14:17:25,Success,,Occasional Buyer,0,New,
-TXN00377,CUST0069,Kunal Kulkarni,3228.51,INR,Debit Card,2026-08-15 17:23:14,Success,,Regular Customer,0,Regular,
-TXN00546,CUST0128,Deepak Patel,1289.11,INR,Credit Card,2026-08-16 10:25:38,Success,,Occasional Buyer,0,Regular,
-TXN00312,CUST0012,Shreya Kulkarni,9408.68,INR,Debit Card,2026-08-16 17:08:27,Success,,Loyal Customer,0,Premium,
-TXN00150,CUST0167,Vivek Menon,2352.75,INR,UPI,2026-08-16 17:15:43,Success,,Occasional Buyer,0,Regular,
-TXN00529,CUST0174,Riya Rao,1049.25,INR,UPI,2026-08-16 19:46:38,Success,,Occasional Buyer,0,New,
-TXN00551,CUST0094,Kunal Singh,945.73,INR,Debit Card,2026-08-16 19:51:58,Success,,Regular Customer,0,New,
-TXN00318,CUST0084,Amit Sharma,1684.72,INR,UPI,2026-08-17 01:52:14,Success,,Loyal Customer,0,Regular,
-TXN00320,CUST0157,Vikram Bose,1860.17,INR,UPI,2026-08-17 04:59:10,Success,,Regular Customer,0,Regular,
-TXN00566,CUST0178,Siddharth Rao,1596.48,INR,Debit Card,2026-08-17 05:08:35,Success,,Loyal Customer,0,Regular,
-TXN00631,CUST0107,Nisha Mehta,787.72,INR,Debit Card,2026-08-17 09:51:00,Success,,Loyal Customer,0,Regular,
-TXN00439,CUST0082,Nikhil Agarwal,783.01,INR,UPI,2026-08-17 19:01:12,Success,,Loyal Customer,0,Regular,
-TXN00404,CUST0064,Varun Verma,2050.5,INR,UPI,2026-08-17 21:24:29,Failed,Insufficient Funds,New Customer,2,Regular,0.0
-TXN00398,CUST0150,Manish Joshi,10688.63,INR,UPI,2026-08-17 22:18:11,Success,,Regular Customer,0,Premium,
-TXN00086,CUST0093,Kunal Sharma,4226.47,INR,UPI,2026-08-18 01:10:38,Success,,Loyal Customer,0,Premium,
-TXN00597,CUST0092,Ishita Gupta,1722.56,INR,Wallet,2026-08-18 02:52:16,Success,,Loyal Customer,0,Regular,
-TXN00054,CUST0093,Kunal Sharma,7374.9,INR,Credit Card,2026-08-18 08:46:32,Success,,Loyal Customer,0,Premium,
-TXN00120,CUST0096,Aditya Iyer,7910.66,INR,Credit Card,2026-08-18 11:06:08,Success,,Loyal Customer,0,Premium,
-TXN00317,CUST0204,Riya Kulkarni,7638.65,INR,UPI,2026-08-18 11:51:58,Success,,Loyal Customer,0,Premium,
-TXN00463,CUST0150,Manish Joshi,3828.15,INR,Debit Card,2026-08-18 20:09:52,Success,,Regular Customer,0,Premium,
-TXN00641,CUST0212,Sanjay Pillai,4592.17,INR,UPI,2026-08-18 22:46:42,Success,,New Customer,0,Premium,
-TXN00526,CUST0020,Anjali Menon,2202.96,INR,Debit Card,2026-08-19 01:38:07,Success,,Loyal Customer,0,Premium,
-TXN00062,CUST0117,Priya Verma,803.2,INR,UPI,2026-08-19 03:41:53,Failed,Network Failure,New Customer,1,New,1.0
-TXN00425,CUST0170,Simran Pillai,2849.67,INR,UPI,2026-08-19 04:34:20,Success,,Regular Customer,0,Regular,
-TXN00044,CUST0061,Suresh Malhotra,4672.49,INR,Netbanking,2026-08-19 05:41:34,Success,,Loyal Customer,0,Premium,
-TXN00540,CUST0177,Lakshmi Bose,635.15,INR,Debit Card,2026-08-19 08:04:41,Success,,New Customer,0,New,
-TXN00496,CUST0143,Pooja Pillai,1240.59,INR,UPI,2026-08-19 09:27:33,Failed,Card Declined,New Customer,2,New,0.0
-TXN00270,CUST0046,Sneha Singh,2147.17,INR,UPI,2026-08-19 11:24:39,Failed,Insufficient Funds,New Customer,1,Regular,0.0
-TXN00276,CUST0145,Manish Patel,2576.42,INR,Wallet,2026-08-19 11:32:53,Success,,Loyal Customer,0,Regular,
-TXN00421,CUST0045,Kiran Singh,3091.61,INR,Credit Card,2026-08-19 18:21:49,Failed,Insufficient Funds,New Customer,1,New,1.0
-TXN00157,CUST0034,Siddharth Nair,13806.4,INR,Credit Card,2026-08-19 18:42:44,Success,,Regular Customer,0,Premium,
-TXN00353,CUST0060,Rajesh Menon,1502.06,INR,Credit Card,2026-08-19 19:47:02,Failed,Expired Card,New Customer,0,New,0.0
-TXN00506,CUST0041,Swati Iyer,670.3,INR,Credit Card,2026-08-19 21:01:48,Success,,Regular Customer,0,New,
-TXN00411,CUST0141,Abhishek Sharma,1376.05,INR,Credit Card,2026-08-20 02:30:17,Failed,Card Declined,New Customer,1,New,0.0
-TXN00288,CUST0105,Swati Sharma,1277.92,INR,UPI,2026-08-20 05:12:15,Success,,New Customer,0,New,
-TXN00034,CUST0206,Neha Kulkarni,1116.84,INR,Credit Card,2026-08-20 06:41:04,Failed,Expired Card,Loyal Customer,1,Regular,0.0
-TXN00273,CUST0167,Vivek Menon,3788.56,INR,Debit Card,2026-08-20 07:04:27,Success,,Occasional Buyer,0,Regular,
-TXN00345,CUST0199,Suresh Pillai,1542.14,INR,Netbanking,2026-08-20 09:00:36,Success,,Loyal Customer,0,Regular,
-TXN00224,CUST0184,Vikram Chowdhury,2425.13,INR,Credit Card,2026-08-20 10:54:02,Success,,Regular Customer,0,Premium,
-TXN00249,CUST0116,Ishita Rao,2589.64,INR,Netbanking,2026-08-20 11:49:13,Success,,Loyal Customer,0,New,
-TXN00063,CUST0122,Kavya Pillai,462.29,INR,UPI,2026-08-20 19:42:46,Failed,Authentication Failure,New Customer,1,New,1.0
-TXN00589,CUST0050,Kunal Iyer,3154.81,INR,UPI,2026-08-20 19:48:44,Failed,Unknown Error,Regular Customer,1,Regular,1.0
-TXN00163,CUST0133,Rajesh Kulkarni,1799.31,INR,Netbanking,2026-08-21 01:26:34,Failed,Unknown Error,Occasional Buyer,0,New,0.0
-TXN00057,CUST0114,Karthik Patel,1259.45,INR,UPI,2026-08-21 04:02:46,Success,,Regular Customer,0,Regular,
-TXN00271,CUST0069,Kunal Kulkarni,4414.72,INR,Debit Card,2026-08-21 05:54:03,Success,,Regular Customer,0,Regular,
-TXN00454,CUST0061,Suresh Malhotra,6988.51,INR,Credit Card,2026-08-21 06:41:34,Success,,Loyal Customer,0,Premium,
-TXN00458,CUST0033,Rohan Rao,1130.73,INR,UPI,2026-08-21 08:10:14,Failed,Authentication Failure,Regular Customer,0,Regular,0.0
-TXN00101,CUST0215,Suresh Pillai,384.05,INR,UPI,2026-08-21 10:41:19,Success,,New Customer,0,New,
-TXN00370,CUST0072,Tanvi Kapoor,564.64,INR,UPI,2026-08-21 10:56:04,Success,,Occasional Buyer,0,New,
-TXN00131,CUST0048,Simran Iyer,851.62,INR,Debit Card,2026-08-21 11:22:41,Success,,Occasional Buyer,0,Regular,
-TXN00438,CUST0058,Karthik Malhotra,2724.25,INR,UPI,2026-08-21 17:32:06,Success,,Loyal Customer,0,Premium,
-TXN00280,CUST0211,Anjali Bose,712.52,INR,UPI,2026-08-22 03:12:53,Failed,Card Declined,New Customer,2,New,0.0
-TXN00292,CUST0108,Meera Bose,667.94,INR,UPI,2026-08-22 05:28:00,Failed,Card Declined,Occasional Buyer,1,New,0.0
-TXN00302,CUST0109,Anjali Rao,641.55,INR,Debit Card,2026-08-22 08:40:07,Success,,New Customer,0,New,
-TXN00627,CUST0168,Siddharth Patel,1159.47,INR,Netbanking,2026-08-22 11:07:47,Failed,Unknown Error,Regular Customer,0,Regular,0.0
-TXN00440,CUST0097,Meera Singh,5282.88,INR,UPI,2026-08-22 12:14:09,Success,,Regular Customer,0,Premium,
-TXN00459,CUST0082,Nikhil Agarwal,1473.64,INR,Netbanking,2026-08-22 19:29:13,Success,,Loyal Customer,0,Regular,
-TXN00237,CUST0005,Kunal Singh,656.01,INR,UPI,2026-08-22 19:59:31,Success,,Regular Customer,0,Regular,
-TXN00606,CUST0019,Sneha Singh,5609.62,INR,UPI,2026-08-23 01:26:45,Failed,Authentication Failure,Loyal Customer,1,Regular,1.0
-TXN00378,CUST0110,Rajesh Gupta,2210.2,INR,UPI,2026-08-23 01:53:32,Success,,Occasional Buyer,0,Regular,
-TXN00229,CUST0016,Riya Patel,1348.28,INR,Wallet,2026-08-23 09:30:22,Failed,Card Declined,Occasional Buyer,2,Regular,0.0
-TXN00053,CUST0135,Meera Chowdhury,1377.04,INR,UPI,2026-08-23 09:39:29,Success,,Loyal Customer,0,Regular,
-TXN00346,CUST0179,Rahul Desai,1031.98,INR,UPI,2026-08-23 11:46:35,Failed,Unknown Error,New Customer,2,New,0.0
-TXN00145,CUST0071,Manish Chowdhury,2305.23,INR,Debit Card,2026-08-23 19:03:02,Success,,Occasional Buyer,0,Regular,
-TXN00475,CUST0214,Sneha Iyer,4938.08,INR,UPI,2026-08-24 01:24:08,Failed,Insufficient Funds,Regular Customer,1,Regular,1.0
-TXN00017,CUST0008,Ananya Chowdhury,3273.4,INR,UPI,2026-08-24 02:59:59,Success,,Regular Customer,0,Premium,
-TXN00570,CUST0065,Preeti Gupta,727.12,INR,UPI,2026-08-24 03:03:51,Failed,Network Failure,New Customer,1,New,1.0
-TXN00452,CUST0151,Kavya Gupta,1592.54,INR,UPI,2026-08-24 06:24:45,Success,,Occasional Buyer,0,New,
-TXN00415,CUST0208,Rohan Gupta,1095.96,INR,Debit Card,2026-08-24 09:29:31,Success,,New Customer,0,New,
-TXN00176,CUST0056,Rohan Verma,8213.97,INR,Credit Card,2026-08-24 18:09:31,Success,,Loyal Customer,0,Premium,
-TXN00569,CUST0007,Divya Iyer,714.13,INR,UPI,2026-08-24 18:22:46,Failed,Authentication Failure,Occasional Buyer,0,Regular,1.0
-TXN00052,CUST0005,Kunal Singh,1616.8,INR,UPI,2026-08-24 20:56:01,Success,,Regular Customer,0,Regular,
-TXN00238,CUST0115,Radhika Kapoor,1004.13,INR,Credit Card,2026-08-25 01:13:44,Success,,Occasional Buyer,0,New,
-TXN00446,CUST0216,Priya Mehta,7591.89,INR,Credit Card,2026-08-25 05:27:21,Failed,Insufficient Funds,Regular Customer,2,Premium,0.0
-TXN00445,CUST0077,Meera Mehta,410.48,INR,UPI,2026-08-25 06:37:25,Success,,Occasional Buyer,0,New,
-TXN00468,CUST0085,Manish Gupta,1414.46,INR,Debit Card,2026-08-25 09:37:14,Success,,New Customer,0,New,
-TXN00119,CUST0036,Kavya Joshi,3746.41,INR,Netbanking,2026-08-25 15:39:47,Success,,Regular Customer,0,Regular,
-TXN00528,CUST0026,Kavya Nair,2051.75,INR,Debit Card,2026-08-26 02:53:52,Success,,Regular Customer,0,Regular,
-TXN00588,CUST0131,Pooja Patel,1252.11,INR,Credit Card,2026-08-26 03:06:41,Success,,Occasional Buyer,0,Regular,
-TXN00585,CUST0160,Riya Mehta,2208.41,INR,UPI,2026-08-26 04:00:12,Success,,Regular Customer,0,Regular,
-TXN00114,CUST0043,Shreya Pillai,7744.85,INR,Debit Card,2026-08-26 07:16:39,Success,,Regular Customer,0,Regular,
-TXN00098,CUST0149,Kavya Kulkarni,1050.09,INR,Credit Card,2026-08-26 08:41:34,Success,,New Customer,0,New,
-TXN00645,CUST0108,Meera Bose,774.76,INR,UPI,2026-08-26 11:36:31,Success,,Occasional Buyer,0,New,
-TXN00523,CUST0105,Swati Sharma,603.31,INR,UPI,2026-08-26 12:16:32,Success,,New Customer,0,New,
-TXN00258,CUST0095,Rohan Chowdhury,587.22,INR,UPI,2026-08-26 12:47:58,Success,,Occasional Buyer,0,New,
-TXN00634,CUST0035,Preeti Sharma,1580.06,INR,Debit Card,2026-08-26 13:09:15,Failed,Insufficient Funds,Occasional Buyer,3,Regular,0.0
-TXN00206,CUST0186,Meera Patel,511.48,INR,Netbanking,2026-08-26 22:41:33,Success,,Occasional Buyer,0,New,
-TXN00039,CUST0030,Riya Kapoor,962.46,INR,UPI,2026-08-27 03:24:00,Success,,Regular Customer,0,Regular,
-TXN00304,CUST0178,Siddharth Rao,2795.32,INR,UPI,2026-08-27 05:24:31,Success,,Loyal Customer,0,Regular,
-TXN00515,CUST0183,Sneha Menon,1455.02,INR,Debit Card,2026-08-27 05:58:44,Success,,Occasional Buyer,0,Regular,
-TXN00467,CUST0175,Siddharth Kapoor,1297.9,INR,Debit Card,2026-08-27 06:43:44,Success,,New Customer,0,New,
-TXN00207,CUST0215,Suresh Pillai,1222.95,INR,UPI,2026-08-27 06:46:21,Success,,New Customer,0,New,
-TXN00333,CUST0064,Varun Verma,2083.27,INR,UPI,2026-08-27 08:41:34,Failed,Bank Server Issue,New Customer,0,Regular,0.0
-TXN00383,CUST0046,Sneha Singh,621.33,INR,Wallet,2026-08-27 12:26:52,Success,,New Customer,0,Regular,
-TXN00148,CUST0099,Riya Joshi,406.56,INR,Wallet,2026-08-27 14:20:57,Failed,Expired Card,New Customer,1,New,0.0
-TXN00474,CUST0135,Meera Chowdhury,4237.72,INR,Netbanking,2026-08-27 22:38:39,Success,,Loyal Customer,0,Regular,
-TXN00447,CUST0123,Preeti Desai,1118.74,INR,UPI,2026-08-27 23:51:12,Failed,Card Declined,New Customer,0,New,0.0
-TXN00299,CUST0175,Siddharth Kapoor,1462.23,INR,Debit Card,2026-08-28 09:07:32,Success,,New Customer,0,New,
-TXN00309,CUST0039,Sanjay Nair,2699.72,INR,UPI,2026-08-28 09:53:44,Failed,Card Declined,Loyal Customer,3,Regular,1.0
-TXN00167,CUST0107,Nisha Mehta,3140.49,INR,Credit Card,2026-08-28 10:27:05,Success,,Loyal Customer,0,Regular,
-TXN00491,CUST0175,Siddharth Kapoor,893.56,INR,UPI,2026-08-28 16:10:51,Success,,New Customer,0,New,
-TXN00187,CUST0077,Meera Mehta,1192.66,INR,Credit Card,2026-08-29 05:43:48,Failed,Insufficient Funds,Occasional Buyer,1,New,0.0
-TXN00391,CUST0215,Suresh Pillai,523.72,INR,Debit Card,2026-08-30 04:30:58,Failed,Network Failure,New Customer,2,New,0.0
-TXN00211,CUST0066,Neha Patel,1264.63,INR,Debit Card,2026-08-30 04:35:32,Success,,New Customer,0,New,
-TXN00354,CUST0175,Siddharth Kapoor,815.69,INR,Credit Card,2026-08-30 04:49:39,Success,,New Customer,0,New,
-TXN00233,CUST0187,Kunal Mehta,5556.85,INR,Wallet,2026-08-30 17:08:46,Success,,Occasional Buyer,0,Premium,
-TXN00227,CUST0102,Amit Reddy,2070.1,INR,UPI,2026-08-31 00:15:07,Success,,Loyal Customer,0,Regular,
-TXN00004,CUST0202,Varun Mehta,2239.07,INR,Credit Card,2026-08-31 02:36:59,Success,,New Customer,0,New,
-TXN00267,CUST0169,Kiran Singh,2390.95,INR,Credit Card,2026-08-31 11:41:45,Success,,New Customer,0,New,
-TXN00649,CUST0049,Abhishek Kulkarni,1759.85,INR,UPI,2026-08-31 13:21:44,Success,,Regular Customer,0,Regular,
+TXN00534,CUST0043,Shreya Pillai,1026.53,INR,UPI,2026-06-04 12:07:19,Success,,Regular Customer,0,Regular,
+TXN00228,CUST0012,Shreya Kulkarni,3168.86,INR,Credit Card,2026-06-04 12:18:30,Success,,Loyal Customer,0,Premium,
+TXN00451,CUST0145,Manish Patel,1930.48,INR,UPI,2026-06-04 13:30:28,Failed,Card Declined,Loyal Customer,1,Regular,0.0
+TXN00191,CUST0063,Sneha Kulkarni,686.83,INR,UPI,2026-06-04 13:59:17,Failed,Expired Card,New Customer,1,New,0.0
+TXN00520,CUST0070,Manish Iyer,3020.76,INR,Debit Card,2026-06-04 14:58:51,Success,,Occasional Buyer,0,Regular,
+TXN00272,CUST0118,Vikram Pillai,379.36,INR,Credit Card,2026-06-04 18:12:36,Failed,Authentication Failure,New Customer,0,New,0.0
+TXN00038,CUST0163,Ananya Menon,2038.9,INR,Netbanking,2026-06-04 20:59:21,Success,,Loyal Customer,0,Premium,
+TXN00419,CUST0152,Priya Rao,9795.21,INR,UPI,2026-06-04 22:47:28,Success,,Occasional Buyer,0,Premium,
+TXN00108,CUST0080,Kiran Nair,997.0,INR,Wallet,2026-06-05 00:15:27,Failed,Authentication Failure,Regular Customer,0,New,0.0
+TXN00269,CUST0005,Kunal Singh,1568.66,INR,Credit Card,2026-06-05 01:39:49,Success,,Regular Customer,0,Regular,
+TXN00041,CUST0095,Rohan Chowdhury,1398.39,INR,Debit Card,2026-06-05 05:39:17,Success,,Occasional Buyer,0,New,
+TXN00647,CUST0190,Radhika Reddy,178.02,INR,Netbanking,2026-06-05 06:57:46,Failed,Insufficient Funds,Occasional Buyer,1,New,1.0
+TXN00155,CUST0218,Aditya Reddy,1070.46,INR,UPI,2026-06-05 09:12:17,Failed,Card Declined,New Customer,0,New,0.0
+TXN00362,CUST0156,Amit Joshi,4642.49,INR,UPI,2026-06-05 10:57:48,Success,,Regular Customer,0,Regular,
+TXN00350,CUST0110,Rajesh Gupta,1776.86,INR,UPI,2026-06-05 14:47:23,Success,,Occasional Buyer,0,Regular,
+TXN00071,CUST0156,Amit Joshi,2437.6,INR,Wallet,2026-06-05 19:43:27,Failed,Card Declined,Regular Customer,2,Regular,0.0
+TXN00143,CUST0184,Vikram Chowdhury,2431.49,INR,Credit Card,2026-06-06 02:08:56,Success,,Regular Customer,0,Premium,
+TXN00277,CUST0059,Anjali Verma,2229.39,INR,UPI,2026-06-06 06:37:22,Success,,Occasional Buyer,0,Regular,
+TXN00470,CUST0126,Harsh Pillai,1455.78,INR,Netbanking,2026-06-06 13:33:46,Success,,Occasional Buyer,0,Regular,
+TXN00056,CUST0217,Meera Desai,3334.92,INR,UPI,2026-06-06 13:55:03,Success,,Regular Customer,0,Regular,
+TXN00537,CUST0092,Ishita Gupta,1244.85,INR,Credit Card,2026-06-06 14:44:38,Success,,Loyal Customer,0,Regular,
+TXN00619,CUST0207,Ananya Agarwal,2603.35,INR,Wallet,2026-06-06 16:01:30,Success,,Loyal Customer,0,Regular,
+TXN00278,CUST0012,Shreya Kulkarni,4023.44,INR,Wallet,2026-06-06 20:11:42,Success,,Loyal Customer,0,Premium,
+TXN00401,CUST0024,Lakshmi Chowdhury,344.93,INR,UPI,2026-06-06 21:03:47,Success,,Occasional Buyer,0,New,
+TXN00153,CUST0114,Karthik Patel,1374.69,INR,Wallet,2026-06-06 21:37:22,Success,,Regular Customer,0,Regular,
+TXN00261,CUST0141,Abhishek Sharma,514.83,INR,Debit Card,2026-06-06 22:16:38,Failed,Authentication Failure,New Customer,3,New,0.0
+TXN00638,CUST0131,Pooja Patel,2080.42,INR,UPI,2026-06-06 22:27:47,Success,,Occasional Buyer,0,Regular,
+TXN00501,CUST0050,Kunal Iyer,3325.57,INR,Credit Card,2026-06-06 23:52:59,Success,,Regular Customer,0,Regular,
+TXN00453,CUST0108,Meera Bose,496.99,INR,Wallet,2026-06-07 03:16:29,Success,,Occasional Buyer,0,New,
+TXN00372,CUST0196,Siddharth Malhotra,2627.79,INR,Netbanking,2026-06-07 09:24:12,Failed,Network Failure,Regular Customer,2,Regular,0.0
+TXN00339,CUST0220,Riya Malhotra,6677.28,INR,Credit Card,2026-06-07 13:27:14,Failed,Authentication Failure,Regular Customer,1,Premium,1.0
+TXN00146,CUST0104,Rajesh Kulkarni,3071.75,INR,UPI,2026-06-07 15:48:42,Success,,Regular Customer,0,Regular,
+TXN00321,CUST0118,Vikram Pillai,951.65,INR,Credit Card,2026-06-07 20:48:59,Success,,New Customer,0,New,
+TXN00226,CUST0015,Shreya Gupta,1725.67,INR,Credit Card,2026-06-07 21:12:25,Success,,Occasional Buyer,0,New,
+TXN00147,CUST0037,Meera Singh,2926.39,INR,Netbanking,2026-06-08 01:56:25,Failed,Insufficient Funds,Loyal Customer,2,Premium,1.0
+TXN00301,CUST0204,Riya Kulkarni,3588.55,INR,Debit Card,2026-06-08 04:09:57,Failed,Card Declined,Loyal Customer,0,Premium,1.0
+TXN00556,CUST0012,Shreya Kulkarni,4420.74,INR,Wallet,2026-06-08 07:25:29,Failed,Bank Server Issue,Loyal Customer,1,Premium,1.0
+TXN00078,CUST0029,Rahul Reddy,750.39,INR,UPI,2026-06-08 07:34:56,Success,,Occasional Buyer,0,New,
+TXN00644,CUST0001,Riya Singh,874.17,INR,Netbanking,2026-06-08 09:37:29,Success,,New Customer,0,Regular,
+TXN00264,CUST0020,Anjali Menon,3254.54,INR,Wallet,2026-06-08 11:45:11,Success,,Loyal Customer,0,Premium,
+TXN00567,CUST0150,Manish Joshi,1960.47,INR,Credit Card,2026-06-09 01:11:12,Success,,Regular Customer,0,Premium,
+TXN00065,CUST0032,Manish Bose,8153.99,INR,UPI,2026-06-09 01:23:08,Success,,Loyal Customer,0,Premium,
+TXN00266,CUST0016,Riya Patel,1005.98,INR,Credit Card,2026-06-09 08:26:01,Success,,Occasional Buyer,0,Regular,
+TXN00433,CUST0023,Kiran Desai,763.84,INR,Netbanking,2026-06-09 09:15:21,Success,,New Customer,0,New,
+TXN00352,CUST0065,Preeti Gupta,2175.93,INR,UPI,2026-06-09 09:36:47,Failed,Card Declined,New Customer,0,New,0.0
+TXN00374,CUST0156,Amit Joshi,3386.66,INR,UPI,2026-06-09 09:56:45,Success,,Regular Customer,0,Regular,
+TXN00051,CUST0205,Harsh Bose,1090.56,INR,UPI,2026-06-09 10:55:32,Failed,Card Declined,Occasional Buyer,2,New,0.0
+TXN00028,CUST0159,Tanvi Nair,1124.87,INR,UPI,2026-06-09 14:58:00,Success,,Loyal Customer,0,New,
+TXN00107,CUST0086,Swati Desai,5638.66,INR,UPI,2026-06-09 15:08:10,Success,,Regular Customer,0,Regular,
+TXN00025,CUST0180,Sneha Desai,647.66,INR,UPI,2026-06-10 00:23:52,Failed,Network Failure,New Customer,2,New,0.0
+TXN00005,CUST0215,Suresh Pillai,780.17,INR,Credit Card,2026-06-10 03:48:51,Success,,New Customer,0,New,
+TXN00055,CUST0158,Kunal Agarwal,3522.94,INR,UPI,2026-06-10 04:58:20,Failed,Network Failure,New Customer,0,Regular,0.0
+TXN00106,CUST0099,Riya Joshi,1144.17,INR,UPI,2026-06-10 07:55:50,Success,,New Customer,0,New,
+TXN00541,CUST0064,Varun Verma,3164.12,INR,Credit Card,2026-06-10 09:20:23,Failed,Authentication Failure,New Customer,1,Regular,0.0
+TXN00584,CUST0211,Anjali Bose,3506.65,INR,Debit Card,2026-06-10 10:18:26,Failed,Card Declined,New Customer,0,New,0.0
+TXN00517,CUST0013,Aditya Rao,1212.63,INR,Debit Card,2026-06-10 10:42:20,Failed,Insufficient Funds,New Customer,1,New,1.0
+TXN00009,CUST0099,Riya Joshi,677.44,INR,Wallet,2026-06-10 15:31:29,Success,,New Customer,0,New,
+TXN00565,CUST0034,Siddharth Nair,9903.14,INR,Wallet,2026-06-10 16:27:39,Success,,Regular Customer,0,Premium,
+TXN00650,CUST0134,Abhishek Chowdhury,7693.29,INR,UPI,2026-06-10 17:27:57,Success,,New Customer,0,Premium,
+TXN00166,CUST0198,Karthik Rao,6676.78,INR,Credit Card,2026-06-10 17:39:44,Success,,Occasional Buyer,0,Premium,
+TXN00489,CUST0067,Ishita Chowdhury,5053.96,INR,Debit Card,2026-06-10 20:51:56,Failed,Expired Card,Regular Customer,0,Regular,1.0
+TXN00139,CUST0200,Anjali Menon,1462.8,INR,UPI,2026-06-10 22:04:19,Failed,Authentication Failure,Occasional Buyer,1,New,1.0
+TXN00256,CUST0098,Anjali Kapoor,671.46,INR,Credit Card,2026-06-10 23:04:01,Failed,Card Declined,Occasional Buyer,3,New,0.0
+TXN00626,CUST0146,Sneha Joshi,1508.44,INR,UPI,2026-06-10 23:46:06,Success,,Regular Customer,0,Regular,
+TXN00549,CUST0131,Pooja Patel,2450.7,INR,Credit Card,2026-06-11 02:35:49,Success,,Occasional Buyer,0,Regular,
+TXN00177,CUST0153,Rajesh Chowdhury,2012.54,INR,Netbanking,2026-06-11 03:07:13,Success,,Loyal Customer,0,Regular,
+TXN00060,CUST0030,Riya Kapoor,3417.11,INR,Netbanking,2026-06-11 06:03:37,Success,,Regular Customer,0,Regular,
+TXN00592,CUST0190,Radhika Reddy,674.12,INR,Debit Card,2026-06-11 12:36:45,Success,,Occasional Buyer,0,New,
+TXN00357,CUST0193,Deepak Mehta,887.93,INR,Netbanking,2026-06-11 15:11:17,Failed,Network Failure,New Customer,1,New,1.0
+TXN00480,CUST0055,Vikram Pillai,1757.67,INR,Netbanking,2026-06-11 18:10:58,Success,,New Customer,0,New,
+TXN00484,CUST0079,Rohan Nair,2234.8,INR,Debit Card,2026-06-11 20:00:47,Success,,Regular Customer,0,Regular,
+TXN00601,CUST0037,Meera Singh,7930.68,INR,UPI,2026-06-11 23:34:19,Success,,Loyal Customer,0,Premium,
+TXN00209,CUST0073,Rahul Pillai,7027.06,INR,Credit Card,2026-06-12 05:46:04,Success,,Loyal Customer,0,Premium,
+TXN00596,CUST0031,Tanvi Sharma,661.16,INR,Credit Card,2026-06-12 08:30:01,Failed,Authentication Failure,New Customer,0,New,0.0
+TXN00306,CUST0157,Vikram Bose,2131.39,INR,UPI,2026-06-12 09:32:02,Success,,Regular Customer,0,Regular,
+TXN00274,CUST0142,Tanvi Gupta,903.38,INR,Credit Card,2026-06-12 10:19:51,Success,,New Customer,0,New,
+TXN00073,CUST0018,Kiran Singh,1959.21,INR,UPI,2026-06-12 11:06:11,Failed,Expired Card,Occasional Buyer,1,Regular,0.0
+TXN00305,CUST0208,Rohan Gupta,886.66,INR,Credit Card,2026-06-12 13:04:51,Failed,Card Declined,New Customer,2,New,1.0
+TXN00021,CUST0037,Meera Singh,11303.01,INR,UPI,2026-06-12 19:14:02,Success,,Loyal Customer,0,Premium,
+TXN00319,CUST0126,Harsh Pillai,2388.19,INR,Credit Card,2026-06-12 21:23:51,Success,,Occasional Buyer,0,Regular,
+TXN00488,CUST0087,Divya Desai,469.22,INR,Wallet,2026-06-12 21:49:29,Success,,New Customer,0,New,
+TXN00324,CUST0109,Anjali Rao,3150.87,INR,UPI,2026-06-13 05:33:08,Success,,New Customer,0,New,
+TXN00365,CUST0029,Rahul Reddy,1358.43,INR,UPI,2026-06-13 07:36:40,Failed,Bank Server Issue,Occasional Buyer,0,New,1.0
+TXN00046,CUST0170,Simran Pillai,1344.91,INR,UPI,2026-06-13 07:43:42,Success,,Regular Customer,0,Regular,
+TXN00575,CUST0114,Karthik Patel,3153.2,INR,Netbanking,2026-06-13 09:33:59,Success,,Regular Customer,0,Regular,
+TXN00188,CUST0186,Meera Patel,859.46,INR,Netbanking,2026-06-13 10:57:25,Success,,Occasional Buyer,0,New,
+TXN00614,CUST0005,Kunal Singh,1075.97,INR,Netbanking,2026-06-13 11:07:21,Success,,Regular Customer,0,Regular,
+TXN00613,CUST0051,Gaurav Malhotra,1062.08,INR,UPI,2026-06-13 12:46:15,Success,,Occasional Buyer,0,New,
+TXN00358,CUST0090,Ishita Reddy,4701.66,INR,Debit Card,2026-06-13 15:29:53,Success,,Regular Customer,0,Premium,
+TXN00315,CUST0060,Rajesh Menon,1965.08,INR,Debit Card,2026-06-13 16:42:09,Failed,Network Failure,New Customer,1,New,0.0
+TXN00590,CUST0017,Ishita Gupta,1247.82,INR,UPI,2026-06-13 17:44:54,Success,,Occasional Buyer,0,Regular,
+TXN00265,CUST0106,Siddharth Joshi,1739.04,INR,UPI,2026-06-13 18:24:47,Failed,Insufficient Funds,Loyal Customer,0,Regular,1.0
+TXN00516,CUST0066,Neha Patel,1412.67,INR,Debit Card,2026-06-14 11:45:21,Success,,New Customer,0,New,
+TXN00075,CUST0014,Rohan Chowdhury,1465.76,INR,UPI,2026-06-14 11:47:55,Success,,Loyal Customer,0,Premium,
+TXN00500,CUST0150,Manish Joshi,2720.58,INR,Credit Card,2026-06-14 12:34:47,Success,,Regular Customer,0,Premium,
+TXN00521,CUST0027,Swati Mehta,797.78,INR,Credit Card,2026-06-14 14:16:24,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
+TXN00531,CUST0092,Ishita Gupta,2839.05,INR,Netbanking,2026-06-14 19:45:20,Success,,Loyal Customer,0,Regular,
+TXN00093,CUST0145,Manish Patel,1358.14,INR,Debit Card,2026-06-14 21:45:16,Success,,Loyal Customer,0,Regular,
+TXN00129,CUST0062,Kiran Agarwal,2110.77,INR,UPI,2026-06-15 02:37:47,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
+TXN00085,CUST0084,Amit Sharma,1280.91,INR,UPI,2026-06-15 02:44:18,Success,,Loyal Customer,0,Regular,
+TXN00461,CUST0004,Kiran Iyer,2918.53,INR,Debit Card,2026-06-15 07:22:47,Success,,Occasional Buyer,0,New,
+TXN00181,CUST0072,Tanvi Kapoor,1306.88,INR,Netbanking,2026-06-15 08:14:03,Failed,Unknown Error,Occasional Buyer,1,New,0.0
+TXN00058,CUST0017,Ishita Gupta,1685.69,INR,UPI,2026-06-15 09:02:11,Success,,Occasional Buyer,0,Regular,
+TXN00037,CUST0144,Rajesh Menon,1017.72,INR,UPI,2026-06-15 18:02:48,Success,,Occasional Buyer,0,New,
+TXN00185,CUST0082,Nikhil Agarwal,1767.1,INR,UPI,2026-06-15 20:52:54,Success,,Loyal Customer,0,Regular,
+TXN00192,CUST0053,Rohan Singh,1500.93,INR,UPI,2026-06-16 03:09:27,Success,,Occasional Buyer,0,New,
+TXN00441,CUST0024,Lakshmi Chowdhury,1130.53,INR,UPI,2026-06-16 03:33:46,Success,,Occasional Buyer,0,New,
+TXN00283,CUST0088,Kiran Nair,2325.31,INR,Credit Card,2026-06-16 07:40:20,Failed,Authentication Failure,New Customer,0,New,1.0
+TXN00335,CUST0151,Kavya Gupta,1611.74,INR,Debit Card,2026-06-16 09:01:31,Success,,Occasional Buyer,0,New,
+TXN00070,CUST0197,Divya Menon,609.68,INR,Debit Card,2026-06-16 09:23:12,Success,,New Customer,0,New,
+TXN00630,CUST0048,Simran Iyer,3647.53,INR,UPI,2026-06-16 14:17:42,Success,,Occasional Buyer,0,Regular,
+TXN00576,CUST0151,Kavya Gupta,238.25,INR,Credit Card,2026-06-16 17:08:24,Success,,Occasional Buyer,0,New,
+TXN00295,CUST0035,Preeti Sharma,2431.73,INR,UPI,2026-06-16 17:17:59,Success,,Occasional Buyer,0,Regular,
+TXN00220,CUST0123,Preeti Desai,943.05,INR,UPI,2026-06-16 23:35:24,Failed,Network Failure,New Customer,1,New,1.0
+TXN00636,CUST0022,Tanvi Nair,332.65,INR,UPI,2026-06-17 03:09:02,Success,,New Customer,0,New,
+TXN00128,CUST0141,Abhishek Sharma,639.2,INR,Wallet,2026-06-17 05:12:09,Failed,Authentication Failure,New Customer,0,New,1.0
+TXN00548,CUST0001,Riya Singh,1787.06,INR,Netbanking,2026-06-17 08:31:35,Success,,New Customer,0,Regular,
+TXN00104,CUST0199,Suresh Pillai,1285.3,INR,UPI,2026-06-17 11:53:36,Success,,Loyal Customer,0,Regular,
+TXN00323,CUST0131,Pooja Patel,1274.08,INR,UPI,2026-06-17 15:00:23,Success,,Occasional Buyer,0,Regular,
+TXN00113,CUST0197,Divya Menon,930.89,INR,Credit Card,2026-06-17 23:42:10,Failed,Insufficient Funds,New Customer,2,New,0.0
+TXN00490,CUST0220,Riya Malhotra,8440.69,INR,Debit Card,2026-06-18 00:41:58,Success,,Regular Customer,0,Premium,
+TXN00097,CUST0219,Divya Agarwal,2351.64,INR,UPI,2026-06-18 04:26:55,Success,,Occasional Buyer,0,Regular,
+TXN00002,CUST0038,Ananya Patel,826.37,INR,UPI,2026-06-18 04:29:29,Success,,Regular Customer,0,New,
+TXN00059,CUST0183,Sneha Menon,2397.53,INR,UPI,2026-06-18 05:18:14,Failed,Expired Card,Occasional Buyer,1,Regular,0.0
+TXN00648,CUST0220,Riya Malhotra,5286.19,INR,UPI,2026-06-18 05:47:00,Success,,Regular Customer,0,Premium,
+TXN00615,CUST0149,Kavya Kulkarni,3895.01,INR,UPI,2026-06-18 17:43:59,Success,,New Customer,0,New,
+TXN00201,CUST0036,Kavya Joshi,2432.76,INR,UPI,2026-06-18 18:41:56,Failed,Network Failure,Regular Customer,1,Regular,1.0
+TXN00511,CUST0027,Swati Mehta,2318.68,INR,UPI,2026-06-18 21:07:56,Failed,Authentication Failure,Regular Customer,0,Regular,1.0
+TXN00010,CUST0010,Sanjay Reddy,7124.39,INR,UPI,2026-06-18 22:04:28,Success,,Loyal Customer,0,Premium,
+TXN00360,CUST0036,Kavya Joshi,1267.78,INR,Debit Card,2026-06-18 23:58:08,Success,,Regular Customer,0,Regular,
+TXN00251,CUST0019,Sneha Singh,998.76,INR,UPI,2026-06-19 06:20:02,Success,,Loyal Customer,0,Regular,
+TXN00135,CUST0161,Harsh Pillai,3429.91,INR,UPI,2026-06-19 22:05:36,Failed,Card Declined,Regular Customer,0,Premium,0.0
+TXN00285,CUST0111,Kiran Sharma,6458.6,INR,UPI,2026-06-19 23:49:29,Failed,Network Failure,Occasional Buyer,2,Regular,0.0
+TXN00092,CUST0194,Suresh Rao,3404.16,INR,Credit Card,2026-06-20 02:19:51,Success,,New Customer,0,Regular,
+TXN00189,CUST0068,Ishita Kulkarni,540.19,INR,Wallet,2026-06-20 07:01:04,Failed,Insufficient Funds,Regular Customer,1,New,0.0
+TXN00381,CUST0066,Neha Patel,542.49,INR,Debit Card,2026-06-20 14:11:10,Failed,Expired Card,New Customer,0,New,0.0
+TXN00493,CUST0010,Sanjay Reddy,5645.9,INR,Credit Card,2026-06-20 16:54:05,Success,,Loyal Customer,0,Premium,
+TXN00205,CUST0197,Divya Menon,392.84,INR,UPI,2026-06-20 18:26:30,Success,,New Customer,0,New,
+TXN00297,CUST0163,Ananya Menon,8516.83,INR,Credit Card,2026-06-20 18:48:48,Success,,Loyal Customer,0,Premium,
+TXN00083,CUST0020,Anjali Menon,11372.43,INR,Netbanking,2026-06-21 01:37:00,Success,,Loyal Customer,0,Premium,
+TXN00455,CUST0183,Sneha Menon,1492.72,INR,UPI,2026-06-21 04:48:13,Success,,Occasional Buyer,0,Regular,
+TXN00198,CUST0071,Manish Chowdhury,2174.49,INR,UPI,2026-06-21 05:45:50,Success,,Occasional Buyer,0,Regular,
+TXN00539,CUST0174,Riya Rao,1642.17,INR,Credit Card,2026-06-21 06:33:30,Failed,Unknown Error,Occasional Buyer,3,New,0.0
+TXN00241,CUST0188,Preeti Chowdhury,1292.22,INR,Credit Card,2026-06-21 07:45:23,Success,,Regular Customer,0,Regular,
+TXN00437,CUST0026,Kavya Nair,4893.87,INR,Netbanking,2026-06-21 09:41:16,Success,,Regular Customer,0,Regular,
+TXN00430,CUST0147,Amit Sharma,312.55,INR,UPI,2026-06-21 11:09:57,Failed,Card Declined,New Customer,2,New,0.0
+TXN00380,CUST0015,Shreya Gupta,552.81,INR,Credit Card,2026-06-21 16:03:46,Success,,Occasional Buyer,0,New,
+TXN00366,CUST0082,Nikhil Agarwal,1602.51,INR,UPI,2026-06-22 01:18:36,Success,,Loyal Customer,0,Regular,
+TXN00503,CUST0088,Kiran Nair,387.94,INR,UPI,2026-06-22 02:38:47,Failed,Bank Server Issue,New Customer,0,New,1.0
+TXN00635,CUST0104,Rajesh Kulkarni,1145.21,INR,Credit Card,2026-06-22 09:12:07,Failed,Authentication Failure,Regular Customer,2,Regular,1.0
+TXN00151,CUST0128,Deepak Patel,2293.35,INR,Credit Card,2026-06-22 14:16:28,Failed,Card Declined,Occasional Buyer,1,Regular,0.0
+TXN00602,CUST0003,Ananya Iyer,1203.28,INR,Credit Card,2026-06-22 15:08:03,Failed,Insufficient Funds,New Customer,1,Regular,0.0
+TXN00571,CUST0158,Kunal Agarwal,2018.54,INR,Netbanking,2026-06-22 18:09:13,Success,,New Customer,0,Regular,
+TXN00082,CUST0181,Simran Reddy,1112.39,INR,UPI,2026-06-22 22:52:54,Failed,Bank Server Issue,Regular Customer,0,New,1.0
+TXN00314,CUST0142,Tanvi Gupta,1462.8,INR,UPI,2026-06-23 01:30:38,Success,,New Customer,0,New,
+TXN00244,CUST0161,Harsh Pillai,8373.92,INR,Debit Card,2026-06-23 04:01:55,Failed,Card Declined,Regular Customer,1,Premium,1.0
+TXN00327,CUST0050,Kunal Iyer,3778.04,INR,Debit Card,2026-06-23 04:23:21,Success,,Regular Customer,0,Regular,
+TXN00064,CUST0016,Riya Patel,1034.93,INR,Credit Card,2026-06-23 06:26:13,Success,,Occasional Buyer,0,Regular,
+TXN00427,CUST0167,Vivek Menon,1175.32,INR,UPI,2026-06-23 08:19:53,Success,,Occasional Buyer,0,Regular,
+TXN00574,CUST0176,Neha Iyer,787.25,INR,UPI,2026-06-23 11:56:44,Failed,Card Declined,New Customer,1,New,0.0
+TXN00048,CUST0053,Rohan Singh,1693.03,INR,UPI,2026-06-23 17:31:45,Success,,Occasional Buyer,0,New,
+TXN00255,CUST0102,Amit Reddy,866.4,INR,Netbanking,2026-06-23 21:41:47,Success,,Loyal Customer,0,Regular,
+TXN00580,CUST0126,Harsh Pillai,3748.33,INR,Debit Card,2026-06-23 23:01:27,Failed,Authentication Failure,Occasional Buyer,1,Regular,0.0
+TXN00605,CUST0193,Deepak Mehta,1150.63,INR,Wallet,2026-06-24 02:46:51,Success,,New Customer,0,New,
+TXN00412,CUST0064,Varun Verma,1076.47,INR,Debit Card,2026-06-24 10:41:52,Success,,New Customer,0,Regular,
+TXN00239,CUST0103,Varun Malhotra,1388.55,INR,Credit Card,2026-06-24 17:53:50,Success,,Occasional Buyer,0,Regular,
+TXN00444,CUST0105,Swati Sharma,851.1,INR,Debit Card,2026-06-24 19:38:41,Success,,New Customer,0,New,
+TXN00154,CUST0182,Harsh Agarwal,6100.51,INR,UPI,2026-06-24 20:33:31,Success,,Loyal Customer,0,Premium,
+TXN00600,CUST0035,Preeti Sharma,2459.01,INR,Debit Card,2026-06-24 20:43:36,Success,,Occasional Buyer,0,Regular,
+TXN00331,CUST0147,Amit Sharma,891.27,INR,UPI,2026-06-24 23:20:38,Success,,New Customer,0,New,
+TXN00449,CUST0068,Ishita Kulkarni,659.63,INR,UPI,2026-06-25 00:05:46,Failed,Bank Server Issue,Regular Customer,1,New,1.0
+TXN00234,CUST0119,Siddharth Chowdhury,1396.35,INR,Debit Card,2026-06-25 01:25:44,Success,,Regular Customer,0,Regular,
+TXN00616,CUST0142,Tanvi Gupta,970.23,INR,UPI,2026-06-25 03:10:32,Success,,New Customer,0,New,
+TXN00138,CUST0080,Kiran Nair,740.08,INR,Credit Card,2026-06-25 03:13:22,Failed,Authentication Failure,Regular Customer,0,New,1.0
+TXN00132,CUST0018,Kiran Singh,2074.99,INR,Wallet,2026-06-25 04:27:29,Success,,Occasional Buyer,0,Regular,
+TXN00040,CUST0030,Riya Kapoor,2226.69,INR,UPI,2026-06-25 14:55:34,Success,,Regular Customer,0,Regular,
+TXN00223,CUST0130,Divya Singh,7655.12,INR,UPI,2026-06-25 15:26:34,Failed,Bank Server Issue,Occasional Buyer,1,Premium,1.0
+TXN00464,CUST0026,Kavya Nair,2247.76,INR,Debit Card,2026-06-25 22:30:24,Success,,Regular Customer,0,Regular,
+TXN00399,CUST0081,Nisha Iyer,838.22,INR,UPI,2026-06-25 23:01:54,Success,,Occasional Buyer,0,New,
+TXN00232,CUST0090,Ishita Reddy,6052.52,INR,UPI,2026-06-26 00:17:51,Success,,Regular Customer,0,Premium,
+TXN00186,CUST0130,Divya Singh,7762.04,INR,Netbanking,2026-06-26 03:49:18,Success,,Occasional Buyer,0,Premium,
+TXN00642,CUST0158,Kunal Agarwal,5003.84,INR,Credit Card,2026-06-26 04:18:45,Success,,New Customer,0,Regular,
+TXN00303,CUST0123,Preeti Desai,1405.82,INR,Credit Card,2026-06-26 04:25:55,Success,,New Customer,0,New,
+TXN00369,CUST0103,Varun Malhotra,2108.48,INR,UPI,2026-06-26 05:33:44,Success,,Occasional Buyer,0,Regular,
+TXN00494,CUST0183,Sneha Menon,1244.26,INR,UPI,2026-06-26 09:13:38,Success,,Occasional Buyer,0,Regular,
+TXN00263,CUST0165,Priya Agarwal,336.06,INR,Wallet,2026-06-26 11:13:06,Success,,Occasional Buyer,0,Regular,
+TXN00112,CUST0214,Sneha Iyer,1969.27,INR,Debit Card,2026-06-26 11:21:40,Success,,Regular Customer,0,Regular,
+TXN00512,CUST0187,Kunal Mehta,5296.92,INR,Credit Card,2026-06-26 22:17:13,Success,,Occasional Buyer,0,Premium,
+TXN00222,CUST0021,Abhishek Kapoor,292.84,INR,Credit Card,2026-06-26 23:09:32,Failed,Network Failure,Regular Customer,0,New,1.0
+TXN00149,CUST0020,Anjali Menon,7051.32,INR,Credit Card,2026-06-26 23:20:49,Success,,Loyal Customer,0,Premium,
+TXN00158,CUST0184,Vikram Chowdhury,6883.73,INR,Debit Card,2026-06-27 00:56:36,Success,,Regular Customer,0,Premium,
+TXN00018,CUST0111,Kiran Sharma,2375.2,INR,UPI,2026-06-27 00:59:21,Success,,Occasional Buyer,0,Regular,
+TXN00011,CUST0217,Meera Desai,1548.62,INR,Credit Card,2026-06-27 02:37:23,Failed,Insufficient Funds,Regular Customer,3,Regular,0.0
+TXN00162,CUST0015,Shreya Gupta,1439.79,INR,Netbanking,2026-06-27 15:33:29,Failed,Insufficient Funds,Occasional Buyer,3,New,0.0
+TXN00522,CUST0200,Anjali Menon,1243.91,INR,UPI,2026-06-27 17:19:46,Success,,Occasional Buyer,0,New,
+TXN00160,CUST0116,Ishita Rao,1331.33,INR,Credit Card,2026-06-27 22:31:49,Failed,Authentication Failure,Loyal Customer,1,New,1.0
+TXN00587,CUST0073,Rahul Pillai,4317.02,INR,UPI,2026-06-27 23:38:19,Success,,Loyal Customer,0,Premium,
+TXN00640,CUST0028,Tanvi Bose,412.8,INR,UPI,2026-06-28 04:21:00,Success,,New Customer,0,New,
+TXN00481,CUST0069,Kunal Kulkarni,1862.44,INR,Debit Card,2026-06-28 10:43:01,Success,,Regular Customer,0,Regular,
+TXN00077,CUST0107,Nisha Mehta,2096.19,INR,UPI,2026-06-28 14:07:51,Success,,Loyal Customer,0,Regular,
+TXN00473,CUST0096,Aditya Iyer,2546.32,INR,Netbanking,2026-06-28 15:46:29,Failed,Authentication Failure,Loyal Customer,1,Premium,0.0
+TXN00343,CUST0197,Divya Menon,1040.0,INR,UPI,2026-06-28 20:07:00,Success,,New Customer,0,New,
+TXN00572,CUST0144,Rajesh Menon,2454.95,INR,UPI,2026-06-28 20:27:34,Success,,Occasional Buyer,0,New,
+TXN00486,CUST0150,Manish Joshi,2667.44,INR,UPI,2026-06-28 23:36:44,Success,,Regular Customer,0,Premium,
+TXN00225,CUST0015,Shreya Gupta,676.44,INR,Credit Card,2026-06-29 01:06:43,Success,,Occasional Buyer,0,New,
+TXN00386,CUST0147,Amit Sharma,982.63,INR,UPI,2026-06-29 11:54:16,Failed,Authentication Failure,New Customer,3,New,0.0
+TXN00581,CUST0134,Abhishek Chowdhury,6433.33,INR,UPI,2026-06-29 15:47:22,Success,,New Customer,0,Premium,
+TXN00240,CUST0199,Suresh Pillai,3193.39,INR,UPI,2026-06-29 20:31:07,Success,,Loyal Customer,0,Regular,
+TXN00414,CUST0089,Shreya Verma,4034.84,INR,Netbanking,2026-06-29 21:41:46,Failed,Insufficient Funds,New Customer,0,Regular,1.0
+TXN00560,CUST0156,Amit Joshi,1585.19,INR,Netbanking,2026-06-29 23:59:31,Success,,Regular Customer,0,Regular,
+TXN00476,CUST0095,Rohan Chowdhury,773.23,INR,Netbanking,2026-06-30 00:26:21,Success,,Occasional Buyer,0,New,
+TXN00180,CUST0074,Rohan Patel,8920.37,INR,UPI,2026-06-30 02:23:01,Success,,Regular Customer,0,Regular,
+TXN00618,CUST0075,Arjun Joshi,2978.49,INR,UPI,2026-06-30 04:34:13,Failed,Card Declined,Regular Customer,0,Regular,1.0
+TXN00164,CUST0158,Kunal Agarwal,1272.35,INR,Credit Card,2026-06-30 09:19:28,Failed,Bank Server Issue,New Customer,0,Regular,0.0
+TXN00557,CUST0130,Divya Singh,4256.48,INR,UPI,2026-06-30 10:08:41,Success,,Occasional Buyer,0,Premium,
+TXN00156,CUST0203,Abhishek Kulkarni,584.87,INR,UPI,2026-06-30 10:56:38,Failed,Network Failure,New Customer,1,New,0.0
+TXN00408,CUST0211,Anjali Bose,824.33,INR,Debit Card,2026-06-30 11:03:37,Failed,Card Declined,New Customer,1,New,0.0
+TXN00431,CUST0164,Tanvi Kulkarni,3006.02,INR,Credit Card,2026-06-30 15:06:27,Success,,Regular Customer,0,Premium,
+TXN00389,CUST0095,Rohan Chowdhury,1588.04,INR,Credit Card,2026-06-30 17:06:07,Success,,Occasional Buyer,0,New,
+TXN00026,CUST0013,Aditya Rao,959.64,INR,Netbanking,2026-06-30 20:24:25,Success,,New Customer,0,New,
+TXN00379,CUST0148,Priya Mehta,16234.62,INR,Debit Card,2026-07-01 02:33:36,Success,,Occasional Buyer,0,Premium,
+TXN00330,CUST0145,Manish Patel,2823.1,INR,Debit Card,2026-07-01 06:00:06,Success,,Loyal Customer,0,Regular,
+TXN00152,CUST0074,Rohan Patel,2417.64,INR,Debit Card,2026-07-01 17:16:30,Failed,Bank Server Issue,Regular Customer,1,Regular,0.0
+TXN00622,CUST0011,Kiran Rao,6875.6,INR,UPI,2026-07-01 18:25:28,Failed,Card Declined,Regular Customer,0,Premium,1.0
+TXN00344,CUST0095,Rohan Chowdhury,662.38,INR,Credit Card,2026-07-01 21:54:11,Success,,Occasional Buyer,0,New,
+TXN00628,CUST0210,Tanvi Patel,5100.56,INR,Netbanking,2026-07-02 03:32:24,Success,,Loyal Customer,0,Premium,
+TXN00014,CUST0082,Nikhil Agarwal,697.63,INR,Debit Card,2026-07-02 05:41:05,Failed,Insufficient Funds,Loyal Customer,1,Regular,0.0
+TXN00465,CUST0068,Ishita Kulkarni,839.33,INR,UPI,2026-07-02 06:48:49,Success,,Regular Customer,0,New,
+TXN00355,CUST0109,Anjali Rao,887.66,INR,Debit Card,2026-07-02 12:33:56,Failed,Insufficient Funds,New Customer,2,New,1.0
+TXN00200,CUST0168,Siddharth Patel,1065.68,INR,UPI,2026-07-02 17:46:40,Failed,Expired Card,Regular Customer,3,Regular,0.0
+TXN00524,CUST0054,Arjun Malhotra,1264.41,INR,Debit Card,2026-07-02 22:01:25,Failed,Insufficient Funds,New Customer,0,New,1.0
+TXN00413,CUST0201,Ananya Mehta,859.4,INR,Debit Card,2026-07-03 05:48:44,Success,,Regular Customer,0,Regular,
+TXN00036,CUST0028,Tanvi Bose,431.6,INR,Debit Card,2026-07-03 10:53:53,Success,,New Customer,0,New,
+TXN00499,CUST0119,Siddharth Chowdhury,1234.49,INR,Netbanking,2026-07-03 11:56:28,Success,,Regular Customer,0,Regular,
+TXN00367,CUST0175,Siddharth Kapoor,1027.06,INR,UPI,2026-07-03 12:38:40,Failed,Insufficient Funds,New Customer,0,New,1.0
+TXN00482,CUST0197,Divya Menon,506.07,INR,Debit Card,2026-07-03 14:48:15,Success,,New Customer,0,New,
+TXN00599,CUST0211,Anjali Bose,687.75,INR,Debit Card,2026-07-03 15:40:42,Success,,New Customer,0,New,
+TXN00116,CUST0080,Kiran Nair,1075.92,INR,Wallet,2026-07-03 17:03:03,Success,,Regular Customer,0,New,
+TXN00001,CUST0214,Sneha Iyer,2625.94,INR,Credit Card,2026-07-03 18:51:39,Success,,Regular Customer,0,Regular,
+TXN00257,CUST0206,Neha Kulkarni,4011.02,INR,Wallet,2026-07-03 21:38:46,Success,,Loyal Customer,0,Regular,
+TXN00623,CUST0203,Abhishek Kulkarni,2777.24,INR,UPI,2026-07-04 02:32:24,Success,,New Customer,0,New,
+TXN00203,CUST0041,Swati Iyer,1719.57,INR,UPI,2026-07-04 03:22:13,Success,,Regular Customer,0,New,
+TXN00448,CUST0079,Rohan Nair,1191.62,INR,Debit Card,2026-07-04 03:47:39,Success,,Regular Customer,0,Regular,
+TXN00183,CUST0036,Kavya Joshi,1108.77,INR,Debit Card,2026-07-04 04:53:42,Success,,Regular Customer,0,Regular,
+TXN00478,CUST0115,Radhika Kapoor,1082.2,INR,UPI,2026-07-04 07:21:16,Success,,Occasional Buyer,0,New,
+TXN00400,CUST0054,Arjun Malhotra,1886.9,INR,Credit Card,2026-07-04 19:38:08,Success,,New Customer,0,New,
+TXN00210,CUST0035,Preeti Sharma,16630.64,INR,Netbanking,2026-07-04 19:55:14,Failed,Insufficient Funds,Occasional Buyer,0,Regular,0.0
+TXN00117,CUST0147,Amit Sharma,879.34,INR,Wallet,2026-07-04 20:14:45,Success,,New Customer,0,New,
+TXN00022,CUST0171,Aditya Chowdhury,1764.85,INR,UPI,2026-07-04 20:27:33,Success,,New Customer,0,Regular,
+TXN00611,CUST0085,Manish Gupta,1329.58,INR,Netbanking,2026-07-05 02:12:06,Failed,Card Declined,New Customer,1,New,1.0
+TXN00136,CUST0213,Shreya Mehta,4686.61,INR,Debit Card,2026-07-05 03:24:35,Success,,Occasional Buyer,0,Regular,
+TXN00349,CUST0220,Riya Malhotra,3792.49,INR,UPI,2026-07-05 10:00:41,Success,,Regular Customer,0,Premium,
+TXN00137,CUST0208,Rohan Gupta,561.18,INR,UPI,2026-07-05 11:20:00,Failed,Insufficient Funds,New Customer,0,New,1.0
+TXN00394,CUST0180,Sneha Desai,2694.25,INR,Netbanking,2026-07-05 13:04:41,Success,,New Customer,0,New,
+TXN00485,CUST0097,Meera Singh,3721.29,INR,Netbanking,2026-07-05 19:09:42,Failed,Card Declined,Regular Customer,1,Premium,0.0
+TXN00235,CUST0211,Anjali Bose,3249.86,INR,UPI,2026-07-05 22:35:24,Failed,Insufficient Funds,New Customer,3,New,0.0
+TXN00194,CUST0081,Nisha Iyer,425.2,INR,Wallet,2026-07-06 05:23:51,Failed,Card Declined,Occasional Buyer,2,New,0.0
+TXN00342,CUST0161,Harsh Pillai,6135.48,INR,UPI,2026-07-06 12:44:11,Success,,Regular Customer,0,Premium,
+TXN00100,CUST0039,Sanjay Nair,1756.32,INR,Wallet,2026-07-06 13:45:19,Success,,Loyal Customer,0,Regular,
+TXN00562,CUST0088,Kiran Nair,3118.92,INR,Wallet,2026-07-06 14:50:34,Failed,Network Failure,New Customer,3,New,0.0
+TXN00172,CUST0120,Rahul Reddy,1275.77,INR,UPI,2026-07-06 19:00:48,Failed,Insufficient Funds,Occasional Buyer,3,Regular,0.0
+TXN00127,CUST0195,Aditya Menon,1158.88,INR,Debit Card,2026-07-07 08:23:27,Failed,Insufficient Funds,Regular Customer,0,Regular,0.0
+TXN00094,CUST0161,Harsh Pillai,4610.86,INR,UPI,2026-07-07 12:28:23,Success,,Regular Customer,0,Premium,
+TXN00016,CUST0181,Simran Reddy,640.74,INR,Netbanking,2026-07-07 16:02:38,Success,,Regular Customer,0,New,
+TXN00471,CUST0059,Anjali Verma,1717.67,INR,UPI,2026-07-07 21:40:09,Failed,Card Declined,Occasional Buyer,1,Regular,1.0
+TXN00435,CUST0001,Riya Singh,4565.56,INR,UPI,2026-07-08 01:15:57,Success,,New Customer,0,Regular,
+TXN00102,CUST0011,Kiran Rao,4401.4,INR,UPI,2026-07-08 01:59:08,Success,,Regular Customer,0,Premium,
+TXN00332,CUST0194,Suresh Rao,1219.88,INR,UPI,2026-07-08 05:52:44,Failed,Card Declined,New Customer,2,Regular,0.0
+TXN00115,CUST0185,Sneha Nair,1797.59,INR,UPI,2026-07-08 08:13:04,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
+TXN00122,CUST0132,Tanvi Malhotra,1211.77,INR,UPI,2026-07-08 13:19:34,Success,,Occasional Buyer,0,Regular,
+TXN00015,CUST0059,Anjali Verma,773.79,INR,Debit Card,2026-07-08 13:34:16,Success,,Occasional Buyer,0,Regular,
+TXN00307,CUST0193,Deepak Mehta,1932.56,INR,UPI,2026-07-08 13:50:39,Failed,Card Declined,New Customer,1,New,0.0
+TXN00373,CUST0015,Shreya Gupta,2144.55,INR,UPI,2026-07-08 14:12:35,Success,,Occasional Buyer,0,New,
+TXN00178,CUST0003,Ananya Iyer,4444.59,INR,Netbanking,2026-07-08 14:51:48,Success,,New Customer,0,Regular,
+TXN00282,CUST0089,Shreya Verma,2876.05,INR,UPI,2026-07-08 18:26:20,Success,,New Customer,0,Regular,
+TXN00161,CUST0197,Divya Menon,500.29,INR,Wallet,2026-07-09 04:17:44,Success,,New Customer,0,New,
+TXN00558,CUST0013,Aditya Rao,692.61,INR,Credit Card,2026-07-09 07:17:25,Success,,New Customer,0,New,
+TXN00426,CUST0035,Preeti Sharma,4241.82,INR,Wallet,2026-07-09 09:15:42,Success,,Occasional Buyer,0,Regular,
+TXN00275,CUST0022,Tanvi Nair,498.25,INR,Credit Card,2026-07-09 09:28:02,Success,,New Customer,0,New,
+TXN00294,CUST0085,Manish Gupta,1494.82,INR,Credit Card,2026-07-09 09:41:25,Success,,New Customer,0,New,
+TXN00568,CUST0216,Priya Mehta,3281.17,INR,Credit Card,2026-07-09 10:27:06,Success,,Regular Customer,0,Premium,
+TXN00316,CUST0051,Gaurav Malhotra,909.23,INR,Credit Card,2026-07-10 00:08:38,Failed,Insufficient Funds,Occasional Buyer,0,New,0.0
+TXN00507,CUST0163,Ananya Menon,4039.2,INR,Credit Card,2026-07-10 03:22:06,Success,,Loyal Customer,0,Premium,
+TXN00076,CUST0070,Manish Iyer,3140.21,INR,Credit Card,2026-07-10 03:40:09,Success,,Occasional Buyer,0,Regular,
+TXN00213,CUST0164,Tanvi Kulkarni,8751.68,INR,Netbanking,2026-07-10 04:44:51,Success,,Regular Customer,0,Premium,
+TXN00519,CUST0162,Riya Kapoor,2110.4,INR,UPI,2026-07-10 13:39:48,Success,,Regular Customer,0,Regular,
+TXN00384,CUST0183,Sneha Menon,1496.43,INR,Debit Card,2026-07-10 18:09:40,Success,,Occasional Buyer,0,Regular,
+TXN00230,CUST0187,Kunal Mehta,7629.66,INR,Debit Card,2026-07-10 23:37:14,Success,,Occasional Buyer,0,Premium,
+TXN00492,CUST0076,Shreya Rao,11384.09,INR,UPI,2026-07-11 00:43:04,Success,,Loyal Customer,0,Premium,
+TXN00245,CUST0135,Meera Chowdhury,1032.6,INR,UPI,2026-07-11 00:51:04,Failed,Card Declined,Loyal Customer,2,Regular,0.0
+TXN00328,CUST0105,Swati Sharma,1443.75,INR,Debit Card,2026-07-11 02:08:49,Success,,New Customer,0,New,
+TXN00247,CUST0144,Rajesh Menon,675.22,INR,UPI,2026-07-11 06:16:37,Success,,Occasional Buyer,0,New,
+TXN00535,CUST0217,Meera Desai,1396.17,INR,UPI,2026-07-11 07:29:43,Success,,Regular Customer,0,Regular,
+TXN00236,CUST0009,Vivek Menon,1313.37,INR,Debit Card,2026-07-11 08:22:32,Success,,Occasional Buyer,0,New,
+TXN00533,CUST0177,Lakshmi Bose,862.95,INR,Netbanking,2026-07-11 09:36:38,Success,,New Customer,0,New,
+TXN00042,CUST0191,Pooja Menon,5917.59,INR,Debit Card,2026-07-11 09:49:54,Failed,Expired Card,Regular Customer,1,Premium,0.0
+TXN00547,CUST0005,Kunal Singh,2744.6,INR,UPI,2026-07-11 11:17:29,Success,,Regular Customer,0,Regular,
+TXN00538,CUST0125,Swati Desai,4481.54,INR,UPI,2026-07-12 02:01:54,Failed,Card Declined,Loyal Customer,0,Premium,0.0
+TXN00472,CUST0055,Vikram Pillai,225.62,INR,Netbanking,2026-07-12 03:37:32,Success,,New Customer,0,New,
+TXN00637,CUST0044,Ishita Singh,8197.51,INR,UPI,2026-07-12 07:51:46,Failed,Network Failure,Regular Customer,2,Premium,1.0
+TXN00466,CUST0010,Sanjay Reddy,4863.51,INR,UPI,2026-07-12 15:13:28,Success,,Loyal Customer,0,Premium,
+TXN00545,CUST0141,Abhishek Sharma,203.77,INR,Debit Card,2026-07-12 18:32:34,Failed,Expired Card,New Customer,1,New,1.0
+TXN00179,CUST0187,Kunal Mehta,4758.42,INR,UPI,2026-07-12 23:18:37,Failed,Insufficient Funds,Occasional Buyer,1,Premium,1.0
+TXN00395,CUST0130,Divya Singh,9795.91,INR,UPI,2026-07-13 12:42:41,Success,,Occasional Buyer,0,Premium,
+TXN00045,CUST0166,Pooja Joshi,2593.44,INR,UPI,2026-07-13 20:01:53,Failed,Insufficient Funds,Occasional Buyer,2,Premium,0.0
+TXN00087,CUST0103,Varun Malhotra,3305.92,INR,Credit Card,2026-07-13 21:17:01,Success,,Occasional Buyer,0,Regular,
+TXN00298,CUST0072,Tanvi Kapoor,1079.64,INR,Debit Card,2026-07-13 23:16:36,Failed,Network Failure,Occasional Buyer,1,New,1.0
+TXN00368,CUST0016,Riya Patel,2012.08,INR,Wallet,2026-07-14 04:25:55,Failed,Authentication Failure,Occasional Buyer,2,Regular,1.0
+TXN00215,CUST0064,Varun Verma,1680.09,INR,UPI,2026-07-14 18:33:43,Success,,New Customer,0,Regular,
+TXN00586,CUST0204,Riya Kulkarni,6149.4,INR,Wallet,2026-07-14 19:19:44,Success,,Loyal Customer,0,Premium,
+TXN00140,CUST0113,Deepak Iyer,1015.39,INR,Netbanking,2026-07-14 22:19:51,Success,,Regular Customer,0,Regular,
+TXN00573,CUST0013,Aditya Rao,1092.43,INR,Wallet,2026-07-15 01:09:13,Success,,New Customer,0,New,
+TXN00133,CUST0130,Divya Singh,3193.42,INR,Credit Card,2026-07-15 03:06:14,Failed,Card Declined,Occasional Buyer,1,Premium,0.0
+TXN00024,CUST0078,Preeti Sharma,2664.11,INR,UPI,2026-07-15 03:34:48,Failed,Card Declined,Loyal Customer,1,Premium,1.0
+TXN00190,CUST0185,Sneha Nair,868.56,INR,Credit Card,2026-07-15 15:22:02,Success,,Regular Customer,0,Regular,
+TXN00646,CUST0206,Neha Kulkarni,1719.87,INR,Credit Card,2026-07-15 22:44:56,Success,,Loyal Customer,0,Regular,
+TXN00436,CUST0106,Siddharth Joshi,2081.31,INR,Credit Card,2026-07-15 22:46:29,Success,,Loyal Customer,0,Regular,
+TXN00231,CUST0098,Anjali Kapoor,579.28,INR,Credit Card,2026-07-15 23:39:49,Failed,Unknown Error,Occasional Buyer,3,New,0.0
+TXN00250,CUST0049,Abhishek Kulkarni,2496.74,INR,UPI,2026-07-16 08:00:47,Success,,Regular Customer,0,Regular,
+TXN00286,CUST0022,Tanvi Nair,278.31,INR,UPI,2026-07-16 09:03:59,Failed,Card Declined,New Customer,1,New,1.0
+TXN00035,CUST0173,Swati Desai,3141.32,INR,UPI,2026-07-16 09:14:08,Success,,Regular Customer,0,Regular,
+TXN00508,CUST0010,Sanjay Reddy,3526.3,INR,Credit Card,2026-07-16 10:29:58,Success,,Loyal Customer,0,Premium,
+TXN00553,CUST0075,Arjun Joshi,3798.19,INR,Credit Card,2026-07-16 13:51:28,Failed,Insufficient Funds,Regular Customer,0,Regular,0.0
+TXN00376,CUST0185,Sneha Nair,1310.23,INR,UPI,2026-07-16 14:36:30,Success,,Regular Customer,0,Regular,
+TXN00388,CUST0142,Tanvi Gupta,2767.51,INR,Credit Card,2026-07-16 17:17:35,Failed,Authentication Failure,New Customer,2,New,1.0
+TXN00498,CUST0202,Varun Mehta,800.95,INR,Netbanking,2026-07-16 19:28:25,Success,,New Customer,0,New,
+TXN00103,CUST0157,Vikram Bose,1654.92,INR,UPI,2026-07-16 20:17:12,Success,,Regular Customer,0,Regular,
+TXN00141,CUST0128,Deepak Patel,2264.49,INR,Debit Card,2026-07-17 04:53:35,Failed,Insufficient Funds,Occasional Buyer,1,Regular,0.0
+TXN00405,CUST0051,Gaurav Malhotra,685.37,INR,Netbanking,2026-07-17 08:56:07,Success,,Occasional Buyer,0,New,
+TXN00424,CUST0217,Meera Desai,3409.65,INR,Credit Card,2026-07-17 12:37:39,Success,,Regular Customer,0,Regular,
+TXN00610,CUST0165,Priya Agarwal,4549.74,INR,Credit Card,2026-07-17 14:52:36,Success,,Occasional Buyer,0,Regular,
+TXN00182,CUST0087,Divya Desai,536.84,INR,Credit Card,2026-07-17 15:14:22,Failed,Expired Card,New Customer,1,New,1.0
+TXN00217,CUST0003,Ananya Iyer,1306.29,INR,UPI,2026-07-17 18:35:25,Failed,Insufficient Funds,New Customer,0,Regular,0.0
+TXN00583,CUST0170,Simran Pillai,2829.99,INR,UPI,2026-07-17 20:40:32,Failed,Authentication Failure,Regular Customer,1,Regular,0.0
+TXN00382,CUST0063,Sneha Kulkarni,626.64,INR,UPI,2026-07-17 23:55:50,Success,,New Customer,0,New,
+TXN00326,CUST0159,Tanvi Nair,433.32,INR,UPI,2026-07-18 10:20:09,Success,,Loyal Customer,0,New,
+TXN00262,CUST0126,Harsh Pillai,1933.84,INR,Credit Card,2026-07-18 16:08:58,Failed,Network Failure,Occasional Buyer,0,Regular,0.0
+TXN00027,CUST0059,Anjali Verma,1060.99,INR,Credit Card,2026-07-18 17:57:38,Success,,Occasional Buyer,0,Regular,
+TXN00284,CUST0116,Ishita Rao,427.22,INR,Credit Card,2026-07-19 06:07:20,Success,,Loyal Customer,0,New,
+TXN00144,CUST0011,Kiran Rao,5956.97,INR,Debit Card,2026-07-19 08:22:22,Success,,Regular Customer,0,Premium,
+TXN00552,CUST0057,Rahul Patel,1834.23,INR,UPI,2026-07-19 09:03:28,Success,,Regular Customer,0,Regular,
+TXN00123,CUST0057,Rahul Patel,4322.27,INR,Debit Card,2026-07-19 10:57:28,Success,,Regular Customer,0,Regular,
+TXN00603,CUST0022,Tanvi Nair,1512.87,INR,UPI,2026-07-19 17:41:45,Failed,Network Failure,New Customer,1,New,1.0
+TXN00582,CUST0138,Simran Sharma,1590.16,INR,UPI,2026-07-19 18:02:25,Success,,Occasional Buyer,0,Regular,
+TXN00134,CUST0092,Ishita Gupta,2592.75,INR,Debit Card,2026-07-19 18:45:57,Success,,Loyal Customer,0,Regular,
+TXN00006,CUST0115,Radhika Kapoor,780.17,INR,Credit Card,2026-07-19 22:05:26,Success,,Occasional Buyer,0,New,
+TXN00171,CUST0082,Nikhil Agarwal,1225.09,INR,Debit Card,2026-07-20 00:30:13,Failed,Card Declined,Loyal Customer,1,Regular,1.0
+TXN00311,CUST0053,Rohan Singh,787.92,INR,Credit Card,2026-07-20 03:19:24,Failed,Authentication Failure,Occasional Buyer,1,New,1.0
+TXN00068,CUST0058,Karthik Malhotra,8971.13,INR,Netbanking,2026-07-20 06:14:23,Success,,Loyal Customer,0,Premium,
+TXN00023,CUST0041,Swati Iyer,934.97,INR,UPI,2026-07-20 07:22:47,Failed,Unknown Error,Regular Customer,2,New,0.0
+TXN00348,CUST0145,Manish Patel,921.4,INR,Netbanking,2026-07-20 11:44:58,Failed,Network Failure,Loyal Customer,2,Regular,1.0
+TXN00555,CUST0212,Sanjay Pillai,6430.46,INR,Debit Card,2026-07-20 13:54:38,Success,,New Customer,0,Premium,
+TXN00032,CUST0076,Shreya Rao,13713.54,INR,Debit Card,2026-07-20 14:10:48,Success,,Loyal Customer,0,Premium,
+TXN00532,CUST0024,Lakshmi Chowdhury,331.32,INR,UPI,2026-07-20 16:38:42,Failed,Card Declined,Occasional Buyer,1,New,0.0
+TXN00513,CUST0176,Neha Iyer,777.93,INR,Wallet,2026-07-21 03:50:01,Failed,Insufficient Funds,New Customer,3,New,0.0
+TXN00347,CUST0083,Sneha Patel,376.59,INR,Netbanking,2026-07-21 05:54:50,Success,,Regular Customer,0,New,
+TXN00165,CUST0185,Sneha Nair,3394.31,INR,Netbanking,2026-07-21 06:30:27,Failed,Bank Server Issue,Regular Customer,0,Regular,0.0
+TXN00593,CUST0040,Kiran Gupta,1196.78,INR,UPI,2026-07-21 11:21:58,Failed,Insufficient Funds,New Customer,2,New,0.0
+TXN00105,CUST0166,Pooja Joshi,5010.83,INR,UPI,2026-07-21 13:25:40,Success,,Occasional Buyer,0,Premium,
+TXN00407,CUST0033,Rohan Rao,1110.77,INR,UPI,2026-07-21 14:26:52,Failed,Expired Card,Regular Customer,0,Regular,0.0
+TXN00049,CUST0209,Suresh Chowdhury,1103.42,INR,Netbanking,2026-07-21 15:21:33,Success,,Occasional Buyer,0,New,
+TXN00443,CUST0041,Swati Iyer,259.7,INR,UPI,2026-07-21 17:28:14,Success,,Regular Customer,0,New,
+TXN00252,CUST0054,Arjun Malhotra,1557.31,INR,Netbanking,2026-07-21 21:01:32,Success,,New Customer,0,New,
+TXN00202,CUST0014,Rohan Chowdhury,7189.61,INR,UPI,2026-07-22 03:11:11,Failed,Authentication Failure,Loyal Customer,0,Premium,1.0
+TXN00013,CUST0102,Amit Reddy,2282.62,INR,Debit Card,2026-07-22 05:24:55,Success,,Loyal Customer,0,Regular,
+TXN00497,CUST0047,Nisha Patel,481.86,INR,Wallet,2026-07-22 09:48:51,Failed,Card Declined,New Customer,2,New,0.0
+TXN00423,CUST0206,Neha Kulkarni,1742.49,INR,Netbanking,2026-07-22 12:09:19,Failed,Network Failure,Loyal Customer,3,Regular,0.0
+TXN00624,CUST0011,Kiran Rao,10643.56,INR,Wallet,2026-07-22 13:44:42,Success,,Regular Customer,0,Premium,
+TXN00081,CUST0196,Siddharth Malhotra,1770.79,INR,UPI,2026-07-22 14:21:19,Failed,Authentication Failure,Regular Customer,0,Regular,1.0
+TXN00007,CUST0140,Radhika Desai,11963.39,INR,UPI,2026-07-22 16:51:20,Success,,Loyal Customer,0,Premium,
+TXN00204,CUST0194,Suresh Rao,3567.4,INR,Wallet,2026-07-22 20:22:42,Success,,New Customer,0,Regular,
+TXN00289,CUST0153,Rajesh Chowdhury,2332.15,INR,Credit Card,2026-07-23 00:00:46,Failed,Card Declined,Loyal Customer,2,Regular,0.0
+TXN00371,CUST0207,Ananya Agarwal,2025.32,INR,UPI,2026-07-23 00:12:46,Success,,Loyal Customer,0,Regular,
+TXN00074,CUST0041,Swati Iyer,2295.68,INR,UPI,2026-07-23 06:39:08,Success,,Regular Customer,0,New,
+TXN00579,CUST0040,Kiran Gupta,369.76,INR,UPI,2026-07-23 07:43:07,Failed,Bank Server Issue,New Customer,1,New,0.0
+TXN00099,CUST0147,Amit Sharma,900.61,INR,Debit Card,2026-07-23 08:00:52,Success,,New Customer,0,New,
+TXN00595,CUST0162,Riya Kapoor,3535.63,INR,UPI,2026-07-23 10:36:06,Success,,Regular Customer,0,Regular,
+TXN00125,CUST0096,Aditya Iyer,7283.95,INR,UPI,2026-07-23 13:35:40,Success,,Loyal Customer,0,Premium,
+TXN00432,CUST0020,Anjali Menon,1959.38,INR,UPI,2026-07-23 16:05:58,Success,,Loyal Customer,0,Premium,
+TXN00385,CUST0107,Nisha Mehta,1316.16,INR,Netbanking,2026-07-23 19:51:47,Success,,Loyal Customer,0,Regular,
+TXN00296,CUST0046,Sneha Singh,1364.99,INR,Wallet,2026-07-23 20:35:53,Success,,New Customer,0,Regular,
+TXN00397,CUST0213,Shreya Mehta,778.82,INR,Debit Card,2026-07-24 02:28:16,Failed,Insufficient Funds,Occasional Buyer,0,Regular,0.0
+TXN00563,CUST0216,Priya Mehta,8396.43,INR,Debit Card,2026-07-24 06:08:32,Success,,Regular Customer,0,Premium,
+TXN00218,CUST0129,Nisha Kapoor,1754.17,INR,Wallet,2026-07-24 14:15:42,Success,,Occasional Buyer,0,Regular,
+TXN00310,CUST0187,Kunal Mehta,4909.38,INR,UPI,2026-07-24 22:28:39,Success,,Occasional Buyer,0,Premium,
+TXN00029,CUST0161,Harsh Pillai,4022.59,INR,Debit Card,2026-07-25 02:02:12,Failed,Card Declined,Regular Customer,0,Premium,0.0
+TXN00175,CUST0120,Rahul Reddy,2326.64,INR,Credit Card,2026-07-25 04:05:44,Failed,Bank Server Issue,Occasional Buyer,1,Regular,0.0
+TXN00608,CUST0085,Manish Gupta,425.48,INR,Credit Card,2026-07-25 07:15:21,Failed,Network Failure,New Customer,2,New,0.0
+TXN00487,CUST0153,Rajesh Chowdhury,1400.22,INR,Credit Card,2026-07-25 13:55:22,Success,,Loyal Customer,0,Regular,
+TXN00242,CUST0210,Tanvi Patel,5128.82,INR,UPI,2026-07-25 15:12:10,Success,,Loyal Customer,0,Premium,
+TXN00495,CUST0172,Lakshmi Joshi,4618.01,INR,UPI,2026-07-25 16:10:33,Success,,Occasional Buyer,0,Regular,
+TXN00080,CUST0015,Shreya Gupta,272.45,INR,UPI,2026-07-25 17:40:39,Success,,Occasional Buyer,0,New,
+TXN00196,CUST0064,Varun Verma,2469.88,INR,UPI,2026-07-25 18:10:26,Success,,New Customer,0,Regular,
+TXN00243,CUST0134,Abhishek Chowdhury,6991.8,INR,UPI,2026-07-25 20:00:17,Failed,Bank Server Issue,New Customer,3,Premium,0.0
+TXN00469,CUST0096,Aditya Iyer,4166.16,INR,UPI,2026-07-25 21:18:29,Success,,Loyal Customer,0,Premium,
+TXN00169,CUST0207,Ananya Agarwal,1745.92,INR,Debit Card,2026-07-26 02:29:59,Failed,Insufficient Funds,Loyal Customer,1,Regular,0.0
+TXN00168,CUST0140,Radhika Desai,14022.19,INR,UPI,2026-07-26 03:34:13,Success,,Loyal Customer,0,Premium,
+TXN00216,CUST0069,Kunal Kulkarni,3033.38,INR,Wallet,2026-07-26 07:11:37,Success,,Regular Customer,0,Regular,
+TXN00208,CUST0048,Simran Iyer,2650.71,INR,Wallet,2026-07-26 11:21:03,Failed,Network Failure,Occasional Buyer,0,Regular,0.0
+TXN00300,CUST0054,Arjun Malhotra,1309.99,INR,Credit Card,2026-07-26 12:30:17,Success,,New Customer,0,New,
+TXN00084,CUST0182,Harsh Agarwal,4191.71,INR,Debit Card,2026-07-26 14:10:49,Success,,Loyal Customer,0,Premium,
+TXN00260,CUST0149,Kavya Kulkarni,1429.07,INR,Debit Card,2026-07-26 15:32:09,Failed,Insufficient Funds,New Customer,1,New,0.0
+TXN00527,CUST0117,Priya Verma,338.14,INR,Wallet,2026-07-26 19:36:12,Success,,New Customer,0,New,
+TXN00338,CUST0083,Sneha Patel,740.38,INR,Wallet,2026-07-26 20:31:16,Success,,Regular Customer,0,New,
+TXN00142,CUST0211,Anjali Bose,1967.04,INR,UPI,2026-07-26 21:40:54,Failed,Card Declined,New Customer,0,New,0.0
+TXN00564,CUST0052,Sneha Reddy,1670.18,INR,UPI,2026-07-26 22:33:31,Success,,Loyal Customer,0,Regular,
+TXN00410,CUST0158,Kunal Agarwal,2651.66,INR,UPI,2026-07-27 04:09:03,Success,,New Customer,0,Regular,
+TXN00364,CUST0049,Abhishek Kulkarni,2492.25,INR,Debit Card,2026-07-27 09:30:47,Failed,Bank Server Issue,Regular Customer,3,Regular,1.0
+TXN00096,CUST0015,Shreya Gupta,373.12,INR,UPI,2026-07-27 12:46:50,Success,,Occasional Buyer,0,New,
+TXN00387,CUST0018,Kiran Singh,2411.41,INR,Netbanking,2026-07-27 21:17:56,Success,,Occasional Buyer,0,Regular,
+TXN00598,CUST0078,Preeti Sharma,3329.64,INR,Credit Card,2026-07-28 01:55:20,Success,,Loyal Customer,0,Premium,
+TXN00066,CUST0185,Sneha Nair,4213.01,INR,UPI,2026-07-28 07:50:49,Success,,Regular Customer,0,Regular,
+TXN00544,CUST0083,Sneha Patel,2132.27,INR,UPI,2026-07-28 11:49:12,Success,,Regular Customer,0,New,
+TXN00351,CUST0078,Preeti Sharma,6345.2,INR,UPI,2026-07-28 13:23:07,Success,,Loyal Customer,0,Premium,
+TXN00612,CUST0156,Amit Joshi,1938.03,INR,UPI,2026-07-28 15:05:03,Success,,Regular Customer,0,Regular,
+TXN00625,CUST0134,Abhishek Chowdhury,12047.27,INR,Debit Card,2026-07-28 19:34:26,Success,,New Customer,0,Premium,
+TXN00003,CUST0035,Preeti Sharma,2853.29,INR,Netbanking,2026-07-29 01:05:40,Success,,Occasional Buyer,0,Regular,
+TXN00460,CUST0102,Amit Reddy,1033.98,INR,Credit Card,2026-07-29 04:54:29,Success,,Loyal Customer,0,Regular,
+TXN00268,CUST0004,Kiran Iyer,380.66,INR,UPI,2026-07-29 05:29:33,Success,,Occasional Buyer,0,New,
+TXN00095,CUST0162,Riya Kapoor,1610.57,INR,UPI,2026-07-29 07:31:11,Failed,Expired Card,Regular Customer,0,Regular,0.0
+TXN00337,CUST0146,Sneha Joshi,1268.99,INR,UPI,2026-07-29 07:43:04,Success,,Regular Customer,0,Regular,
+TXN00287,CUST0079,Rohan Nair,1838.16,INR,Credit Card,2026-07-29 13:42:32,Failed,Insufficient Funds,Regular Customer,1,Regular,0.0
+TXN00406,CUST0022,Tanvi Nair,1304.68,INR,Credit Card,2026-07-30 12:43:01,Failed,Insufficient Funds,New Customer,3,New,0.0
+TXN00479,CUST0089,Shreya Verma,10865.9,INR,UPI,2026-07-30 13:16:40,Failed,Card Declined,New Customer,0,Regular,0.0
+TXN00578,CUST0110,Rajesh Gupta,3053.29,INR,UPI,2026-07-30 14:43:21,Failed,Bank Server Issue,Occasional Buyer,0,Regular,1.0
+TXN00403,CUST0013,Aditya Rao,900.68,INR,Debit Card,2026-07-30 16:19:02,Failed,Card Declined,New Customer,1,New,0.0
+TXN00434,CUST0086,Swati Desai,2965.05,INR,Credit Card,2026-07-30 17:37:16,Failed,Insufficient Funds,Regular Customer,0,Regular,1.0
+TXN00450,CUST0068,Ishita Kulkarni,475.55,INR,Credit Card,2026-07-30 18:13:27,Success,,Regular Customer,0,New,
+TXN00012,CUST0020,Anjali Menon,4303.29,INR,Credit Card,2026-07-30 22:18:48,Success,,Loyal Customer,0,Premium,
+TXN00594,CUST0148,Priya Mehta,6417.8,INR,Netbanking,2026-07-31 00:49:42,Success,,Occasional Buyer,0,Premium,
+TXN00259,CUST0190,Radhika Reddy,1171.79,INR,UPI,2026-07-31 06:07:56,Success,,Occasional Buyer,0,New,
+TXN00195,CUST0165,Priya Agarwal,2197.88,INR,Debit Card,2026-07-31 08:11:56,Success,,Occasional Buyer,0,Regular,
+TXN00604,CUST0057,Rahul Patel,4211.61,INR,Credit Card,2026-07-31 17:03:43,Failed,Network Failure,Regular Customer,1,Regular,1.0
+TXN00031,CUST0070,Manish Iyer,1435.2,INR,Netbanking,2026-08-01 03:31:49,Success,,Occasional Buyer,0,Regular,
+TXN00554,CUST0185,Sneha Nair,2298.31,INR,UPI,2026-08-01 08:13:38,Failed,Insufficient Funds,Regular Customer,2,Regular,1.0
+TXN00047,CUST0013,Aditya Rao,681.04,INR,Debit Card,2026-08-01 14:34:18,Success,,New Customer,0,New,
+TXN00390,CUST0140,Radhika Desai,4070.61,INR,Debit Card,2026-08-01 15:28:08,Failed,Card Declined,Loyal Customer,0,Premium,1.0
+TXN00609,CUST0044,Ishita Singh,2231.97,INR,UPI,2026-08-01 18:03:08,Success,,Regular Customer,0,Premium,
+TXN00561,CUST0156,Amit Joshi,2343.44,INR,Netbanking,2026-08-01 19:56:53,Success,,Regular Customer,0,Regular,
+TXN00290,CUST0144,Rajesh Menon,617.93,INR,Netbanking,2026-08-02 06:48:40,Success,,Occasional Buyer,0,New,
+TXN00221,CUST0171,Aditya Chowdhury,7137.1,INR,Netbanking,2026-08-02 07:40:47,Success,,New Customer,0,Regular,
+TXN00254,CUST0194,Suresh Rao,3525.78,INR,Credit Card,2026-08-02 07:59:33,Success,,New Customer,0,Regular,
+TXN00607,CUST0033,Rohan Rao,1305.6,INR,Debit Card,2026-08-02 13:37:46,Failed,Insufficient Funds,Regular Customer,0,Regular,0.0
+TXN00130,CUST0162,Riya Kapoor,1514.88,INR,Credit Card,2026-08-02 15:12:51,Failed,Insufficient Funds,Regular Customer,1,Regular,0.0
+TXN00334,CUST0031,Tanvi Sharma,598.07,INR,Debit Card,2026-08-02 17:37:42,Success,,New Customer,0,New,
+TXN00477,CUST0032,Manish Bose,7246.53,INR,Debit Card,2026-08-02 23:32:52,Success,,Loyal Customer,0,Premium,
+TXN00124,CUST0102,Amit Reddy,924.25,INR,Credit Card,2026-08-03 00:02:48,Success,,Loyal Customer,0,Regular,
+TXN00392,CUST0027,Swati Mehta,2619.02,INR,UPI,2026-08-03 01:16:19,Success,,Regular Customer,0,Regular,
+TXN00020,CUST0098,Anjali Kapoor,384.76,INR,Credit Card,2026-08-03 04:06:23,Success,,Occasional Buyer,0,New,
+TXN00416,CUST0197,Divya Menon,573.01,INR,Credit Card,2026-08-03 15:47:55,Failed,Network Failure,New Customer,0,New,0.0
+TXN00639,CUST0153,Rajesh Chowdhury,982.91,INR,Credit Card,2026-08-03 23:45:25,Success,,Loyal Customer,0,Regular,
+TXN00008,CUST0062,Kiran Agarwal,3047.54,INR,Credit Card,2026-08-04 00:56:34,Failed,Authentication Failure,Regular Customer,2,Regular,0.0
+TXN00061,CUST0056,Rohan Verma,4274.46,INR,Credit Card,2026-08-04 01:03:12,Success,,Loyal Customer,0,Premium,
+TXN00514,CUST0104,Rajesh Kulkarni,1212.99,INR,UPI,2026-08-04 14:45:50,Failed,Insufficient Funds,Regular Customer,1,Regular,1.0
+TXN00219,CUST0076,Shreya Rao,4261.25,INR,UPI,2026-08-04 17:57:54,Success,,Loyal Customer,0,Premium,
+TXN00483,CUST0154,Lakshmi Singh,2432.75,INR,Debit Card,2026-08-04 19:10:34,Success,,Occasional Buyer,0,Premium,
+TXN00329,CUST0022,Tanvi Nair,1305.67,INR,Credit Card,2026-08-04 20:37:17,Failed,Insufficient Funds,New Customer,0,New,0.0
+TXN00510,CUST0161,Harsh Pillai,3585.04,INR,Debit Card,2026-08-04 22:31:27,Success,,Regular Customer,0,Premium,
+TXN00079,CUST0171,Aditya Chowdhury,2101.63,INR,UPI,2026-08-05 00:22:40,Success,,New Customer,0,Regular,
+TXN00033,CUST0020,Anjali Menon,5395.13,INR,UPI,2026-08-05 00:27:22,Success,,Loyal Customer,0,Premium,
+TXN00069,CUST0196,Siddharth Malhotra,2437.92,INR,UPI,2026-08-05 01:36:37,Success,,Regular Customer,0,Regular,
+TXN00308,CUST0149,Kavya Kulkarni,629.58,INR,Debit Card,2026-08-05 02:13:02,Failed,Expired Card,New Customer,2,New,0.0
+TXN00550,CUST0094,Kunal Singh,624.91,INR,Netbanking,2026-08-05 02:31:59,Failed,Authentication Failure,Regular Customer,1,New,0.0
+TXN00417,CUST0189,Lakshmi Malhotra,4689.75,INR,UPI,2026-08-05 06:56:50,Success,,Regular Customer,0,Regular,
+TXN00617,CUST0039,Sanjay Nair,2122.11,INR,UPI,2026-08-05 07:27:13,Success,,Loyal Customer,0,Regular,
+TXN00359,CUST0158,Kunal Agarwal,2386.29,INR,Debit Card,2026-08-05 13:08:35,Success,,New Customer,0,Regular,
+TXN00067,CUST0027,Swati Mehta,1920.6,INR,Credit Card,2026-08-05 15:37:13,Success,,Regular Customer,0,Regular,
+TXN00402,CUST0179,Rahul Desai,626.64,INR,Credit Card,2026-08-05 21:55:17,Failed,Authentication Failure,New Customer,3,New,0.0
+TXN00110,CUST0080,Kiran Nair,858.63,INR,UPI,2026-08-05 22:25:44,Success,,Regular Customer,0,New,
+TXN00043,CUST0009,Vivek Menon,837.66,INR,Debit Card,2026-08-06 02:07:48,Success,,Occasional Buyer,0,New,
+TXN00505,CUST0002,Sanjay Patel,607.66,INR,Credit Card,2026-08-06 16:07:32,Success,,Occasional Buyer,0,New,
+TXN00336,CUST0158,Kunal Agarwal,1842.94,INR,UPI,2026-08-06 17:31:17,Success,,New Customer,0,Regular,
+TXN00248,CUST0100,Sanjay Kapoor,1395.03,INR,UPI,2026-08-06 22:00:41,Success,,Occasional Buyer,0,Regular,
+TXN00197,CUST0077,Meera Mehta,528.31,INR,Debit Card,2026-08-07 03:47:27,Failed,Card Declined,Occasional Buyer,3,New,0.0
+TXN00363,CUST0169,Kiran Singh,841.13,INR,Netbanking,2026-08-07 04:50:15,Success,,New Customer,0,New,
+TXN00591,CUST0109,Anjali Rao,937.24,INR,Netbanking,2026-08-07 05:33:57,Success,,New Customer,0,New,
+TXN00509,CUST0194,Suresh Rao,2052.24,INR,Netbanking,2026-08-08 10:38:21,Success,,New Customer,0,Regular,
+TXN00253,CUST0004,Kiran Iyer,3207.65,INR,UPI,2026-08-08 14:15:29,Success,,Occasional Buyer,0,New,
+TXN00212,CUST0146,Sneha Joshi,3731.48,INR,Debit Card,2026-08-08 16:22:35,Success,,Regular Customer,0,Regular,
+TXN00089,CUST0030,Riya Kapoor,1493.13,INR,Credit Card,2026-08-08 22:42:26,Success,,Regular Customer,0,Regular,
+TXN00420,CUST0145,Manish Patel,2073.79,INR,UPI,2026-08-09 03:54:30,Success,,Loyal Customer,0,Regular,
+TXN00214,CUST0103,Varun Malhotra,2859.11,INR,Debit Card,2026-08-09 15:06:23,Success,,Occasional Buyer,0,Regular,
+TXN00536,CUST0146,Sneha Joshi,2050.97,INR,Debit Card,2026-08-10 08:14:40,Success,,Regular Customer,0,Regular,
+TXN00429,CUST0177,Lakshmi Bose,1694.35,INR,UPI,2026-08-10 10:03:08,Success,,New Customer,0,New,
+TXN00577,CUST0050,Kunal Iyer,2274.66,INR,UPI,2026-08-10 12:41:53,Failed,Insufficient Funds,Regular Customer,1,Regular,0.0
+TXN00019,CUST0203,Abhishek Kulkarni,520.71,INR,UPI,2026-08-10 12:51:43,Success,,New Customer,0,New,
+TXN00418,CUST0205,Harsh Bose,962.38,INR,UPI,2026-08-10 16:23:54,Failed,Card Declined,Occasional Buyer,2,New,0.0
+TXN00030,CUST0084,Amit Sharma,1702.02,INR,Debit Card,2026-08-10 17:17:51,Failed,Expired Card,Loyal Customer,3,Regular,0.0
+TXN00504,CUST0086,Swati Desai,2723.39,INR,Debit Card,2026-08-10 21:23:52,Success,,Regular Customer,0,Regular,
+TXN00279,CUST0145,Manish Patel,2076.4,INR,Debit Card,2026-08-10 21:26:13,Failed,Insufficient Funds,Loyal Customer,0,Regular,0.0
+TXN00428,CUST0058,Karthik Malhotra,7654.32,INR,Debit Card,2026-08-10 23:45:48,Success,,Loyal Customer,0,Premium,
+TXN00325,CUST0166,Pooja Joshi,3284.57,INR,Wallet,2026-08-11 06:11:26,Failed,Card Declined,Occasional Buyer,0,Premium,0.0
+TXN00620,CUST0036,Kavya Joshi,2260.04,INR,Credit Card,2026-08-11 06:36:26,Success,,Regular Customer,0,Regular,
+TXN00559,CUST0131,Pooja Patel,2482.32,INR,Debit Card,2026-08-11 07:03:05,Failed,Authentication Failure,Occasional Buyer,0,Regular,0.0
+TXN00091,CUST0195,Aditya Menon,2107.78,INR,Debit Card,2026-08-11 08:50:59,Success,,Regular Customer,0,Regular,
+TXN00543,CUST0219,Divya Agarwal,2674.16,INR,Credit Card,2026-08-11 12:42:45,Success,,Occasional Buyer,0,Regular,
+TXN00088,CUST0057,Rahul Patel,2394.22,INR,UPI,2026-08-11 12:46:04,Success,,Regular Customer,0,Regular,
+TXN00457,CUST0115,Radhika Kapoor,842.0,INR,UPI,2026-08-11 17:42:05,Success,,Occasional Buyer,0,New,
+TXN00313,CUST0166,Pooja Joshi,8206.72,INR,UPI,2026-08-11 18:52:03,Success,,Occasional Buyer,0,Premium,
+TXN00442,CUST0111,Kiran Sharma,1962.59,INR,Wallet,2026-08-12 08:05:55,Success,,Occasional Buyer,0,Regular,
+TXN00118,CUST0129,Nisha Kapoor,1050.72,INR,Credit Card,2026-08-12 17:15:27,Success,,Occasional Buyer,0,Regular,
+TXN00121,CUST0073,Rahul Pillai,8066.83,INR,UPI,2026-08-12 19:55:08,Success,,Loyal Customer,0,Premium,
+TXN00173,CUST0108,Meera Bose,857.26,INR,UPI,2026-08-12 21:54:30,Success,,Occasional Buyer,0,New,
+TXN00174,CUST0185,Sneha Nair,2410.61,INR,UPI,2026-08-13 04:07:41,Success,,Regular Customer,0,Regular,
+TXN00542,CUST0014,Rohan Chowdhury,3087.59,INR,UPI,2026-08-13 04:23:38,Success,,Loyal Customer,0,Premium,
+TXN00632,CUST0123,Preeti Desai,2247.85,INR,UPI,2026-08-13 09:33:10,Success,,New Customer,0,New,
+TXN00409,CUST0071,Manish Chowdhury,2134.87,INR,UPI,2026-08-13 11:14:54,Success,,Occasional Buyer,0,Regular,
+TXN00525,CUST0147,Amit Sharma,567.96,INR,Debit Card,2026-08-13 13:16:00,Success,,New Customer,0,New,
+TXN00502,CUST0106,Siddharth Joshi,5711.17,INR,UPI,2026-08-13 14:59:17,Success,,Loyal Customer,0,Regular,
+TXN00462,CUST0108,Meera Bose,917.05,INR,UPI,2026-08-13 15:22:57,Success,,Occasional Buyer,0,New,
+TXN00518,CUST0065,Preeti Gupta,499.43,INR,Credit Card,2026-08-13 17:28:07,Success,,New Customer,0,New,
+TXN00456,CUST0174,Riya Rao,557.95,INR,Wallet,2026-08-14 14:21:58,Success,,Occasional Buyer,0,New,
+TXN00050,CUST0153,Rajesh Chowdhury,757.73,INR,UPI,2026-08-14 14:43:11,Success,,Loyal Customer,0,Regular,
+TXN00126,CUST0167,Vivek Menon,6665.84,INR,UPI,2026-08-14 14:59:48,Failed,Bank Server Issue,Occasional Buyer,1,Regular,0.0
+TXN00090,CUST0210,Tanvi Patel,7020.81,INR,Debit Card,2026-08-14 18:35:21,Failed,Card Declined,Loyal Customer,0,Premium,1.0
+TXN00393,CUST0016,Riya Patel,966.68,INR,Wallet,2026-08-14 20:10:30,Failed,Bank Server Issue,Occasional Buyer,3,Regular,0.0
+TXN00199,CUST0102,Amit Reddy,2063.2,INR,Debit Card,2026-08-14 20:33:43,Failed,Unknown Error,Loyal Customer,0,Regular,0.0
+TXN00170,CUST0053,Rohan Singh,571.21,INR,UPI,2026-08-14 21:22:03,Success,,Occasional Buyer,0,New,
+TXN00246,CUST0218,Aditya Reddy,734.58,INR,UPI,2026-08-15 02:50:42,Success,,New Customer,0,New,
+TXN00621,CUST0169,Kiran Singh,558.76,INR,Netbanking,2026-08-15 03:35:26,Success,,New Customer,0,New,
+TXN00072,CUST0090,Ishita Reddy,11719.6,INR,UPI,2026-08-15 06:36:21,Success,,Regular Customer,0,Premium,
+TXN00341,CUST0174,Riya Rao,548.22,INR,UPI,2026-08-15 07:00:37,Success,,Occasional Buyer,0,New,
+TXN00375,CUST0031,Tanvi Sharma,3267.92,INR,UPI,2026-08-15 10:24:00,Failed,Unknown Error,New Customer,1,New,0.0
+TXN00281,CUST0139,Anjali Gupta,2126.93,INR,UPI,2026-08-15 12:50:32,Success,,Regular Customer,0,Regular,
+TXN00111,CUST0125,Swati Desai,2081.02,INR,UPI,2026-08-15 15:37:41,Failed,Bank Server Issue,Loyal Customer,0,Premium,1.0
+TXN00361,CUST0110,Rajesh Gupta,2658.83,INR,UPI,2026-08-15 19:00:30,Failed,Insufficient Funds,Occasional Buyer,1,Regular,0.0
+TXN00291,CUST0176,Neha Iyer,792.45,INR,UPI,2026-08-15 19:46:40,Failed,Expired Card,New Customer,0,New,0.0
+TXN00293,CUST0051,Gaurav Malhotra,630.42,INR,Credit Card,2026-08-15 21:04:45,Failed,Card Declined,Occasional Buyer,2,New,0.0
+TXN00322,CUST0152,Priya Rao,7314.24,INR,UPI,2026-08-15 21:23:22,Failed,Card Declined,Occasional Buyer,0,Premium,0.0
+TXN00184,CUST0156,Amit Joshi,2605.45,INR,Netbanking,2026-08-15 21:55:40,Success,,Regular Customer,0,Regular,
+TXN00356,CUST0095,Rohan Chowdhury,492.0,INR,Netbanking,2026-08-15 23:55:17,Success,,Occasional Buyer,0,New,
+TXN00629,CUST0002,Sanjay Patel,928.37,INR,Credit Card,2026-08-16 02:00:11,Failed,Insufficient Funds,Occasional Buyer,1,New,1.0
+TXN00193,CUST0189,Lakshmi Malhotra,2247.9,INR,Debit Card,2026-08-16 04:52:17,Failed,Card Declined,Regular Customer,2,Regular,0.0
+TXN00530,CUST0012,Shreya Kulkarni,3455.91,INR,UPI,2026-08-16 09:33:02,Success,,Loyal Customer,0,Premium,
+TXN00340,CUST0071,Manish Chowdhury,1465.5,INR,Netbanking,2026-08-16 14:49:05,Failed,Authentication Failure,Occasional Buyer,2,Regular,0.0
+TXN00396,CUST0016,Riya Patel,1543.72,INR,Credit Card,2026-08-16 18:36:27,Failed,Bank Server Issue,Occasional Buyer,3,Regular,1.0
+TXN00159,CUST0211,Anjali Bose,439.32,INR,Credit Card,2026-08-16 21:31:46,Success,,New Customer,0,New,
+TXN00422,CUST0158,Kunal Agarwal,5247.13,INR,UPI,2026-08-16 22:23:36,Success,,New Customer,0,Regular,
+TXN00109,CUST0165,Priya Agarwal,2302.27,INR,Debit Card,2026-08-17 05:09:08,Failed,Network Failure,Occasional Buyer,1,Regular,1.0
+TXN00633,CUST0006,Rahul Gupta,1831.88,INR,UPI,2026-08-17 06:52:01,Success,,Occasional Buyer,0,Regular,
+TXN00643,CUST0024,Lakshmi Chowdhury,768.35,INR,Credit Card,2026-08-17 07:57:31,Success,,Occasional Buyer,0,New,
+TXN00377,CUST0069,Kunal Kulkarni,3228.51,INR,Debit Card,2026-08-17 11:03:20,Success,,Regular Customer,0,Regular,
+TXN00546,CUST0128,Deepak Patel,1289.11,INR,Credit Card,2026-08-18 04:05:44,Success,,Occasional Buyer,0,Regular,
+TXN00312,CUST0012,Shreya Kulkarni,9408.68,INR,Debit Card,2026-08-18 10:48:33,Success,,Loyal Customer,0,Premium,
+TXN00150,CUST0167,Vivek Menon,2352.75,INR,UPI,2026-08-18 10:55:49,Success,,Occasional Buyer,0,Regular,
+TXN00529,CUST0174,Riya Rao,1049.25,INR,UPI,2026-08-18 13:26:44,Success,,Occasional Buyer,0,New,
+TXN00551,CUST0094,Kunal Singh,945.73,INR,Debit Card,2026-08-18 13:32:04,Success,,Regular Customer,0,New,
+TXN00318,CUST0084,Amit Sharma,1684.72,INR,UPI,2026-08-18 19:32:20,Success,,Loyal Customer,0,Regular,
+TXN00320,CUST0157,Vikram Bose,1860.17,INR,UPI,2026-08-18 22:39:16,Success,,Regular Customer,0,Regular,
+TXN00566,CUST0178,Siddharth Rao,1596.48,INR,Debit Card,2026-08-18 22:48:41,Success,,Loyal Customer,0,Regular,
+TXN00631,CUST0107,Nisha Mehta,787.72,INR,Debit Card,2026-08-19 03:31:06,Success,,Loyal Customer,0,Regular,
+TXN00439,CUST0082,Nikhil Agarwal,783.01,INR,UPI,2026-08-19 12:41:18,Success,,Loyal Customer,0,Regular,
+TXN00404,CUST0064,Varun Verma,2050.5,INR,UPI,2026-08-19 15:04:35,Failed,Insufficient Funds,New Customer,2,Regular,0.0
+TXN00398,CUST0150,Manish Joshi,10688.63,INR,UPI,2026-08-19 15:58:17,Success,,Regular Customer,0,Premium,
+TXN00086,CUST0093,Kunal Sharma,4226.47,INR,UPI,2026-08-19 18:50:44,Success,,Loyal Customer,0,Premium,
+TXN00597,CUST0092,Ishita Gupta,1722.56,INR,Wallet,2026-08-19 20:32:22,Success,,Loyal Customer,0,Regular,
+TXN00054,CUST0093,Kunal Sharma,7374.9,INR,Credit Card,2026-08-20 02:26:38,Success,,Loyal Customer,0,Premium,
+TXN00120,CUST0096,Aditya Iyer,7910.66,INR,Credit Card,2026-08-20 04:46:14,Success,,Loyal Customer,0,Premium,
+TXN00317,CUST0204,Riya Kulkarni,7638.65,INR,UPI,2026-08-20 05:32:04,Success,,Loyal Customer,0,Premium,
+TXN00463,CUST0150,Manish Joshi,3828.15,INR,Debit Card,2026-08-20 13:49:58,Success,,Regular Customer,0,Premium,
+TXN00641,CUST0212,Sanjay Pillai,4592.17,INR,UPI,2026-08-20 16:26:48,Success,,New Customer,0,Premium,
+TXN00526,CUST0020,Anjali Menon,2202.96,INR,Debit Card,2026-08-20 19:18:13,Success,,Loyal Customer,0,Premium,
+TXN00062,CUST0117,Priya Verma,803.2,INR,UPI,2026-08-20 21:21:59,Failed,Network Failure,New Customer,1,New,1.0
+TXN00425,CUST0170,Simran Pillai,2849.67,INR,UPI,2026-08-20 22:14:26,Success,,Regular Customer,0,Regular,
+TXN00044,CUST0061,Suresh Malhotra,4672.49,INR,Netbanking,2026-08-20 23:21:40,Success,,Loyal Customer,0,Premium,
+TXN00540,CUST0177,Lakshmi Bose,635.15,INR,Debit Card,2026-08-21 01:44:47,Success,,New Customer,0,New,
+TXN00496,CUST0143,Pooja Pillai,1240.59,INR,UPI,2026-08-21 03:07:39,Failed,Card Declined,New Customer,2,New,0.0
+TXN00270,CUST0046,Sneha Singh,2147.17,INR,UPI,2026-08-21 05:04:45,Failed,Insufficient Funds,New Customer,1,Regular,0.0
+TXN00276,CUST0145,Manish Patel,2576.42,INR,Wallet,2026-08-21 05:12:59,Success,,Loyal Customer,0,Regular,
+TXN00421,CUST0045,Kiran Singh,3091.61,INR,Credit Card,2026-08-21 12:01:55,Failed,Insufficient Funds,New Customer,1,New,1.0
+TXN00157,CUST0034,Siddharth Nair,13806.4,INR,Credit Card,2026-08-21 12:22:50,Success,,Regular Customer,0,Premium,
+TXN00353,CUST0060,Rajesh Menon,1502.06,INR,Credit Card,2026-08-21 13:27:08,Failed,Expired Card,New Customer,0,New,0.0
+TXN00506,CUST0041,Swati Iyer,670.3,INR,Credit Card,2026-08-21 14:41:54,Success,,Regular Customer,0,New,
+TXN00411,CUST0141,Abhishek Sharma,1376.05,INR,Credit Card,2026-08-21 20:10:23,Failed,Card Declined,New Customer,1,New,0.0
+TXN00288,CUST0105,Swati Sharma,1277.92,INR,UPI,2026-08-21 22:52:21,Success,,New Customer,0,New,
+TXN00034,CUST0206,Neha Kulkarni,1116.84,INR,Credit Card,2026-08-22 00:21:10,Failed,Expired Card,Loyal Customer,1,Regular,0.0
+TXN00273,CUST0167,Vivek Menon,3788.56,INR,Debit Card,2026-08-22 00:44:33,Success,,Occasional Buyer,0,Regular,
+TXN00345,CUST0199,Suresh Pillai,1542.14,INR,Netbanking,2026-08-22 02:40:42,Success,,Loyal Customer,0,Regular,
+TXN00224,CUST0184,Vikram Chowdhury,2425.13,INR,Credit Card,2026-08-22 04:34:08,Success,,Regular Customer,0,Premium,
+TXN00249,CUST0116,Ishita Rao,2589.64,INR,Netbanking,2026-08-22 05:29:19,Success,,Loyal Customer,0,New,
+TXN00063,CUST0122,Kavya Pillai,462.29,INR,UPI,2026-08-22 13:22:52,Failed,Authentication Failure,New Customer,1,New,1.0
+TXN00589,CUST0050,Kunal Iyer,3154.81,INR,UPI,2026-08-22 13:28:50,Failed,Unknown Error,Regular Customer,1,Regular,1.0
+TXN00163,CUST0133,Rajesh Kulkarni,1799.31,INR,Netbanking,2026-08-22 19:06:40,Failed,Unknown Error,Occasional Buyer,0,New,0.0
+TXN00057,CUST0114,Karthik Patel,1259.45,INR,UPI,2026-08-22 21:42:52,Success,,Regular Customer,0,Regular,
+TXN00271,CUST0069,Kunal Kulkarni,4414.72,INR,Debit Card,2026-08-22 23:34:09,Success,,Regular Customer,0,Regular,
+TXN00454,CUST0061,Suresh Malhotra,6988.51,INR,Credit Card,2026-08-23 00:21:40,Success,,Loyal Customer,0,Premium,
+TXN00458,CUST0033,Rohan Rao,1130.73,INR,UPI,2026-08-23 01:50:20,Failed,Authentication Failure,Regular Customer,0,Regular,0.0
+TXN00101,CUST0215,Suresh Pillai,384.05,INR,UPI,2026-08-23 04:21:25,Success,,New Customer,0,New,
+TXN00370,CUST0072,Tanvi Kapoor,564.64,INR,UPI,2026-08-23 04:36:10,Success,,Occasional Buyer,0,New,
+TXN00131,CUST0048,Simran Iyer,851.62,INR,Debit Card,2026-08-23 05:02:47,Success,,Occasional Buyer,0,Regular,
+TXN00438,CUST0058,Karthik Malhotra,2724.25,INR,UPI,2026-08-23 11:12:12,Success,,Loyal Customer,0,Premium,
+TXN00280,CUST0211,Anjali Bose,712.52,INR,UPI,2026-08-23 20:52:59,Failed,Card Declined,New Customer,2,New,0.0
+TXN00292,CUST0108,Meera Bose,667.94,INR,UPI,2026-08-23 23:08:06,Failed,Card Declined,Occasional Buyer,1,New,0.0
+TXN00302,CUST0109,Anjali Rao,641.55,INR,Debit Card,2026-08-24 02:20:13,Success,,New Customer,0,New,
+TXN00627,CUST0168,Siddharth Patel,1159.47,INR,Netbanking,2026-08-24 04:47:53,Failed,Unknown Error,Regular Customer,0,Regular,0.0
+TXN00440,CUST0097,Meera Singh,5282.88,INR,UPI,2026-08-24 05:54:15,Success,,Regular Customer,0,Premium,
+TXN00459,CUST0082,Nikhil Agarwal,1473.64,INR,Netbanking,2026-08-24 13:09:19,Success,,Loyal Customer,0,Regular,
+TXN00237,CUST0005,Kunal Singh,656.01,INR,UPI,2026-08-24 13:39:37,Success,,Regular Customer,0,Regular,
+TXN00606,CUST0019,Sneha Singh,5609.62,INR,UPI,2026-08-24 19:06:51,Failed,Authentication Failure,Loyal Customer,1,Regular,1.0
+TXN00378,CUST0110,Rajesh Gupta,2210.2,INR,UPI,2026-08-24 19:33:38,Success,,Occasional Buyer,0,Regular,
+TXN00229,CUST0016,Riya Patel,1348.28,INR,Wallet,2026-08-25 03:10:28,Failed,Card Declined,Occasional Buyer,2,Regular,0.0
+TXN00053,CUST0135,Meera Chowdhury,1377.04,INR,UPI,2026-08-25 03:19:35,Success,,Loyal Customer,0,Regular,
+TXN00346,CUST0179,Rahul Desai,1031.98,INR,UPI,2026-08-25 05:26:41,Failed,Unknown Error,New Customer,2,New,0.0
+TXN00145,CUST0071,Manish Chowdhury,2305.23,INR,Debit Card,2026-08-25 12:43:08,Success,,Occasional Buyer,0,Regular,
+TXN00475,CUST0214,Sneha Iyer,4938.08,INR,UPI,2026-08-25 19:04:14,Failed,Insufficient Funds,Regular Customer,1,Regular,1.0
+TXN00017,CUST0008,Ananya Chowdhury,3273.4,INR,UPI,2026-08-25 20:40:05,Success,,Regular Customer,0,Premium,
+TXN00570,CUST0065,Preeti Gupta,727.12,INR,UPI,2026-08-25 20:43:57,Failed,Network Failure,New Customer,1,New,1.0
+TXN00452,CUST0151,Kavya Gupta,1592.54,INR,UPI,2026-08-26 00:04:51,Success,,Occasional Buyer,0,New,
+TXN00415,CUST0208,Rohan Gupta,1095.96,INR,Debit Card,2026-08-26 03:09:37,Success,,New Customer,0,New,
+TXN00176,CUST0056,Rohan Verma,8213.97,INR,Credit Card,2026-08-26 11:49:37,Success,,Loyal Customer,0,Premium,
+TXN00569,CUST0007,Divya Iyer,714.13,INR,UPI,2026-08-26 12:02:52,Failed,Authentication Failure,Occasional Buyer,0,Regular,1.0
+TXN00052,CUST0005,Kunal Singh,1616.8,INR,UPI,2026-08-26 14:36:07,Success,,Regular Customer,0,Regular,
+TXN00238,CUST0115,Radhika Kapoor,1004.13,INR,Credit Card,2026-08-26 18:53:50,Success,,Occasional Buyer,0,New,
+TXN00446,CUST0216,Priya Mehta,7591.89,INR,Credit Card,2026-08-26 23:07:27,Failed,Insufficient Funds,Regular Customer,2,Premium,0.0
+TXN00445,CUST0077,Meera Mehta,410.48,INR,UPI,2026-08-27 00:17:31,Success,,Occasional Buyer,0,New,
+TXN00468,CUST0085,Manish Gupta,1414.46,INR,Debit Card,2026-08-27 03:17:20,Success,,New Customer,0,New,
+TXN00119,CUST0036,Kavya Joshi,3746.41,INR,Netbanking,2026-08-27 09:19:53,Success,,Regular Customer,0,Regular,
+TXN00528,CUST0026,Kavya Nair,2051.75,INR,Debit Card,2026-08-27 20:33:58,Success,,Regular Customer,0,Regular,
+TXN00588,CUST0131,Pooja Patel,1252.11,INR,Credit Card,2026-08-27 20:46:47,Success,,Occasional Buyer,0,Regular,
+TXN00585,CUST0160,Riya Mehta,2208.41,INR,UPI,2026-08-27 21:40:18,Success,,Regular Customer,0,Regular,
+TXN00114,CUST0043,Shreya Pillai,7744.85,INR,Debit Card,2026-08-28 00:56:45,Success,,Regular Customer,0,Regular,
+TXN00098,CUST0149,Kavya Kulkarni,1050.09,INR,Credit Card,2026-08-28 02:21:40,Success,,New Customer,0,New,
+TXN00645,CUST0108,Meera Bose,774.76,INR,UPI,2026-08-28 05:16:37,Success,,Occasional Buyer,0,New,
+TXN00523,CUST0105,Swati Sharma,603.31,INR,UPI,2026-08-28 05:56:38,Success,,New Customer,0,New,
+TXN00258,CUST0095,Rohan Chowdhury,587.22,INR,UPI,2026-08-28 06:28:04,Success,,Occasional Buyer,0,New,
+TXN00634,CUST0035,Preeti Sharma,1580.06,INR,Debit Card,2026-08-28 06:49:21,Failed,Insufficient Funds,Occasional Buyer,3,Regular,0.0
+TXN00206,CUST0186,Meera Patel,511.48,INR,Netbanking,2026-08-28 16:21:39,Success,,Occasional Buyer,0,New,
+TXN00039,CUST0030,Riya Kapoor,962.46,INR,UPI,2026-08-28 21:04:06,Success,,Regular Customer,0,Regular,
+TXN00304,CUST0178,Siddharth Rao,2795.32,INR,UPI,2026-08-28 23:04:37,Success,,Loyal Customer,0,Regular,
+TXN00515,CUST0183,Sneha Menon,1455.02,INR,Debit Card,2026-08-28 23:38:50,Success,,Occasional Buyer,0,Regular,
+TXN00467,CUST0175,Siddharth Kapoor,1297.9,INR,Debit Card,2026-08-29 00:23:50,Success,,New Customer,0,New,
+TXN00207,CUST0215,Suresh Pillai,1222.95,INR,UPI,2026-08-29 00:26:27,Success,,New Customer,0,New,
+TXN00333,CUST0064,Varun Verma,2083.27,INR,UPI,2026-08-29 02:21:40,Failed,Bank Server Issue,New Customer,0,Regular,0.0
+TXN00383,CUST0046,Sneha Singh,621.33,INR,Wallet,2026-08-29 06:06:58,Success,,New Customer,0,Regular,
+TXN00148,CUST0099,Riya Joshi,406.56,INR,Wallet,2026-08-29 08:01:03,Failed,Expired Card,New Customer,1,New,0.0
+TXN00474,CUST0135,Meera Chowdhury,4237.72,INR,Netbanking,2026-08-29 16:18:45,Success,,Loyal Customer,0,Regular,
+TXN00447,CUST0123,Preeti Desai,1118.74,INR,UPI,2026-08-29 17:31:18,Failed,Card Declined,New Customer,0,New,0.0
+TXN00299,CUST0175,Siddharth Kapoor,1462.23,INR,Debit Card,2026-08-30 02:47:38,Success,,New Customer,0,New,
+TXN00309,CUST0039,Sanjay Nair,2699.72,INR,UPI,2026-08-30 03:33:50,Failed,Card Declined,Loyal Customer,3,Regular,1.0
+TXN00167,CUST0107,Nisha Mehta,3140.49,INR,Credit Card,2026-08-30 04:07:11,Success,,Loyal Customer,0,Regular,
+TXN00491,CUST0175,Siddharth Kapoor,893.56,INR,UPI,2026-08-30 09:50:57,Success,,New Customer,0,New,
+TXN00187,CUST0077,Meera Mehta,1192.66,INR,Credit Card,2026-08-30 23:23:54,Failed,Insufficient Funds,Occasional Buyer,1,New,0.0
+TXN00391,CUST0215,Suresh Pillai,523.72,INR,Debit Card,2026-08-31 22:11:04,Failed,Network Failure,New Customer,2,New,0.0
+TXN00211,CUST0066,Neha Patel,1264.63,INR,Debit Card,2026-08-31 22:15:38,Success,,New Customer,0,New,
+TXN00354,CUST0175,Siddharth Kapoor,815.69,INR,Credit Card,2026-08-31 22:29:45,Success,,New Customer,0,New,
+TXN00233,CUST0187,Kunal Mehta,5556.85,INR,Wallet,2026-09-01 10:48:52,Success,,Occasional Buyer,0,Premium,
+TXN00227,CUST0102,Amit Reddy,2070.1,INR,UPI,2026-09-01 17:55:13,Success,,Loyal Customer,0,Regular,
+TXN00004,CUST0202,Varun Mehta,2239.07,INR,Credit Card,2026-09-01 20:17:05,Success,,New Customer,0,New,
+TXN00267,CUST0169,Kiran Singh,2390.95,INR,Credit Card,2026-09-02 05:21:51,Success,,New Customer,0,New,
+TXN00649,CUST0049,Abhishek Kulkarni,1759.85,INR,UPI,2026-09-02 07:01:50,Success,,Regular Customer,0,Regular,

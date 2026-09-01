@@ -19,8 +19,13 @@ from agents.analyzer import analyze_failed_transactions
 from agents.decision_agent import decide_for_dataframe
 from agents.message_generator import generate_recovery_message
 from backend.services.email_dispatcher import send_direct_email_reminder
-from backend.services.whatsapp_dispatcher import send_direct_whatsapp_reminder
 from models.recovery_model import RecoveryModel
+from utils.auth_manager import (
+    handle_oauth_callback,
+    is_authenticated,
+    render_login_screen,
+    render_sidebar_user_profile,
+)
 from utils.data_processor import apply_filters, compute_summary_metrics, load_data
 
 def render_whatsapp_qr(message_text: str, phone: str = "919876543210"):
@@ -689,6 +694,16 @@ SVG_BOLT = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="
 SVG_ROBOT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>'
 SVG_CLIPBOARD = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C8B5BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg>'
 SVG_WARNING = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg>'
+SVG_LIGHTNING = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FB7185" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>'
+SVG_PAYMENT_FAIL = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>'
+SVG_WEBHOOK = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>'
+SVG_AI_BRAIN = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M12 2a4 4 0 0 1 4 4c0 1.1-.5 2.1-1.3 2.8.8.7 1.3 1.7 1.3 2.8 0 1.2-.6 2.3-1.5 3 .9.7 1.5 1.8 1.5 3a4 4 0 0 1-8 0c0-1.2.6-2.3 1.5-3-.9-.7-1.5-1.8-1.5-3 0-1.1.5-2.1 1.3-2.8A4 4 0 0 1 12 2z"/></svg>'
+SVG_MESSAGE_DISPATCH = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'
+SVG_MONEY_RECOVERED = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>'
+SVG_CHECK_CIRCLE = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>'
+SVG_SANDBOX_ROCKET = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>'
+SVG_MAIL = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>'
+SVG_AUDIT_DOC = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; display: inline-block;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
 
 
 def priority_badge(priority: str) -> str:
@@ -718,6 +733,19 @@ def priority_badge(priority: str) -> str:
 
 def format_inr(value: float) -> str:
     return f"₹{value:,.0f}"
+
+
+# --------------------------------------------------------------------------
+# Authentication & OAuth Gatekeeper
+# --------------------------------------------------------------------------
+
+# Handle OAuth redirect callbacks (e.g. Google / GitHub ?code=... in URL)
+handle_oauth_callback(redirect_uri="http://localhost:8501")
+
+# Guard the dashboard behind authentication
+if not is_authenticated():
+    render_login_screen(redirect_uri="http://localhost:8501")
+    st.stop()
 
 
 # --------------------------------------------------------------------------
@@ -754,6 +782,9 @@ st.sidebar.markdown(
 )
 st.sidebar.caption("Built for the Razorpay AI Buildathon 2026")
 
+# Render User Profile Card in Sidebar
+render_sidebar_user_profile()
+
 if "current_page" not in st.session_state:
     st.session_state["current_page"] = "Dashboard"
 
@@ -766,7 +797,7 @@ NAV_CONFIG = [
     ("Dashboard", "nav_btn_dashboard", ":material/space_dashboard:"),
     ("Transaction Explorer", "nav_btn_explorer", ":material/manage_search:"),
     ("AI Recovery Center", "nav_btn_center", ":material/smart_toy:"),
-    ("🎮 Live Sandbox", "nav_btn_sandbox", ":material/sports_esports:"),
+    ("Live Sandbox", "nav_btn_sandbox", ":material/tune:"),
     ("Analytics", "nav_btn_analytics", ":material/insights:"),
 ]
 
@@ -856,30 +887,30 @@ if page == "Dashboard":
     st.caption("Overview of payment performance and AI-estimated recoverable revenue.")
 
     st.markdown(
-        """
+        f"""
         <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 20px; margin-top: 12px; margin-bottom: 24px; box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);">
             <div style="font-size: 0.88rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #FB7185; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-                ⚡ How RecoverOS Operates Automatically in Production
+                {SVG_LIGHTNING} How RecoverOS Operates Automatically in Production
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; text-align: center;">
                 <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">💳 1. Payment Fails</div>
+                    <div style="font-size: 0.98rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">{SVG_PAYMENT_FAIL} 1. Payment Fails</div>
                     <div style="font-size: 0.76rem; color: #94A3B8;">Transaction drops at checkout or debit</div>
                 </div>
                 <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">⚡ 2. Auto Webhook</div>
-                    <div style="font-size: 0.76rem; color: #94A3B8;">Razorpay API payload received in < 5ms</div>
+                    <div style="font-size: 0.98rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">{SVG_WEBHOOK} 2. Auto Webhook</div>
+                    <div style="font-size: 0.76rem; color: #94A3B8;">Razorpay API payload received in &lt; 5ms</div>
                 </div>
                 <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">🧠 3. ML & Policy</div>
+                    <div style="font-size: 0.98rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">{SVG_AI_BRAIN} 3. ML & Policy</div>
                     <div style="font-size: 0.76rem; color: #94A3B8;">XGBoost p_rec score + IST Quiet Hours check</div>
                 </div>
                 <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 14px 10px;">
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px;">💬 4. Auto WhatsApp</div>
-                    <div style="font-size: 0.76rem; color: #94A3B8;">Hinglish AI text + 1-click Razorpay link</div>
+                    <div style="font-size: 0.98rem; font-weight: 700; color: #FFFDFE; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">{SVG_MESSAGE_DISPATCH} 4. Auto Recovery</div>
+                    <div style="font-size: 0.76rem; color: #94A3B8;">Multi-channel nudge + 1-click Razorpay link</div>
                 </div>
                 <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 12px; padding: 14px 10px;">
-                    <div style="font-size: 1.05rem; font-weight: 700; color: #34D399; margin-bottom: 4px;">💰 5. Money Recovered</div>
+                    <div style="font-size: 0.98rem; font-weight: 700; color: #34D399; margin-bottom: 4px; display: flex; align-items: center; justify-content: center; gap: 6px;">{SVG_MONEY_RECOVERED} 5. Money Recovered</div>
                     <div style="font-size: 0.76rem; color: #34D399;">Customer pays & funds hit merchant bank</div>
                 </div>
             </div>
@@ -1106,17 +1137,17 @@ elif page == "AI Recovery Center":
                 st.markdown(badge_html, unsafe_allow_html=True)
 
 # ==========================================================================
-# PAGE: 🎮 LIVE SANDBOX (INTERACTIVE TEST DRIVE FOR JUDGES)
+# PAGE: LIVE SANDBOX (INTERACTIVE TEST DRIVE FOR JUDGES)
 # ==========================================================================
 
-elif page == "🎮 Live Sandbox":
-    st.title("🎮 Live Test-Drive Sandbox")
+elif page == "Live Sandbox":
+    st.title("Live Test-Drive Sandbox")
     st.caption("Simulate live payment failure webhooks, evaluate policy rules, send 100% real-time background email recovery nudges, and inspect cryptographic audit dossiers.")
 
     st.markdown(
-        """
+        f"""
         <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 16px; padding: 20px; margin-bottom: 24px;">
-            <h4 style="margin: 0 0 8px 0; color: #FB7185;">🚀 Interactive Demo Sandbox for Razorpay Judges</h4>
+            <h4 style="margin: 0 0 8px 0; color: #FB7185; display: flex; align-items: center; gap: 8px;">{SVG_SANDBOX_ROCKET} Interactive Demo Sandbox for Razorpay Judges</h4>
             <p style="margin: 0; font-size: 0.9rem; color: #94A3B8;">
                 Select a pre-configured test scenario or type custom payment parameters. Watch RecoverOS process the transaction live through HMAC signature check → Calibrated ML Scoring → Bounded Policy Guardrails → Live Automatic Email Delivery.
             </p>
@@ -1125,9 +1156,9 @@ elif page == "🎮 Live Sandbox":
         unsafe_allow_html=True
     )
 
-    st.markdown("### ✉️ 100% Automatic Real-Time Email Recovery Engine")
+    st.markdown(f'<div style="font-size:1.15rem; font-weight:700; color:#FFFDFE; margin:16px 0 10px 0; display:flex; align-items:center; gap:8px;">{SVG_MAIL} 100% Automatic Real-Time Email Recovery Engine</div>', unsafe_allow_html=True)
     user_target_email = st.text_input(
-        "📩 Destination Client Email Address (Type your email to receive a real recovery email right now)",
+        "Destination Client Email Address (Type your email to receive a live recovery email)",
         value="user@example.com",
         help="Type your email address here! Clicking the button below will deliver a REAL payment recovery email directly to your inbox!"
     )
@@ -1135,11 +1166,11 @@ elif page == "🎮 Live Sandbox":
     preset = st.radio(
         "Choose Test Drive Scenario",
         [
-            "🌙 Scenario 1: Bank Timeout at 11:30 PM IST (Quiet Hours Rule)",
-            "💎 Scenario 2: High-Value Enterprise Payment ₹75,000 (Human Escalation)",
-            "🛒 Scenario 3: Abandoned Cart Session (Email Cart Restore)",
-            "🔄 Scenario 4: Subscription Mandate Debit Failure (Optimal Salary Cycle Retry)",
-            "✍️ Custom Interactive Scenario (Type Your Own Parameters)"
+            "Scenario 1: Bank Timeout at 11:30 PM IST (Quiet Hours Policy)",
+            "Scenario 2: High-Value Enterprise Payment ₹75,000 (Human Escalation)",
+            "Scenario 3: Abandoned Cart Session (Email Cart Restore)",
+            "Scenario 4: Subscription Mandate Debit Failure (Salary Cycle Retry)",
+            "Scenario 5: Custom Interactive Scenario (Type Your Own Parameters)"
         ],
         index=0
     )
@@ -1190,7 +1221,7 @@ elif page == "🎮 Live Sandbox":
             leak_type = st.selectbox("Leak Source", ["payment_failure", "checkout_abandonment", "subscription_failure", "overdue_receivable"])
             segment_type = "Regular"
 
-    if st.button("🚀 Simulate Webhook & Send Automatic Recovery Email", use_container_width=True, type="primary"):
+    if st.button("Simulate Webhook & Dispatch Recovery Email", icon=":material/bolt:", use_container_width=True, type="primary"):
         with st.spinner("Processing live transaction and dispatching recovery email..."):
             # 1. ML Score calculation
             p_rec = 0.78 if fail_reason == "network_timeout" else (0.42 if fail_reason == "insufficient_funds" else 0.65)
@@ -1230,7 +1261,7 @@ elif page == "🎮 Live Sandbox":
 
             # Render Live Execution Dashboard
             st.markdown("---")
-            st.subheader("⚡ Live Pipeline Execution Results")
+            st.markdown(f'<div style="font-size:1.15rem; font-weight:700; color:#FFFDFE; margin:16px 0 12px 0; display:flex; align-items:center; gap:8px;">{SVG_LIGHTNING} Live Pipeline Execution Results</div>', unsafe_allow_html=True)
 
             res_c1, res_c2, res_c3, res_c4 = st.columns(4)
             res_c1.metric("Policy Decision", decision)
@@ -1238,17 +1269,17 @@ elif page == "🎮 Live Sandbox":
             res_c3.metric("Priority Score", f"{p_score} / 100")
             res_c4.metric("Est. Expected Recovery", format_inr(amount_val * p_rec))
 
-            st.markdown(f'<div class="explain-box">📜 <b>Policy Engine Rationale:</b> {reason}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="explain-box">{SVG_AUDIT_DOC} <b>Policy Engine Rationale:</b> {reason}</div>', unsafe_allow_html=True)
 
             st.markdown(
                 f"""
                 <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid #10B981; border-radius: 14px; padding: 18px 22px; margin-top: 16px; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);">
-                    <h4 style="margin: 0 0 6px 0; color: #34D399; font-size: 1.05rem;">✅ AUTOMATIC RECOVERY EMAIL DELIVERED TO CLIENT INBOX!</h4>
+                    <h4 style="margin: 0 0 6px 0; color: #34D399; font-size: 1.05rem; display: flex; align-items: center; gap: 8px;">{SVG_CHECK_CIRCLE} AUTOMATIC RECOVERY EMAIL DELIVERED TO CLIENT INBOX</h4>
                     <div style="font-size: 0.88rem; color: #E2E8F0; margin-bottom: 8px;">
                         <b>Recipient Inbox:</b> <code>{email_res['recipient_email']}</code> &nbsp;|&nbsp; <b>Dispatch ID:</b> <code>{email_res['dispatch_id']}</code> &nbsp;|&nbsp; <b>Status:</b> HTTP {email_res['http_code']} OK
                     </div>
-                    <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px; font-size: 0.86rem; color: #34D399;">
-                        💳 <b>Embedded 1-Click Razorpay Payment Link:</b> <a href="{email_res['payment_link']}" target="_blank" style="color: #6EE7B7; font-weight: 700; text-decoration: underline;">{email_res['payment_link']}</a>
+                    <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px; font-size: 0.86rem; color: #34D399; display: flex; align-items: center; gap: 8px;">
+                        {SVG_PAYMENT_FAIL} <b>Embedded 1-Click Razorpay Payment Link:</b> <a href="{email_res['payment_link']}" target="_blank" style="color: #6EE7B7; font-weight: 700; text-decoration: underline;">{email_res['payment_link']}</a>
                     </div>
                 </div>
                 """,
@@ -1256,13 +1287,13 @@ elif page == "🎮 Live Sandbox":
             )
 
             st.markdown("### ")
-            st.markdown("#### 📥 Client Email Inbox View (What Customer Sees in Gmail)")
+            st.markdown(f'<h4 style="display:flex; align-items:center; gap:8px;">{SVG_MAIL} Client Email Inbox View (What Customer Sees in Gmail)</h4>', unsafe_allow_html=True)
             st.caption("Live rendering of the email card delivered to the client's inbox.")
             st.markdown(email_res["rendered_html"], unsafe_allow_html=True)
 
             # Cryptographic Decision Dossier Export
             st.markdown("---")
-            st.markdown("#### 📜 Signed Decision Dossier Audit Export")
+            st.markdown(f'<h4 style="display:flex; align-items:center; gap:8px;">{SVG_AUDIT_DOC} Signed Decision Dossier Audit Export</h4>', unsafe_allow_html=True)
             dossier_payload = {
                 "dossier_id": f"dos_{hash(cust_name) & 0xffffffff:x}",
                 "case_id": f"case_live_{hash(cust_name) & 0xffff:x}",
@@ -1283,7 +1314,8 @@ elif page == "🎮 Live Sandbox":
             dossier_json = json.dumps(dossier_payload, indent=2)
             st.json(dossier_payload)
             st.download_button(
-                label="📥 Download Signed Decision Dossier (JSON)",
+                label="Download Signed Decision Dossier (JSON)",
+                icon=":material/download:",
                 data=dossier_json,
                 file_name=f"decision_dossier_{dossier_payload['dossier_id']}.json",
                 mime="application/json",
