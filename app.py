@@ -37,13 +37,7 @@ try:
 except ImportError:
     from utils.data_processor import apply_filters, compute_summary_metrics, load_data
 
-def render_whatsapp_qr(message_text: str, phone: str = "919876543210"):
-    clean_phone = "".join(filter(str.isdigit, str(phone))) or "919876543210"
-    encoded_text = urllib.parse.quote(message_text)
-    # Official WhatsApp Universal Link format
-    whatsapp_url = f"https://wa.me/{clean_phone}?text={encoded_text}"
-    qr_url = f"https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=10&data={urllib.parse.quote(whatsapp_url)}"
-    return whatsapp_url, qr_url
+
 
 # --------------------------------------------------------------------------
 # Page config + light custom styling
@@ -1297,35 +1291,7 @@ elif page == "Transaction Explorer":
 
 
 
-        # ------------------------------------------------------------------
-        # Multi-Channel Recovery (Interactive WhatsApp QR & 1-Click Link)
-        # ------------------------------------------------------------------
-        st.markdown("---")
-        st.markdown(f'<div style="font-size:1.05rem; font-weight:700; color:#FFFDFE; margin:14px 0 8px 0; display:flex; align-items:center; gap:8px;">{SVG_WHATSAPP} Multi-Channel WhatsApp Recovery Outreach</div>', unsafe_allow_html=True)
-        st.caption("Send a 1-click WhatsApp recovery prompt with pre-filled payment link or scan the instant QR code on mobile.")
 
-        wa_c1, wa_c2 = st.columns([1.6, 1.2])
-        with wa_c1:
-            wa_phone = st.text_input("Customer WhatsApp Phone (+91)", value="+91 98765 43210", key=f"wa_phone_{selected_id}")
-            clean_digits = "".join(filter(str.isdigit, wa_phone)) or "919876543210"
-            if not clean_digits.startswith("91") and len(clean_digits) == 10:
-                clean_digits = "91" + clean_digits
-
-            rzp_explorer_link = get_razorpay_service().create_payment_link(
-                amount_inr=float(row["amount"]),
-                order_id=f"RZP-{str(row['transaction_id']).replace('TXN', '')[:5]}",
-                customer_name=row["customer_name"],
-                customer_email=target_email_input
-            )
-            wa_msg_default = f"Hi {row['customer_name']}, your payment of {format_inr(row['amount'])} for Order #RZP-{str(row['transaction_id']).replace('TXN', '')[:5]} paused due to a quick bank timeout. Click here to complete payment: {rzp_explorer_link['short_url']}"
-            wa_url, wa_qr = render_whatsapp_qr(wa_msg_default, phone=clean_digits)
-
-            st.markdown(f"<div style='font-size:0.82rem; color:#94A3B8; margin-bottom:8px;'><b>Outreach Preview:</b><br><i>\"{wa_msg_default}\"</i></div>", unsafe_allow_html=True)
-            st.link_button("Open WhatsApp Web Chat", wa_url, use_container_width=True)
-
-        with wa_c2:
-            with st.expander("Instant WhatsApp Mobile QR", expanded=True):
-                st.image(wa_qr, width=170, caption=f"Scan to message {row['customer_name']}")
 
         # ------------------------------------------------------------------
         # 1-Page Official Audit PDF Certificate Generator
@@ -1446,7 +1412,7 @@ elif page == "AI Recovery Center":
                 st.markdown(badge_html, unsafe_allow_html=True)
                 
                 # Multi-channel actions row
-                act_c1, act_c2, act_c3 = st.columns([1.2, 1.2, 1.2])
+                act_c1, act_c2 = st.columns([1.5, 1.5])
                 order_id_clean = f"RZP-{str(row['transaction_id']).replace('TXN', '')[:5]}"
                 rzp_item_link = get_razorpay_service().create_payment_link(
                     amount_inr=float(row["amount"]),
@@ -1469,11 +1435,6 @@ elif page == "AI Recovery Center":
                             st.success(f"Delivered to {batch_res['recipient_email']}!")
 
                 with act_c2:
-                    wa_msg_b = f"Hi {row['customer_name']}, your payment of {format_inr(row['amount'])} for Order #{order_id_clean} timed out. Complete securely: {rzp_item_link['short_url']}"
-                    wa_url_b, wa_qr_b = render_whatsapp_qr(wa_msg_b, phone="919876543210")
-                    st.link_button("WhatsApp Web", wa_url_b, use_container_width=True)
-
-                with act_c3:
                     batch_pdf = generate_audit_certificate_pdf({
                         "order_id": order_id_clean,
                         "customer_name": row["customer_name"],
