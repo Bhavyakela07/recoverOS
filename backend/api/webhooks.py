@@ -33,6 +33,11 @@ from services.ml_engine import get_ml_engine
 from services.ai_engine import get_ai_engine
 from services.email_dispatcher import send_direct_email_reminder
 from services.razorpay_service import get_razorpay_service
+try:
+    from backend.domain.payment_failures import CanonicalPaymentFailure, classify_payment_failure, PaymentMethod, SafetyClassification
+except ImportError:
+    from domain.payment_failures import CanonicalPaymentFailure, classify_payment_failure, PaymentMethod, SafetyClassification
+
 
 logger = logging.getLogger("recoveros.webhooks")
 
@@ -114,31 +119,49 @@ async def receive_razorpay_webhook(
         if amount_inr <= 0:
             amount_inr = 4500.0
 
-        error_code = payment_entity.get("error_code", "network_timeout")
-        error_reason = payment_entity.get("error_reason", "technical_error")
+        error_code = payment_entity.get("error_code", "unknown")
+        error_reason = payment_entity.get("error_reason", "unknown")
+        error_source = payment_entity.get("error_source", "unknown")
+        error_step = payment_entity.get("error_step", "unknown")
+        method_str = payment_entity.get("method", "unknown").lower()
         payment_id = payment_entity.get("id", f"pay_{uuid.uuid4().hex[:8]}")
         customer_email = payment_entity.get("email", "customer@example.com")
         customer_name = payment_entity.get("notes", {}).get("customer_name") or "Valued Customer"
 
-        failure_cat = "network_timeout"
-        if "insufficient" in error_reason.lower() or "funds" in error_reason.lower():
-            failure_cat = "insufficient_funds"
-        elif "decline" in error_reason.lower() or "card" in error_reason.lower():
-            failure_cat = "issuer_decline"
+        # Canonical Deterministic Classification (Fail-Closed)
+        canonical_failure = CanonicalPaymentFailure(
+            payment_method=PaymentMethod(method_str) if method_str in PaymentMethod._value2member_map_ else PaymentMethod.UNKNOWN,
+            error_code=str(error_code),
+            error_source=str(error_source),
+            error_step=str(error_step),
+            error_reason=str(error_reason)
+        )
+        mapping_res = classify_payment_failure(canonical_failure)
+        failure_cat = mapping_res.canonical_category
+
+        # Query actual DB state for retries and contact counts
+        existing_cases = db.query(RecoveryCaseModel).join(RevenueLeakModel).filter(
+            RevenueLeakModel.id == f"leak_{payment_id}"
+        ).all()
+        real_retry_count = len(existing_cases)
 
         # Compute ML Probability & AI Reasoning
         ml_engine = get_ml_engine()
         ai_engine = get_ai_engine()
 
-        p_recovery, brier = ml_engine.predict_p_recovery(
-            amount_inr=amount_inr,
-            customer_ltv=10000.0,
-            contact_count_7d=0,
-            retry_count=0,
-            failure_category=failure_cat,
-            leak_source="payment_failed",
-            is_quiet_hours=False
-        )
+        # If mapping is unsafe or unknown, set recovery probability low to fail closed
+        if mapping_res.safety_classification in (SafetyClassification.UNSAFE_STOP, SafetyClassification.HUMAN_REVIEW_REQUIRED):
+            p_recovery = 0.05
+        else:
+            p_recovery, brier = ml_engine.predict_p_recovery(
+                amount_inr=amount_inr,
+                customer_ltv=10000.0,
+                contact_count_7d=0,
+                retry_count=real_retry_count,
+                failure_category=failure_cat,
+                leak_source="payment_failed",
+                is_quiet_hours=False
+            )
 
         ai_rec = ai_engine.generate_recommendation(
             leak_id=event_id,
@@ -153,22 +176,22 @@ async def receive_razorpay_webhook(
 
         policy_input = build_policy_input(
             recovery_probability=p_recovery,
-            risk_score=0.1,
+            risk_score=0.9 if mapping_res.safety_classification == SafetyClassification.UNSAFE_STOP else 0.1,
             amount=amount_inr,
-            retry_count=0,
-            proposed_action=RecoveryAction.RETRY if ai_rec.recommended_action == "retry" else RecoveryAction.REMINDER,
+            retry_count=real_retry_count,
+            proposed_action=RecoveryAction.RETRY if (ai_rec.recommended_action == "retry" and mapping_res.retry_recommendation) else RecoveryAction.REMINDER,
             leak_source=LeakSource.PAYMENT_FAILURE,
             failure_category=FailureCategory.NETWORK_TIMEOUT if failure_cat == "network_timeout" else FailureCategory.ISSUER_DECLINE,
-            customer_consent=True,
+            customer_consent=mapping_res.safety_classification != SafetyClassification.UNSAFE_STOP,
             customer_contact_count_24h=0,
             customer_contact_count_7d=0,
             is_current_hour_quiet=False
         )
 
         stop_decision = policy_engine.check_stopping_rules(policy_input)
-        if stop_decision.stop:
-            decision = "DO_NOT_RETRY" if "INSUFFICIENT" in str(stop_decision.rule) else "SUPPRESSED"
-            reason_code = stop_decision.rule.value if stop_decision.rule else "STOPPING_RULE"
+        if stop_decision.stop or not mapping_res.retry_recommendation:
+            decision = "DO_NOT_RETRY" if (mapping_res.safety_classification in (SafetyClassification.UNSAFE_STOP, SafetyClassification.REQUIRES_USER_ACTION)) else "SUPPRESSED"
+            reason_code = stop_decision.rule.value if (stop_decision and stop_decision.rule) else mapping_res.recovery_class.value
         else:
             p_dec, p_reas, _ = policy_engine.evaluate(policy_input)
             decision = p_dec.value

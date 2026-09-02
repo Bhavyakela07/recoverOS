@@ -81,3 +81,8 @@ out/
 .DS_Store
 .vscode/
 .idea/
+
+# Test audio and HTML previews
+tests/*_audio/
+tests/*.html
+

@@ -19,10 +19,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY requirements.txt /app/requirements.txt
 COPY backend/requirements.txt /app/backend_requirements.txt
 
-# Install Python packages
+# Install Python packages strictly (including xgboost, scikit-learn, razorpay)
 RUN pip install --no-cache-dir -r requirements.txt && \
-    pip install --no-cache-dir -r backend_requirements.txt || true && \
-    pip install --no-cache-dir fastapi uvicorn pydantic sqlalchemy anthropic
+    pip install --no-cache-dir -r backend_requirements.txt
 
 # Copy application source code
 COPY . /app
@@ -33,7 +32,7 @@ RUN python3 data/generate_data.py && python3 models/train_model.py
 # Expose Streamlit (8501) and FastAPI (8000) ports
 EXPOSE 8501 8000
 
-# Make entrypoint executable
-RUN chmod +x /app/docker-entrypoint.sh
+# Make entrypoint executable if present
+RUN chmod +x /app/docker-entrypoint.sh 2>/dev/null || true
 
-ENTRYPOINT ["/app/docker-entrypoint.sh"]
+CMD ["python3", "-m", "pytest", "tests/"]

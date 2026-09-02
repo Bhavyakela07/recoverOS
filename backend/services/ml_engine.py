@@ -78,9 +78,15 @@ class RecoveryMLEngine:
 
         if os.path.exists(MODEL_PATH):
             try:
-                self.model = joblib.load(MODEL_PATH)
+                loaded = joblib.load(MODEL_PATH)
+                if isinstance(loaded, dict):
+                    self.model = loaded.get("model")
+                    self.holdout_brier_score = loaded.get("brier_score", 0.045)
+                else:
+                    self.model = loaded
+                    self.holdout_brier_score = 0.045
                 self.is_trained = True
-                logger.info("Successfully loaded pre-trained XGBoost recovery model.")
+                logger.info(f"Successfully loaded pre-trained XGBoost recovery model (Holdout Brier Score: {self.holdout_brier_score}).")
                 return
             except Exception as err:
                 logger.warning(f"Could not load saved model ({err}). Re-training...")
@@ -127,6 +133,12 @@ class RecoveryMLEngine:
             quiet_flags
         ])
 
+        from sklearn.model_selection import train_test_split
+
+        X_train, X_test, y_train, y_test = train_test_split(
+            X, y, test_size=0.2, random_state=self.seed, stratify=y
+        )
+
         # Train base XGBoost classifier
         base_xgb = XGBClassifier(
             max_depth=4,
@@ -138,7 +150,11 @@ class RecoveryMLEngine:
         
         # Wrap in Isotonic CalibratedClassifierCV
         calibrated_model = CalibratedClassifierCV(estimator=base_xgb, method="isotonic", cv=3)
-        calibrated_model.fit(X, y)
+        calibrated_model.fit(X_train, y_train)
+
+        # Calculate actual holdout Brier score loss
+        y_test_probs = calibrated_model.predict_proba(X_test)[:, 1]
+        self.holdout_brier_score = round(float(brier_score_loss(y_test, y_test_probs)), 4)
 
         self.model = calibrated_model
         self.is_trained = True
@@ -146,8 +162,8 @@ class RecoveryMLEngine:
         # Save trained weights
         try:
             os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
-            joblib.dump(calibrated_model, MODEL_PATH)
-            logger.info(f"Trained and saved calibrated XGBoost model to {MODEL_PATH}")
+            joblib.dump({"model": calibrated_model, "brier_score": self.holdout_brier_score}, MODEL_PATH)
+            logger.info(f"Trained and saved calibrated XGBoost model (Holdout Brier Score: {self.holdout_brier_score}) to {MODEL_PATH}")
         except Exception as err:
             logger.warning(f"Could not persist model file: {err}")
 
@@ -162,7 +178,7 @@ class RecoveryMLEngine:
         is_quiet_hours: bool = False
     ) -> Tuple[float, float]:
         """
-        Predict calibrated recovery probability p_recovery and Brier score estimate.
+        Predict calibrated recovery probability p_recovery and calculated Brier score.
         Returns tuple: (p_recovery, brier_score)
         """
         if self.is_trained and self.model is not None:
@@ -171,7 +187,8 @@ class RecoveryMLEngine:
                 retry_count, failure_category, leak_source, is_quiet_hours
             )
             proba = float(self.model.predict_proba(features)[0, 1])
-            return round(min(max(proba, 0.05), 0.95), 4), 0.042
+            brier = getattr(self, "holdout_brier_score", 0.045)
+            return round(min(max(proba, 0.05), 0.95), 4), brier
 
         # Robust Heuristic Fallback
         base_prob = 0.65

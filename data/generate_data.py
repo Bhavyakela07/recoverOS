@@ -4,28 +4,18 @@ generate_data.py
 Generates a realistic, SYNTHETIC dataset of Indian payment transactions
 for the AI Revenue Recovery Agent project.
 
-This data is entirely fabricated for demo purposes. No real customer or
-payment data is used anywhere in this project.
-
-Run:
-    python data/generate_data.py
-
-Output:
-    data/payments.csv
+This dataset is explicitly labelled as SYNTHETIC for mechanism validation and demo purposes.
+No real customer or payment data is used anywhere in this project.
 """
 
+import os
 import random
 from datetime import datetime, timedelta
-
 import numpy as np
 import pandas as pd
 
 random.seed(42)
 np.random.seed(42)
-
-# --------------------------------------------------------------------------
-# Reference lists used to build realistic-looking synthetic records
-# --------------------------------------------------------------------------
 
 FIRST_NAMES = [
     "Rahul", "Priya", "Amit", "Sneha", "Vikram", "Ananya", "Rohan", "Kavya",
@@ -43,20 +33,42 @@ LAST_NAMES = [
 ]
 
 PAYMENT_METHODS = ["UPI", "Credit Card", "Debit Card", "Netbanking", "Wallet"]
-
-# Weighted so UPI dominates, mirroring real Indian payment mix
 PAYMENT_METHOD_WEIGHTS = [0.42, 0.20, 0.20, 0.10, 0.08]
 
-FAILURE_REASONS = [
-    "Insufficient Funds",
-    "Card Declined",
-    "Expired Card",
-    "Network Failure",
-    "Authentication Failure",
-    "Bank Server Issue",
-    "Unknown Error",
-]
-FAILURE_REASON_WEIGHTS = [0.24, 0.20, 0.10, 0.16, 0.14, 0.11, 0.05]
+# Method-conditioned valid failure reasons
+FAILURE_REASONS_BY_METHOD = {
+    "Credit Card": [
+        ("Card Declined", 0.35),
+        ("Insufficient Funds", 0.25),
+        ("Expired Card", 0.15),
+        ("Network Failure", 0.15),
+        ("Authentication Failure", 0.10),
+    ],
+    "Debit Card": [
+        ("Card Declined", 0.30),
+        ("Insufficient Funds", 0.35),
+        ("Expired Card", 0.10),
+        ("Network Failure", 0.15),
+        ("Authentication Failure", 0.10),
+    ],
+    "UPI": [
+        ("Insufficient Funds", 0.30),
+        ("Network Failure", 0.30),
+        ("Bank Server Issue", 0.25),
+        ("Authentication Failure", 0.15),
+    ],
+    "Netbanking": [
+        ("Bank Server Issue", 0.40),
+        ("Network Failure", 0.30),
+        ("Insufficient Funds", 0.20),
+        ("Authentication Failure", 0.10),
+    ],
+    "Wallet": [
+        ("Insufficient Funds", 0.50),
+        ("Network Failure", 0.30),
+        ("Authentication Failure", 0.20),
+    ],
+}
 
 CUSTOMER_HISTORY_LEVELS = ["New Customer", "Occasional Buyer", "Regular Customer", "Loyal Customer"]
 CUSTOMER_SEGMENTS = ["New", "Regular", "Premium"]
@@ -66,49 +78,35 @@ N_TRANSACTIONS = 650
 
 
 def build_customers(n_customers: int):
-    """Create a pool of synthetic customers with a segment and history level."""
     customers = []
     for i in range(1, n_customers + 1):
         segment = random.choices(CUSTOMER_SEGMENTS, weights=[0.35, 0.45, 0.20])[0]
-
-        # History level correlates loosely with segment (Premium customers tend
-        # to be more established / loyal, New segment tends to be newer).
         if segment == "Premium":
-            history = random.choices(
-                CUSTOMER_HISTORY_LEVELS, weights=[0.05, 0.15, 0.35, 0.45]
-            )[0]
+            history = random.choices(CUSTOMER_HISTORY_LEVELS, weights=[0.05, 0.15, 0.35, 0.45])[0]
         elif segment == "Regular":
-            history = random.choices(
-                CUSTOMER_HISTORY_LEVELS, weights=[0.10, 0.30, 0.40, 0.20]
-            )[0]
-        else:  # New
-            history = random.choices(
-                CUSTOMER_HISTORY_LEVELS, weights=[0.55, 0.30, 0.10, 0.05]
-            )[0]
+            history = random.choices(CUSTOMER_HISTORY_LEVELS, weights=[0.10, 0.30, 0.40, 0.20])[0]
+        else:
+            history = random.choices(CUSTOMER_HISTORY_LEVELS, weights=[0.55, 0.30, 0.10, 0.05])[0]
 
         name = f"{random.choice(FIRST_NAMES)} {random.choice(LAST_NAMES)}"
-        customers.append(
-            {
-                "customer_id": f"CUST{i:04d}",
-                "customer_name": name,
-                "customer_segment": segment,
-                "customer_history": history,
-            }
-        )
+        customers.append({
+            "customer_id": f"CUST{i:04d}",
+            "customer_name": name,
+            "customer_segment": segment,
+            "customer_history": history,
+        })
     return customers
 
 
 def sample_amount(segment: str) -> float:
-    """Sample a transaction amount (INR) based loosely on customer segment."""
     if segment == "Premium":
-        amount = np.random.lognormal(mean=8.6, sigma=0.5)  # roughly 2k-25k
+        amount = np.random.lognormal(mean=8.6, sigma=0.5)
     elif segment == "Regular":
-        amount = np.random.lognormal(mean=7.6, sigma=0.55)  # roughly 700-8k
-    else:  # New
-        amount = np.random.lognormal(mean=6.8, sigma=0.6)  # roughly 300-4k
+        amount = np.random.lognormal(mean=7.6, sigma=0.55)
+    else:
+        amount = np.random.lognormal(mean=6.8, sigma=0.6)
 
-    amount = max(149.0, min(amount, 49999.0))
-    return round(amount, 2)
+    return round(max(149.0, min(amount, 49999.0)), 2)
 
 
 def sample_transaction_date() -> datetime:
@@ -130,8 +128,6 @@ def build_transactions(customers):
         payment_method = random.choices(PAYMENT_METHODS, weights=PAYMENT_METHOD_WEIGHTS)[0]
         txn_date = sample_transaction_date()
 
-        # Base failure probability, adjusted by customer history & segment.
-        # Loyal / Premium customers fail less often; New customers fail more.
         base_fail_prob = 0.30
         if history == "Loyal Customer":
             base_fail_prob -= 0.12
@@ -148,13 +144,12 @@ def build_transactions(customers):
 
         if is_failed:
             payment_status = "Failed"
-            failure_reason = random.choices(FAILURE_REASONS, weights=FAILURE_REASON_WEIGHTS)[0]
+            # Method-conditioned failure reason selection
+            reasons_spec = FAILURE_REASONS_BY_METHOD[payment_method]
+            reasons, weights = zip(*reasons_spec)
+            failure_reason = random.choices(reasons, weights=weights)[0]
             retry_count = random.choices([0, 1, 2, 3], weights=[0.35, 0.30, 0.22, 0.13])[0]
 
-            # Simulate whether the transaction was EVENTUALLY recovered after
-            # retry / follow-up. This becomes the training label for the ML
-            # model (models/recovery_model.py). Recoverability depends on the
-            # failure reason, retry count, and customer reliability.
             recovery_base = {
                 "Network Failure": 0.75,
                 "Bank Server Issue": 0.68,
@@ -163,7 +158,7 @@ def build_transactions(customers):
                 "Insufficient Funds": 0.35,
                 "Expired Card": 0.30,
                 "Unknown Error": 0.25,
-            }[failure_reason]
+            }.get(failure_reason, 0.30)
 
             if history == "Loyal Customer":
                 recovery_base += 0.12
@@ -173,34 +168,31 @@ def build_transactions(customers):
             if segment == "Premium":
                 recovery_base += 0.08
 
-            # Too many prior retries slightly reduces odds (customer fatigue)
             recovery_base -= 0.06 * retry_count
-
             recovery_prob = min(max(recovery_base, 0.03), 0.95)
             recovered_after_retry = int(random.random() < recovery_prob)
         else:
             payment_status = "Success"
             failure_reason = None
             retry_count = 0
-            recovered_after_retry = None  # not applicable for successful txns
+            recovered_after_retry = None
 
-        rows.append(
-            {
-                "transaction_id": f"TXN{txn_counter:05d}",
-                "customer_id": customer["customer_id"],
-                "customer_name": customer["customer_name"],
-                "amount": amount,
-                "currency": "INR",
-                "payment_method": payment_method,
-                "transaction_date": txn_date.strftime("%Y-%m-%d %H:%M:%S"),
-                "payment_status": payment_status,
-                "failure_reason": failure_reason,
-                "customer_history": history,
-                "retry_count": retry_count,
-                "customer_segment": segment,
-                "recovered_after_retry": recovered_after_retry,
-            }
-        )
+        rows.append({
+            "transaction_id": f"TXN{txn_counter:05d}",
+            "customer_id": customer["customer_id"],
+            "customer_name": customer["customer_name"],
+            "amount": amount,
+            "currency": "INR",
+            "payment_method": payment_method,
+            "transaction_date": txn_date.strftime("%Y-%m-%d %H:%M:%S"),
+            "payment_status": payment_status,
+            "failure_reason": failure_reason,
+            "customer_history": history,
+            "retry_count": retry_count,
+            "customer_segment": segment,
+            "recovered_after_retry": recovered_after_retry,
+            "data_source": "SYNTHETIC_SIMULATION"
+        })
         txn_counter += 1
 
     return rows
@@ -213,6 +205,7 @@ def main():
     df = df.sort_values("transaction_date").reset_index(drop=True)
 
     output_path = "data/payments.csv"
+    os.makedirs("data", exist_ok=True)
     df.to_csv(output_path, index=False)
 
     print(f"Generated {len(df)} synthetic transactions -> {output_path}")
