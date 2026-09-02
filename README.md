@@ -2,23 +2,23 @@
 
 **Razorpay AI Buildathon 2026 | Track 03: AI Revenue Recovery Agent**
 
-> **One-Line Thesis**: *RecoverOS does not simply ask whether a failed payment can be retried — it decides whether recovery is safe, justified, and worth attempting.*
+> **Core Thesis**: *Payment failure does not automatically mean retry.*
 
 ---
 
 ## 📌 Problem
 
-In digital commerce, payment failures are inevitable due to bank drops, network timeouts, expired credentials, or insufficient funds. However, **not all payment failures are equivalent**:
+In digital payments, failure is inevitable due to bank downtime, network drops, expired cards, or insufficient funds. However, **not all payment failures are equivalent**:
 
-- **Blind automated retries** burn customer trust, trigger card network penalties, and cause unnecessary bank decline fees.
+- **Blind retries** frustrate customers, burn merchant reputation, and cause unnecessary bank decline fees.
 - **Generic retry bots** spam customers during quiet hours (e.g. midnight IST) or repeatedly attempt retries on cards with insufficient funds.
-- **Uncontrolled LLMs** can hallucinate, ignore business constraints, or attempt retries on high-risk/fraudulent transactions.
+- **Uncontrolled AI/LLMs** can hallucinate or attempt retries on high-risk/fraudulent transactions.
 
 Payment recovery requires **both prediction and governance**.
 
 ---
 
-## 💡 Core Insight: AI Recommends. Policy Governs.
+## 💡 Core Insight: AI RECOMMENDS. POLICY GOVERNS.
 
 ```
        ┌───────────────────────────────────────────────────────────┐
@@ -38,22 +38,22 @@ Payment recovery requires **both prediction and governance**.
                                      ▼
        ┌───────────────────────────────────────────────────────────┐
        │ FINAL ACTION: ALLOW | DO_NOT_RETRY | UNKNOWN_HUMAN_REVIEW  │
-       └───────────────────────────────────────────────────────────┘
+       └─────────────────────────────┬─────────────────────────────┘
 ```
 
-- **AI/ML Model**: Predicts the calibrated probability ($p_{\text{recovery}}$) that a retry/outreach effort will succeed based on historical transaction features.
+- **AI/ML Model**: Predicts the calibrated probability ($p_{\text{recovery}}$) that a recovery effort will succeed based on historical transaction features.
 - **Policy Engine**: Holds **absolute deterministic authority**. It evaluates safety rules, customer consent, IST quiet hours, contact caps, amount limits, and risk signals.
-- **Core Governance Rule**: If the AI model recommends a retry but the Policy Engine detects a rule violation, **the Policy Engine overrides the AI recommendation and blocks outreach**.
+- **Governance Rule**: If the AI model recommends a retry but the Policy Engine detects a rule violation, **the Policy Engine overrides the AI recommendation and blocks outreach**.
 
 ---
 
-## 🆚 Why RecoverOS? Differentiation from Existing Retry Systems
+## 🆚 Prior Art & Differentiation: Why RecoverOS?
 
-Payment gateways like Razorpay already provide infrastructure-level auto-retries and payment link APIs. **RecoverOS does not replace Razorpay; it acts as an intelligent governance layer on top of Razorpay infrastructure.**
+Payment infrastructure like Razorpay already provides robust auto-retries and payment link APIs. **RecoverOS does not replace Razorpay; it acts as a governance and decision layer around payment recovery.**
 
 | Feature Focus | Standard Payment Retries | RecoverOS Governance Layer |
 | :--- | :--- | :--- |
-| **Primary Goal** | Maximize technical retry attempts | Decide **when NOT to retry** & govern outreach safety |
+| **Primary Focus** | Maximize technical retry attempts | Decide **when NOT to retry** & govern outreach safety |
 | **Failure Diagnosis** | Raw bank decline code | Canonical taxonomy mapping & fail-closed classification |
 | **Outreach Timing** | Immediate / Fixed schedule | Contextual window & IST Quiet Hours (22:00–08:00 IST) |
 | **Safety Guardrails** | Basic retry counters | Multi-variable rules (24h/7d caps, ₹50k human escalation, risk rules) |
@@ -62,40 +62,35 @@ Payment gateways like Razorpay already provide infrastructure-level auto-retries
 
 ---
 
-## 🔄 How It Works: Complete Pipeline Architecture
+## 🔄 How It Works: Pipeline Architecture
 
 ```mermaid
 flowchart TD
-    A[Payment Failure / Cart Abandonment] --> B[Razorpay Webhook Event]
-    B --> C[Canonical Payment Failure Layer]
-    
+    A[Payment Failure] --> B[Razorpay Webhook]
+    B --> C[Canonical Payment Failure]
+    C --> D[AI Recovery Prediction]
+    D --> E[Deterministic Policy Engine]
+    E --> F[Safety & Guardrails]
+    F --> G[Final Decision]
+    G --> H[Recovery Action]
+    H --> I[Payment Outcome]
+    G --> J[Database / Audit Trail]
+
     C --> C1[payment_method]
     C --> C2[error_code]
     C --> C3[error_source]
     C --> C4[error_step]
     C --> C5[error_reason]
-    
-    C --> D[Calibrated XGBoost ML Model]
-    D --> D1[Calculated p_recovery & Holdout Brier Score]
-    
-    D -.->|AI RECOMMENDS| E[Deterministic Policy Engine]
-    
-    E --> F[Safety & Guardrails]
-    F --> F1[Retry Count]
-    F --> F2[Customer Contact Count]
-    F --> F3[Customer Consent]
-    F --> F4[IST Quiet Hours 22:00-08:00]
-    F --> F5[Fraud / Risk Signals]
-    F --> F6[Escalation Threshold > ₹50k]
-    
-    E -.->|POLICY GOVERNS| G[Final Recovery Decision]
-    
-    G -->|ALLOW| H[1-Click Razorpay Payment Link & Email Outreach]
-    G -->|DO_NOT_RETRY| I[Stop Outreach & Flag Policy Reason]
-    G -->|HUMAN_REVIEW| J[Escalate to Merchant Finance Team]
-    
-    H --> K[Razorpay payment.captured Webhook]
-    K -->|HMAC-SHA256 & Idempotency Check| L[Database Update & Audit Certificate PDF]
+    D --> D1[Recovery Probability]
+    F --> F1[Retry Limits]
+    F --> F2[Contact Limits]
+    F --> F3[Consent]
+    F --> F4[Quiet Hours]
+    F --> F5[Fraud / Risk]
+    F --> F6[Cooldown]
+    F --> F7[Escalation]
+    D -.->|AI RECOMMENDS| E
+    E -.->|POLICY GOVERNS| G
 ```
 
 ---
@@ -103,17 +98,10 @@ flowchart TD
 ## 🧠 AI / ML Architecture & Probability Calibration
 
 - **Model Architecture**: `CalibratedClassifierCV(estimator=XGBClassifier, method="isotonic")` in [`backend/services/ml_engine.py`](file:///Users/bhavya/recoveros/backend/services/ml_engine.py).
-- **Features Extracted**:
-  1. Transaction Amount (Scaled INR)
-  2. Customer LTV (Lifetime Value)
-  3. Customer Contact Frequency (7-day window)
-  4. Failure Retry Count
-  5. Canonical Failure Category Code
-  6. Revenue Leak Source (Checkout Abandonment vs Payment Failure)
-  7. IST Quiet Hours Flag (Boolean)
-- **Train/Test Holdout & Metrics**: Trained using an **80% training / 20% holdout test split** (`train_test_split`).
-- **Holdout Brier Score Loss**: Brier score loss is **calculated directly from holdout predictions** using `sklearn.metrics.brier_score_loss` (rather than hardcoded constants).
-- **Synthetic Data Disclosure**: *The current ML model is trained and evaluated on a method-conditioned synthetic dataset (`SYNTHETIC_SIMULATION`). It is designed to demonstrate prototype calibration and governance logic, not production payment recovery performance.*
+- **Features Used**: Amount (INR), Customer LTV, 7-day Contact Frequency, Retry Count, Canonical Failure Category Code, Leak Source, Quiet Hours Flag.
+- **Train/Test Holdout**: Trained on an **80% training / 20% holdout test split** (`train_test_split`).
+- **Holdout Brier Score**: Measured on the held-out synthetic test set using `sklearn.metrics.brier_score_loss`.
+- **Evaluation Notice**: *The current model demonstrates calibrated recovery-probability inference on synthetic simulation data. It is intended to validate the architecture and decision framework, not production payment-recovery performance.*
 
 ---
 
@@ -133,11 +121,11 @@ Located in [`backend/domain/payment_failures.py`](file:///Users/bhavya/recoveros
 | **`UNKNOWN_HUMAN_REVIEW`** | `HUMAN_REVIEW_REQUIRED` | **Fail-Closed Default.** Any unrecognized error code routes to human review. |
 
 > [!IMPORTANT]
-> **Fail-Closed Guarantee**: Security, fraud, or unknown error reasons **NEVER** silently default to a retryable network timeout. They fail closed to `UNKNOWN_HUMAN_REVIEW` or `NEVER_FRAUD`.
+> **Fail-Closed Security**: Security, fraud, or unknown error reasons **NEVER** silently default to a retryable network timeout. They fail closed to `UNKNOWN_HUMAN_REVIEW` or `NEVER_FRAUD`.
 
 ---
 
-## 🛡️ Policy & Safety Guardrails Layer
+## 🛡️ Policy & Safety Layer
 
 Located in [`backend/services/policy_engine.py`](file:///Users/bhavya/recoveros/backend/services/policy_engine.py), the Policy Engine enforces strict stopping rules:
 
@@ -145,14 +133,14 @@ Located in [`backend/services/policy_engine.py`](file:///Users/bhavya/recoveros/
 2. **High-Value Escalation**: Transactions $\ge ₹50,000$ escalate to merchant human review.
 3. **Contact & Retry Caps**: Maximum 3 retries and 3 contacts per customer within 24 hours.
 4. **`DO_NOT_RETRY` Path**: Insufficient funds with prior retries or low probability ($p_{\text{recovery}} < 40\%$) trigger a first-class `DO_NOT_RETRY` callout.
-5. **LLM Safety Guardrail**: The LLM (*Claude / OpenAI*) handles natural language formatting only. It cannot execute financial actions or override policy decisions.
+5. **LLM Safety Guardrail**: The LLM handles natural language formatting only. It cannot execute financial actions or override policy decisions.
 
 ---
 
 ## 🔒 Security & Reliability
 
 - **HMAC-SHA256 Webhook Security**: Webhooks are verified using `X-Razorpay-Signature` via `hmac.compare_digest` in [`backend/utils/security.py`](file:///Users/bhavya/recoveros/backend/utils/security.py). Invalid or missing signatures are rejected with `400 Bad Request`.
-- **Database-Authoritative Idempotency**: Webhook events are logged with a `UNIQUE event_id` constraint in SQLite/Postgres (`WebhookEventModel`). Duplicate webhooks return `200 OK (ignored)` with zero duplicate payment link creation.
+- **Database-Authoritative Idempotency**: Webhook events are logged with a `UNIQUE event_id` constraint in SQLite (`recoveros.db`). Duplicate webhooks return `200 OK (ignored)` with zero duplicate payment link creation.
 
 ---
 
@@ -167,35 +155,74 @@ Located in [`backend/services/policy_engine.py`](file:///Users/bhavya/recoveros/
 
 ---
 
-## 📊 Synthetic Data Disclosure & Limitations
+## 📊 Synthetic Data Disclosure
 
 > [!NOTE]
-> **Synthetic Simulation Notice**: All payment transactions and customer records in `data/payments.csv` are synthetically generated for mechanism validation. Model metrics demonstrate evaluation methodology rather than production payment-recovery performance.
-
-### System Limitations
-1. Trained on synthetic simulation data preserving plausible Indian payment distributions.
-2. Webhook triggers and link generation in demo mode operate via Razorpay Sandbox / Simulation.
-3. Production deployment requires live merchant transaction logging and periodic retraining.
+> **Synthetic Data Disclosure**: The current demo and ML evaluation use synthetic/simulated payment-failure data (`SYNTHETIC_SIMULATION`). Reported model metrics demonstrate prototype evaluation methodology, not production payment-recovery performance.
 
 ---
 
-## 🛣️ Production Roadmap
+## ⚠️ Limitations
 
-1. Train XGBoost model on anonymized production Razorpay transaction logs.
-2. Controlled A/B testing holdout groups for merchants.
-3. Cost-sensitive optimization weighing recovery value against decline fees.
-4. Merchant human-in-the-loop review workflow UI.
-5. Cloud deployment via Azure App Services & Docker Compose.
+- Model trained and evaluated on synthetic simulation data.
+- Demo mode recovery actions operate in simulated/sandbox mode.
+- Production deployment requires live transaction logging, retraining, compliance validation, and monitoring.
+
+---
+
+## 🛣️ Future Roadmap
+
+1. Train on anonymized production payment history.
+2. Validate calibration on real traffic.
+3. Controlled A/B experimentation.
+4. Cost-sensitive recovery optimization.
+5. Payment-method-specific features.
+6. Production observability.
+7. Human review workflow.
+8. Azure/cloud production deployment.
+
+---
+
+## 📁 Repository Structure
+
+```
+recoveros/
+├── app.py                      # Streamlit Web Dashboard UI
+├── Dockerfile                  # Production Container Specification
+├── docker-compose.yml          # Container Compose (SQLite default)
+├── requirements.txt            # Unified Frontend & Backend Dependencies
+├── backend/
+│   ├── main.py                 # FastAPI Application Server Entrypoint
+│   ├── requirements.txt        # Backend Core Dependencies
+│   ├── api/
+│   │   ├── webhooks.py         # Razorpay HMAC & Idempotent Receiver
+│   │   └── health.py           # Health Check Router
+│   ├── db/
+│   │   ├── database.py         # SQLAlchemy SQLite Engine
+│   │   └── models.py           # WebhookEvent & RecoveryCase Models
+│   ├── domain/
+│   │   └── payment_failures.py # Canonical Failure Taxonomy & Mapping
+│   └── services/
+│       ├── ml_engine.py        # Isotonic Calibrated XGBoost Model
+│       ├── policy_engine.py    # Deterministic Guardrails Policy Engine
+│       ├── email_dispatcher.py # Live SMTP Email Sender
+│       └── razorpay_service.py # Razorpay Payment Link Gateway
+├── data/
+│   ├── generate_data.py        # Method-Conditioned Data Generator
+│   └── payments.csv            # Synthetic Dataset
+├── docs/
+│   └── JUDGE_DEMO.md           # Judge Demo Playbook & Q&A
+├── FINAL_VALIDATION.md         # Verification & Test Report
+└── tests/
+    ├── test_domain_payment_failures.py # Taxonomy & Fail-Closed Tests
+    └── smoke_test_scenarios.py          # End-to-End Smoke Test Suite
+```
 
 ---
 
 ## 💻 Local Setup & Execution
 
-### 1. Prerequisites
-- Python 3.11+
-- Git
-
-### 2. Environment Setup & Tests
+### 1. Installation
 ```bash
 # Clone repository
 git clone https://github.com/Bhavyakela07/recoverOS.git
@@ -205,28 +232,27 @@ cd recoverOS
 python3 -m venv venv
 source venv/bin/activate
 
-# Install unified dependencies
+# Install dependencies
 pip install -r requirements.txt
+```
 
-# Run complete Pytest verification test suite
+### 2. Run Test Suite
+```bash
 PYTHONPATH=.:backend python3 -m pytest tests/ -v
 ```
 
-### 3. Launching Daemons (Backend + Web UI)
+### 3. Start Backend & UI Services
 ```bash
-# Terminal 1: Launch FastAPI Backend Daemon (Port 8000)
+# Terminal 1: Launch FastAPI Backend (Port 8000)
 PYTHONPATH=.:backend python3 -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
 
-# Terminal 2: Launch Streamlit Dashboard UI (Port 8501)
+# Terminal 2: Launch Streamlit Web UI (Port 8501)
 PYTHONPATH=.:backend python3 -m streamlit run app.py --server.port 8501
 ```
 
 ### 4. Docker Container Execution
 ```bash
-# Build Docker image
 docker build -t recoveros-ai-agent .
-
-# Run with Docker Compose
 docker compose up --build
 ```
 
@@ -273,5 +299,5 @@ tests/test_qa_pass_pipeline.py::test_qa_06_message_generation_and_pii_handling P
 tests/test_qa_pass_pipeline.py::test_qa_07_end_to_end_recovery_pipeline PASSED [ 96%]
 tests/test_qa_pass_pipeline.py::test_qa_08_invalid_payloads_and_security_rejections PASSED [100%]
 
-============================== 33 passed in 0.63s ==============================
+============================== 33 passed in 1.01s ==============================
 ```
