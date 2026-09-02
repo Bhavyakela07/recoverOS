@@ -6,11 +6,15 @@ Programmatically verifies the 4 judge scenarios against the FastAPI backend,
 Canonical Failure Mapping Layer, Policy Engine, and Database.
 """
 
-import hmac
-import json
-import hashlib
-import httpx
-from backend.domain.payment_failures import CanonicalPaymentFailure, classify_payment_failure, PaymentMethod, RecoveryClass, SafetyClassification
+from fastapi.testclient import TestClient
+from backend.main import app
+from backend.domain.payment_failures import (
+    CanonicalPaymentFailure,
+    classify_payment_failure,
+    PaymentMethod,
+    RecoveryClass,
+    SafetyClassification
+)
 
 
 def run_smoke_tests():
@@ -72,12 +76,13 @@ def run_smoke_tests():
     assert res4.safety_classification == SafetyClassification.HUMAN_REVIEW_REQUIRED
     print("  ✅ SCENARIO 4 (Unknown Error Fail-Closed): PASSED -> UNKNOWN_HUMAN_REVIEW (HUMAN_REVIEW_REQUIRED)")
 
-    # 5. Live FastAPI Endpoint Health & Response Test
-    resp = httpx.get("http://localhost:8000/health")
+    # 5. Live FastAPI Endpoint Health Test (via TestClient)
+    client = TestClient(app)
+    resp = client.get("/health")
     assert resp.status_code == 200
     data = resp.json()
     assert data["status"] == "healthy"
-    print("  ✅ Live FastAPI Health Endpoint (http://localhost:8000/health): PASSED (200 OK)")
+    print("  ✅ Live FastAPI Health Endpoint (/health): PASSED (200 OK)")
 
     print("🎉 ALL SMOKE TEST SCENARIOS PASSED WITH 100% SUCCESS!")
 

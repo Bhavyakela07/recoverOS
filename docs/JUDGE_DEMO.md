@@ -6,7 +6,7 @@
 
 ## 🚀 Quick Launch Commands
 
-Open two terminal windows in `/Users/bhavya/recoveros`:
+Open two terminal windows in the project root directory:
 
 ```bash
 # Terminal 1: FastAPI Backend Daemon (Port 8000)
@@ -22,9 +22,9 @@ PYTHONPATH=.:backend python3 -m streamlit run app.py --server.port 8501
 
 ## 🎙️ 30-Second Introduction Pitch
 
-> *"Hello judges! RecoverOS is an autonomous, policy-governed AI Revenue Recovery Agent built for Track 03 of the Razorpay AI Buildathon.*
+> *"Hello judges! RecoverOS is an AI-governed payment recovery system built for Track 03 of the Razorpay AI Buildathon.*
 > *When payment transactions fail due to bank drops, network timeouts, or expired cards, generic retry bots spam customers or trigger excessive bank decline fees.*
-> *RecoverOS solves this with one core thesis: **AI Recommends. Policy Governs.** Our calibrated ML engine predicts recovery probability, but our deterministic Policy Engine decides whether an action is safe, justified, and worth attempting."*
+> *RecoverOS solves this with one core thesis: **AI RECOMMENDS. POLICY GOVERNS.** Our calibrated ML engine predicts recovery probability, but our deterministic Policy Engine decides whether an action is safe, justified, and worth attempting."*
 
 ---
 
@@ -34,7 +34,7 @@ PYTHONPATH=.:backend python3 -m streamlit run app.py --server.port 8501
 - **Failure Cause:** Transient bank network timeout.
 - **AI Prediction:** `p_recovery = 94%` (High likelihood).
 - **Policy Engine Evaluation:** IST Active (Not Quiet Hours), 0 prior retries, amount under ₹50k limit.
-- **System Action:** **`ALLOW`** $\rightarrow$ Generates 1-click Razorpay payment link (`plink_...`) & dispatches live email to `bhavyakela0009@gmail.com`.
+- **System Action:** **`ALLOW`** $\rightarrow$ Generates 1-click Razorpay payment link (`plink_...`) & dispatches recovery email.
 
 ### Scenario B — Safety Block (Fraud / Risk Failure)
 - **Failure Cause:** Risk check failure (`payment_risk_check_failed`).
